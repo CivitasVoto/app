@@ -1,0 +1,21 @@
+{
+  "version": 2,
+  "name": "communiteths",
+  "builds": [
+    {
+      "src": "package.json",
+      "use": "@now/static-build",
+      "config": { "distDir": "dist/spa" }
+    }
+  ],
+  "routes": [
+    {
+      "src": "/(css|fonts|js|statics)/(.*)",
+      "dest": "/$1/$2"
+    },
+    {
+      "src": "/(.*)",
+      "dest": "index.html"
+    }
+  ]
+}

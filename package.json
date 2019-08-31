@@ -8,12 +8,14 @@
   "private": true,
   "scripts": {
     "lint": "eslint --ext .js,.vue src",
-    "test": "echo \"No test specified\" && exit 0"
+    "test": "echo \"No test specified\" && exit 0",
+    "build": "quasar build"
   },
   "dependencies": {
     "@quasar/extras": "^1.0.0",
     "axios": "^0.18.1",
-    "quasar": "^1.0.0"
+    "quasar": "^1.0.0",
+    "truffle-hdwallet-provider": "^1.0.17"
   },
   "devDependencies": {
     "@quasar/app": "^1.0.0",
