@@ -47,7 +47,10 @@ module.exports = function (ctx) {
         'QItemLabel',
         "QSpace",
         "QForm",
-        "QInput"
+        "QInput",
+        'QCard',
+        'QCardSection',
+        'QCardActions'
       ],
 
       directives: [
