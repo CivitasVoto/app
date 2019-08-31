@@ -1,29 +1,35 @@
 <template>
-  <q-layout view="lHh Lpr lFf">
-    <q-header elevated>
-      <q-toolbar>
-        <q-btn
-          flat
-          dense
-          round
-          @click="leftDrawerOpen = !leftDrawerOpen"
-          aria-label="Menu"
-        >
-          <q-icon name="menu" />
-        </q-btn>
+  <q-layout view="hHh lpR fFf">
+    <div class="row">
+      <q-space />
+      <q-header elevated>
+        <q-toolbar>
+          <q-toolbar-title class="q-px-xs-sm q-px-sm-xl">
+            CommunitEths
+          </q-toolbar-title>
+          <q-space />
+          <q-btn
+            flat
+            dense
+            round
+            @click="rightDrawerOpen = !rightDrawerOpen"
+            aria-label="Menu"
+          >
+            <q-icon name="menu" />
+          </q-btn>
 
-        <q-toolbar-title>
-          Quasar App
-        </q-toolbar-title>
 
-        <div>Quasar v{{ $q.version }}</div>
-      </q-toolbar>
-    </q-header>
-
+        </q-toolbar>
+      </q-header>
+      <q-space />
+    </div>
     <q-drawer
-      v-model="leftDrawerOpen"
+      side="right"
+      behavior="desktop"
+      v-model="rightDrawerOpen"
       show-if-above
       bordered
+      overlay
       content-class="bg-grey-2"
     >
       <q-list>
@@ -123,7 +129,7 @@ export default {
   name: "MyLayout",
   data() {
     return {
-      leftDrawerOpen: false
+      rightDrawerOpen: false
     };
   },
   methods: {
