@@ -36,6 +36,7 @@
 
         <q-input
           filled
+          type="number"
           v-model="tokenInitialPrice"
           label="Initial Token Price *"
           hint="Initial price of token"
