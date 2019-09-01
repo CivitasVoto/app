@@ -3,24 +3,24 @@
     <h2>Communities</h2>
     <div class="row">
       <div
-        v-for="(communiteth, index) in communiteths"
+        v-for="(community, index) in communities"
         :key="index"
-        :communiteth="communiteth"
+        :community="community"
         class="col-12 col-sm-6 col-md-4 row q-pa-lg"
       >
         <q-card class="full-width">
           <q-card-section>
             <h6 class="q-my-xs">
-              <strong>{{ communiteth.communityName }}</strong>
+              <strong>{{ community.communityName }}</strong>
             </h6>
             <p>
-              Token: {{ communiteth.tokenName }}
+              Token: {{ community.tokenName }}
               <br />
-              Symbol: {{ communiteth.tokenSymbol }}
+              Symbol: {{ community.tokenSymbol }}
               <br />
-              Initial Price: {{ communiteth.tokenInitialPrice }}
+              Initial Price: {{ community.tokenInitialPrice }}
               <br />
-              Benefit: {{ communiteth.benefit }}
+              Benefit: {{ community.benefit }}
               <br />
             </p>
             <div class="text-center">
@@ -36,7 +36,7 @@
 <script>
 export default {
   data: () => ({
-    communiteths: [
+    communities: [
       {
         communityName: "Total Tennis",
         tokenName: "totalTennis",
