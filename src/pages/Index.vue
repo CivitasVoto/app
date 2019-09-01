@@ -10,19 +10,24 @@
       >
         <q-card class="full-width">
           <q-card-section>
-            <h6 class="q-my-xs"><strong> {{ community.communityName}}</strong></h6>
+            <h6 class="q-my-xs">
+              <strong>{{ community.communityName }}</strong>
+            </h6>
             <p>
-              Token: {{ community.tokenName}}<br />
-              Symbol: {{ community.tokenSymbol}}<br />
-              Initial Price: {{ community.tokenInitialPrice}}<br />
-              Benefit: {{ community.benefit}}<br />
+              Token: {{ community.tokenName }}
+              <br />
+              Symbol: {{ community.tokenSymbol }}
+              <br />
+              Initial Price: {{ community.tokenInitialPrice }}
+              <br />
+              Benefit: {{ community.benefit }}
+              <br />
             </p>
             <div class="row justify-center q-gutter-md">
               <!-- <router-link :to="{ name: 'community/detail', params: { id: community.communityId } }"> -->
-                <q-btn>Detail</q-btn>
+              <q-btn>Detail</q-btn>
               <!-- </router-link> -->
               <q-btn>Join</q-btn>
-
             </div>
           </q-card-section>
         </q-card>
@@ -33,41 +38,10 @@
 
 <script>
 export default {
-  data: () => ({
-    communities: [
-      {
-        communityId: "1",
-        communityName: "Total Tennis",
-        tokenName: "totalTennis",
-        tokenSymbol: "TTNS",
-        tokenInitialPrice: "500.00",
-        benefit: "24/7 Tennis Court Access"
-      },
-      {
-        communityId: "2",
-        communityName: "Wild Water",
-        tokenName: "wildWater",
-        tokenSymbol: "WWTR",
-        tokenInitialPrice: "200.00",
-        benefit: "24/7 Water Park Access"
-      },
-      {
-        communityId: "3",
-        communityName: "Total Tennis",
-        tokenName: "totalTennis",
-        tokenSymbol: "TTNS",
-        tokenInitialPrice: "500.00",
-        benefit: "24/7 Tennis Court Access"
-      },
-      {
-        communityId: "4",
-        communityName: "Wild Water",
-        tokenName: "wildWater",
-        tokenSymbol: "WWTR",
-        tokenInitialPrice: "200.00",
-        benefit: "24/7 Water Park Access"
-      }
-    ]
-  })
+  computed: {
+    communities() {
+      return this.$store.getters["communities/getAll"];
+    }
+  }
 };
 </script>

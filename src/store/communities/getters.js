@@ -1,1 +1,3 @@
-export function someGetter(/* state */) {}
+export function getAll(state) {
+  return state.data;
+}
