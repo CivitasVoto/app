@@ -9,12 +9,15 @@
   "scripts": {
     "lint": "eslint --ext .js,.vue src",
     "test": "echo \"No test specified\" && exit 0",
-    "build": "quasar build"
+    "build": "npx truffle compile && quasar build"
   },
   "dependencies": {
     "@quasar/extras": "^1.0.0",
     "axios": "^0.18.1",
+    "chai": "^4.2.0",
+    "chai-as-promised": "^7.1.1",
     "quasar": "^1.0.0",
+    "truffle-assertions": "^0.9.1",
     "truffle-hdwallet-provider": "^1.0.17"
   },
   "devDependencies": {

@@ -1,21 +1,13 @@
 <template>
+  <!-- eslint-disable -->
   <q-layout view="hHh lpR fFf">
     <q-header elevated>
       <q-toolbar>
-        <q-toolbar-title class="q-px-xs-sm q-px-sm-xl">
-          CommunitEths
-        </q-toolbar-title>
+        <q-toolbar-title class="q-px-xs-sm q-px-sm-xl">CommunitEths</q-toolbar-title>
         <q-space />
-        <q-btn
-          flat
-          dense
-          round
-          aria-label="Menu"
-        >
+        <q-btn flat dense round aria-label="Menu">
           <q-icon name="menu" />
         </q-btn>
-
-
       </q-toolbar>
     </q-header>
 
@@ -29,7 +21,7 @@
 import { openURL } from "quasar";
 
 export default {
-  name: "MyLayout",
+  name: "AppLayout",
   data() {
     return {
       rightDrawerOpen: false

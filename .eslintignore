@@ -1,2 +1,8 @@
 /dist
+/migrations
+/test/contracts
+/src/boot/web3.js
+
+babel.config.js
+quasar.conf.js
 truffle-config.js
