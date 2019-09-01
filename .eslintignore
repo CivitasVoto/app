@@ -1,2 +1,7 @@
 /dist
+/migrations
+/test/contracts
+
+babel.config.js
+quasar.conf.js
 truffle-config.js
