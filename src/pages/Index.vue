@@ -10,15 +10,15 @@
       >
         <q-card class="full-width">
           <q-card-section>
+            <h6 class="q-my-xs"><strong> {{ communiteth.communityName}}</strong></h6>
             <p>
-              Community Name: {{ communiteth.communityName}}<br />
-              Token Name: {{ communiteth.tokenName}}<br />
-              Token Symbol: {{ communiteth.tokenSymbol}}<br />
-              Initial Token Price: {{ communiteth.tokenInitialPrice}}<br />
+              Token: {{ communiteth.tokenName}}<br />
+              Symbol: {{ communiteth.tokenSymbol}}<br />
+              Initial Price: {{ communiteth.tokenInitialPrice}}<br />
               Benefit: {{ communiteth.benefit}}<br />
             </p>
             <div class="text-center">
-              <q-btn class="col align-center">Join</q-btn>
+              <q-btn>Join</q-btn>
             </div>
           </q-card-section>
         </q-card>

@@ -2,6 +2,24 @@
   <q-page class="flex flex-center">
     <div class="q-pa-md" style="max-width: 400px">
 
+
+
+
+
+      <q-field outlined label="Community Name" stack-label>
+        <template v-slot:control>
+          <div class="self-center full-width no-outline" tabindex="0">{{ props.communityName}}</div>
+        </template>
+      </q-field>
+
+
+
+
+
+
+
+
+
       <q-form
         @submit="onSubmit"
         @reset="onReset"
