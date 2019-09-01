@@ -1,5 +1,7 @@
 const Community = artifacts.require("Community");
 
+const truffleAssert = require("truffle-assertions");
+
 require("chai")
   .use(require("chai-as-promised"))
   .should();
@@ -41,6 +43,15 @@ contract("Community", ([deployer]) => {
     it("tracks the benefit", async () => {
       const benefit = await community.benefit();
       benefit.should.equal("Access to the water park for 1 month!");
+    });
+    it("emits a Created event with the community name", async () => {
+      const result = await truffleAssert.createTransactionResult(
+        community,
+        community.transactionHash
+      );
+      truffleAssert.eventEmitted(result, "Created", event => {
+        return event.name === "Wild Water";
+      });
     });
   });
 });

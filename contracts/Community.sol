@@ -8,6 +8,8 @@ contract Community {
     int public initialPrice;
     string public benefit;
 
+    event Created(string name);
+
     constructor(
         string _name,
         string _tokenName,
@@ -21,5 +23,7 @@ contract Community {
         tokenSymbol = _tokenSymbol;
         initialPrice = _initialPrice;
         benefit = _benefit;
+
+        emit Created(name);
     }
 }
