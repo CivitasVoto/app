@@ -5,15 +5,15 @@ const routes = [
     children: [
       { path: "", component: () => import("pages/Index.vue") },
       {
-        path: "community/create",
+        path: "communities/create",
         component: () => import("pages/communities/Create.vue")
       },
       {
-        path: "community/:id",
+        path: "communities/:id",
         component: () => import("pages/communities/Detail.vue")
       },
       {
-        path: "community/:id/edit",
+        path: "communities/:id/edit",
         component: () => import("pages/communities/Edit.vue")
       }
     ]
