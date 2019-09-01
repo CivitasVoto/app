@@ -1,30 +1,8 @@
 <template>
+  <!-- eslint-disable -->
   <q-page class="flex flex-center">
     <div class="q-pa-md" style="max-width: 400px">
-
-
-
-
-
-      <q-field outlined label="Community Name" stack-label>
-        <template v-slot:control>
-          <div class="self-center full-width no-outline" tabindex="0">{{ props.communityName}}</div>
-        </template>
-      </q-field>
-
-
-
-
-
-
-
-
-
-      <q-form
-        @submit="onSubmit"
-        @reset="onReset"
-        class="q-gutter-md"
-      >
+      <q-form @submit="onSubmit" @reset="onReset" class="q-gutter-md">
         <q-input
           filled
           v-model="communityName"
@@ -70,45 +48,40 @@
           lazy-rules
           :rules="[ val => val && val.length > 0 || 'Please type something']"
         />
+
         <div>
-          <q-btn label="Submit" type="submit" color="primary"/>
+          <q-btn label="Submit" type="submit" color="primary" />
           <q-btn label="Reset" type="reset" color="primary" flat class="q-ml-sm" />
         </div>
       </q-form>
-
     </div>
   </q-page>
 </template>
 
 <script>
 export default {
-  data () {
+  data() {
     return {
       communityName: null,
       tokenName: null,
       tokenSymbol: null,
       tokenInitialPrice: null,
-      benefit: null,
-    }
+      benefit: null
+    };
   },
 
   methods: {
-    onSubmit () {
-    },
+    onSubmit() {},
 
-    onReset () {
-      this.communityName = null,
-      this.tokenName = null,
-      this.tokenSymbol = null,
-      this.tokenInitialPrice = null,
-      this.benefit = null
+    onReset() {
+      (this.communityName = null),
+        (this.tokenName = null),
+        (this.tokenSymbol = null),
+        (this.tokenInitialPrice = null),
+        (this.benefit = null);
     }
   }
-}
-
-
-
-
+};
 </script>
 
 <style></style>

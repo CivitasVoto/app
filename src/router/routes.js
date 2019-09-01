@@ -1,12 +1,21 @@
 const routes = [
   {
     path: "/",
-    component: () => import("layouts/MyLayout.vue"),
+    component: () => import("layouts/AppLayout.vue"),
     children: [
       { path: "", component: () => import("pages/Index.vue") },
-      { path: "community/create", component: () => import("pages/community/Create.vue") },
-      { path: "community/detail", component: () => import("pages/community/Detail.vue") },
-      { path: "community/edit", component: () => import("pages/community/Edit.vue") }
+      {
+        path: "community/create",
+        component: () => import("pages/community/Create.vue")
+      },
+      {
+        path: "community/detail",
+        component: () => import("pages/community/Detail.vue")
+      },
+      {
+        path: "community/edit",
+        component: () => import("pages/community/Edit.vue")
+      }
     ]
   }
 ];
