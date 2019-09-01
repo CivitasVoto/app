@@ -10,70 +10,62 @@
       >
         <q-card class="full-width">
           <q-card-section>
-            <h6 class="q-my-xs"><strong> {{ communiteth.communityName}}</strong></h6>
+            <h6 class="q-my-xs">
+              <strong>{{ communiteth.communityName }}</strong>
+            </h6>
             <p>
-              Token: {{ communiteth.tokenName}}<br />
-              Symbol: {{ communiteth.tokenSymbol}}<br />
-              Initial Price: {{ communiteth.tokenInitialPrice}}<br />
-              Benefit: {{ communiteth.benefit}}<br />
+              Token: {{ communiteth.tokenName }}
+              <br />
+              Symbol: {{ communiteth.tokenSymbol }}
+              <br />
+              Initial Price: {{ communiteth.tokenInitialPrice }}
+              <br />
+              Benefit: {{ communiteth.benefit }}
+              <br />
             </p>
             <div class="text-center">
               <q-btn>Join</q-btn>
             </div>
           </q-card-section>
         </q-card>
-
       </div>
     </div>
   </q-page>
 </template>
 
-
-
 <script>
-
-
 export default {
   data: () => ({
     communiteths: [
       {
-        communityName: 'Total Tennis',
-        tokenName: 'totalTennis',
-        tokenSymbol: 'TTNS',
-        tokenInitialPrice: '500.00',
-        benefit: '24/7 Tennis Court Access'
+        communityName: "Total Tennis",
+        tokenName: "totalTennis",
+        tokenSymbol: "TTNS",
+        tokenInitialPrice: "500.00",
+        benefit: "24/7 Tennis Court Access"
       },
       {
-        communityName: 'Wild Water',
-        tokenName: 'wildWater',
-        tokenSymbol: 'WWTR',
-        tokenInitialPrice: '200.00',
-        benefit: '24/7 Water Park Access'
-
+        communityName: "Wild Water",
+        tokenName: "wildWater",
+        tokenSymbol: "WWTR",
+        tokenInitialPrice: "200.00",
+        benefit: "24/7 Water Park Access"
       },
       {
-        communityName: 'Total Tennis',
-        tokenName: 'totalTennis',
-        tokenSymbol: 'TTNS',
-        tokenInitialPrice: '500.00',
-        benefit: '24/7 Tennis Court Access'
+        communityName: "Total Tennis",
+        tokenName: "totalTennis",
+        tokenSymbol: "TTNS",
+        tokenInitialPrice: "500.00",
+        benefit: "24/7 Tennis Court Access"
       },
       {
-        communityName: 'Wild Water',
-        tokenName: 'wildWater',
-        tokenSymbol: 'WWTR',
-        tokenInitialPrice: '200.00',
-        benefit: '24/7 Water Park Access'
-
+        communityName: "Wild Water",
+        tokenName: "wildWater",
+        tokenSymbol: "WWTR",
+        tokenInitialPrice: "200.00",
+        benefit: "24/7 Water Park Access"
       }
     ]
   })
-}
-
-
+};
 </script>
-
-
-
-
-<style></style>
