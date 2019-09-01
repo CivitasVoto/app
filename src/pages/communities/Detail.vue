@@ -2,19 +2,23 @@
   <!-- eslint-disable -->
   <q-page class="flex flex-center">
     <div class="q-pa-md" style="max-width: 400px">
-      <q-field color="primary" filled label="Community Name" stack-label>
-        <template v-slot:prepend>
-          <q-icon name="event" />
-        </template>
+
+
+      <q-form @submit="onSubmit" @reset="onReset" class="q-gutter-md">
+
+
+      <q-field color="grey-5" filled label="Community Name" stack-label>
         <template v-slot:control>
           <div class="self-center full-width no-outline" tabindex="0">{{community.communityName}}</div>
         </template>
-        <template v-slot:append>
+        <template v-slot:hint>
           <q-icon name="Name of Community" />
         </template>
       </q-field>
 
-      <q-form @submit="onSubmit" @reset="onReset" class="q-gutter-md">
+
+
+
         <q-input
           filled
           v-model="communityName"
@@ -73,23 +77,27 @@
 export default {
   data() {
     return {
-      communityName: null,
-      tokenName: null,
-      tokenSymbol: null,
-      tokenInitialPrice: null,
-      benefit: null
-    };
+      community: {
+        communityId: "1",
+        communityName: "Total Tennis",
+        tokenName: "totalTennis",
+        tokenSymbol: "TTNS",
+        tokenInitialPrice: "500.00",
+        benefit: "24/7 Tennis Access"
+      }
+    }
   },
 
   methods: {
     onSubmit() {},
 
     onReset() {
+      (this.communityId = null),
       (this.communityName = null),
-        (this.tokenName = null),
-        (this.tokenSymbol = null),
-        (this.tokenInitialPrice = null),
-        (this.benefit = null);
+      (this.tokenName = null),
+      (this.tokenSymbol = null),
+      (this.tokenInitialPrice = null),
+      (this.benefit = null);
     }
   }
 };
