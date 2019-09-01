@@ -6,15 +6,15 @@ const routes = [
       { path: "", component: () => import("pages/Index.vue") },
       {
         path: "community/create",
-        component: () => import("pages/community/Create.vue")
+        component: () => import("pages/communities/Create.vue")
       },
       {
-        path: "community/detail",
-        component: () => import("pages/community/Detail.vue")
+        path: "community/:id",
+        component: () => import("pages/communities/Detail.vue")
       },
       {
-        path: "community/edit",
-        component: () => import("pages/community/Edit.vue")
+        path: "community/:id/edit",
+        component: () => import("pages/communities/Edit.vue")
       }
     ]
   }
