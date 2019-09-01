@@ -17,10 +17,8 @@
               Initial Price: {{ community.tokenInitialPrice}}<br />
               Benefit: {{ community.benefit}}<br />
             </p>
-            <div class="text-center">
+            <div class="row justify-center q-gutter-md">
               <q-btn>Detail</q-btn>
-            </div>
-            <div class="text-center">
               <q-btn>Join</q-btn>
             </div>
           </q-card-section>
