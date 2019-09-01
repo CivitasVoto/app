@@ -21,7 +21,7 @@
 import { openURL } from "quasar";
 
 export default {
-  name: "MyLayout",
+  name: "AppLayout",
   data() {
     return {
       rightDrawerOpen: false
