@@ -33,6 +33,7 @@ export default {
   data: () => ({
     communities: [
       {
+        communityId: "1",
         communityName: "Total Tennis",
         tokenName: "totalTennis",
         tokenSymbol: "TTNS",
@@ -40,6 +41,7 @@ export default {
         benefit: "24/7 Tennis Court Access"
       },
       {
+        communityId: "2",
         communityName: "Wild Water",
         tokenName: "wildWater",
         tokenSymbol: "WWTR",
@@ -47,6 +49,7 @@ export default {
         benefit: "24/7 Water Park Access"
       },
       {
+        communityId: "3",
         communityName: "Total Tennis",
         tokenName: "totalTennis",
         tokenSymbol: "TTNS",
@@ -54,6 +57,7 @@ export default {
         benefit: "24/7 Tennis Court Access"
       },
       {
+        communityId: "4",
         communityName: "Wild Water",
         tokenName: "wildWater",
         tokenSymbol: "WWTR",
