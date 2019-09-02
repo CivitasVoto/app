@@ -1,8 +1,10 @@
 export function all(state) {
   return state.communities;
 }
-
-export function detail(state) {
+/**
+ * Get a community's details by contract address.
+ */
+export function detailsByAddress(state) {
   return address => {
     return state.communities.find(community => community.address === address);
   };

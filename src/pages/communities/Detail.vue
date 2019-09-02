@@ -60,7 +60,7 @@
 export default {
   computed: {
     community() {
-      return this.$store.getters["communities/detail"](
+      return this.$store.getters["communities/detailsByAddress"](
         this.$route.params.address
       );
     }
