@@ -9,7 +9,7 @@
   "scripts": {
     "lint": "eslint --ext .js,.vue src",
     "test": "echo \"No test specified\" && exit 0",
-    "build": "npx truffle compile && quasar build"
+    "build": "npx truffle migrate --network ropsten && quasar build"
   },
   "dependencies": {
     "@quasar/extras": "^1.0.0",
