@@ -6,7 +6,7 @@ contract Community {
     string public name;
     string public tokenName;
     string public tokenSymbol;
-    int public tokenInitialPrice;
+    uint public tokenInitialPrice;
     string public benefit;
 
     constructor(
@@ -14,7 +14,7 @@ contract Community {
         string _name,
         string _tokenName,
         string _tokenSymbol,
-        int _tokenInitialPrice,
+        uint _tokenInitialPrice,
         string _benefit
     ) public {
         network = msg.sender;

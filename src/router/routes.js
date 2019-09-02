@@ -9,11 +9,11 @@ const routes = [
         component: () => import("pages/communities/Create.vue")
       },
       {
-        path: "communities/:id",
+        path: "communities/:address",
         component: () => import("pages/communities/Detail.vue")
       },
       {
-        path: "communities/:id/edit",
+        path: "communities/:address/edit",
         component: () => import("pages/communities/Edit.vue")
       }
     ]
