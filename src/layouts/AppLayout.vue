@@ -5,9 +5,13 @@
       <q-toolbar>
         <q-toolbar-title class="q-px-xs-sm q-px-sm-xl">
           <router-link to="/">
-            <q-btn flat no-caps color="white" class="q-py-none q-my-none">
-              CommunitETHs
-            </q-btn>
+            <q-btn
+              flat
+              no-caps
+              label="CommunitETHs"
+              icon="people_alt"
+              color="white"
+            />
           </router-link>
         </q-toolbar-title>
         <q-space />

@@ -49,7 +49,7 @@
           <q-icon name="Membership reward" />
         </template>
       </q-field>
-      <div class="text-center">
+      <div class="text-center q-pt-lg">
         <q-btn label="Join" type="submit" color="primary" />
       </div>
     </div>
