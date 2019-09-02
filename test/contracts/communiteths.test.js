@@ -29,10 +29,6 @@ contract("Community", ([deployer]) => {
   });
 
   describe("creation", () => {
-    it("tracks the network", async () => {
-      const communityNetwork = await community.network();
-      communityNetwork.should.equal(network.address);
-    });
     it("tracks the owner", async () => {
       const owner = await community.owner();
       owner.should.equal(deployer);

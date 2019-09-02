@@ -1,7 +1,6 @@
 pragma solidity 0.4.26;
 
 contract Community {
-    address public network;
     address public owner;
     string public name;
     string public tokenName;
@@ -17,7 +16,6 @@ contract Community {
         uint _tokenInitialPrice,
         string _benefit
     ) public {
-        network = msg.sender;
         owner = _owner;
         name = _name;
         tokenName = _tokenName;

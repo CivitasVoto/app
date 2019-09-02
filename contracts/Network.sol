@@ -31,7 +31,13 @@ contract Network {
         uint _tokenInitialPrice,
         string _benefit
     ) public {
-        Community community = new Community(msg.sender, _name, _tokenName, _tokenSymbol, _tokenInitialPrice, _benefit);
+        Community community = new Community(
+            msg.sender, // Owner
+            _name, // Community Name
+            _tokenName, // Token Name
+            _tokenSymbol, _tokenInitialPrice, // Token Symbol
+            _benefit // Community benefit
+        );
         communities.push(community);
         emit CommunityCreated(
             address(this),
