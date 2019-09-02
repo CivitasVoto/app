@@ -3,7 +3,9 @@
   <q-layout view="hHh lpR fFf">
     <q-header elevated>
       <q-toolbar>
-        <q-toolbar-title class="q-px-xs-sm q-px-sm-xl">CommunitEths</q-toolbar-title>
+        <q-toolbar-title class="q-px-xs-sm q-px-sm-xl">
+          <router-link to="/">CommunitETHs</router-link>
+        </q-toolbar-title>
         <q-space />
         <q-btn flat dense round aria-label="Menu">
           <q-icon name="menu" />

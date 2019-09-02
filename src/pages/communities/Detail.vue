@@ -2,26 +2,19 @@
   <!-- eslint-disable -->
   <q-page class="flex flex-center">
     <div class="q-pa-md" style="max-width: 400px">
-
-
       <q-form @submit="onSubmit" @reset="onReset" class="q-gutter-md">
-
-
-      <q-field color="grey-5" filled label="Community Name" stack-label>
-        <template v-slot:control>
-          <div class="self-center full-width no-outline" tabindex="0">{{community.communityName}}</div>
-        </template>
-        <template v-slot:hint>
-          <q-icon name="Name of Community" />
-        </template>
-      </q-field>
-
-
-
+        <q-field color="grey-5" filled label="Community Name" stack-label>
+          <template v-slot:control>
+            <div class="self-center full-width no-outline" tabindex="0">{{community.name}}</div>
+          </template>
+          <template v-slot:hint>
+            <q-icon name="Name of Community" />
+          </template>
+        </q-field>
 
         <q-input
           filled
-          v-model="communityName"
+          v-model="name"
           label="Community Name *"
           hint="Name of community"
           lazy-rules
@@ -79,25 +72,24 @@ export default {
     return {
       community: {
         communityId: "1",
-        communityName: "Total Tennis",
+        name: "Total Tennis",
         tokenName: "totalTennis",
         tokenSymbol: "TTNS",
         tokenInitialPrice: "500.00",
         benefit: "24/7 Tennis Access"
       }
-    }
+    };
   },
 
   methods: {
     onSubmit() {},
 
     onReset() {
-      (this.communityId = null),
-      (this.communityName = null),
-      (this.tokenName = null),
-      (this.tokenSymbol = null),
-      (this.tokenInitialPrice = null),
-      (this.benefit = null);
+      this.name = null;
+      this.tokenName = null;
+      this.tokenSymbol = null;
+      this.tokenInitialPrice = null;
+      this.benefit = null;
     }
   }
 };
