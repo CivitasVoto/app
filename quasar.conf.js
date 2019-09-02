@@ -53,7 +53,8 @@ module.exports = function(ctx) {
       directives: ["Ripple"],
 
       // Quasar plugins
-      plugins: ["Notify"]
+      plugins: ["Notify"],
+      cssAddon: true
     },
 
     supportIE: true,

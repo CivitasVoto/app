@@ -1,7 +1,7 @@
 <template>
   <q-page class="flex flex-center column">
     <h2>Communities</h2>
-    <div class="row">
+    <!-- <div class="row"> -->
       <div
         v-for="(community, index) in communities"
         :key="index"
@@ -32,12 +32,13 @@
           </q-card-section>
         </q-card>
       </div>
-    </div>
+    <!-- </div> -->
       <q-btn
         fab
         color="primary"
         size="xl"
         icon="add"
+        to="/communities/create"
       />
   </q-page>
 </template>
