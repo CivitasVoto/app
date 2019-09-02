@@ -12,7 +12,7 @@ contract Network {
         string name,
         string tokenName,
         string tokenSymbol,
-        int tokenInitialPrice,
+        uint tokenInitialPrice,
         string benefit
     );
 
@@ -28,7 +28,7 @@ contract Network {
         string _name,
         string _tokenName,
         string _tokenSymbol,
-        int _tokenInitialPrice,
+        uint _tokenInitialPrice,
         string _benefit
     ) public {
         Community community = new Community(msg.sender, _name, _tokenName, _tokenSymbol, _tokenInitialPrice, _benefit);

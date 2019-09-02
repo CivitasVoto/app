@@ -16,6 +16,7 @@ export async function initialize(context) {
     const community = await Community.at(address);
 
     context.commit("push", {
+      address,
       name: await community.name(),
       tokenName: await community.tokenName(),
       tokenSymbol: await community.tokenSymbol(),
@@ -29,11 +30,13 @@ export async function create(context, payload) {
   const network = await Network.deployed();
   const [account] = await web3.eth.getAccounts();
 
-  await network.createCommunity(...Object.values(payload), {
+  const receipt = await network.createCommunity(...Object.values(payload), {
     from: account
   });
 
-  context.commit("push", payload);
+  const address = receipt.logs[0].args.communityAddress;
+
+  context.commit("push", { address, ...payload });
 
   this.$router.push("/");
 }
