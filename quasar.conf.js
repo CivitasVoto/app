@@ -97,7 +97,7 @@ module.exports = function(ctx) {
       manifest: {
         // name: 'CommunitETHs',
         // short_name: 'CommunitETHs',
-        // description: 'The future of decentralized governance and finance for communities.',
+        // description: 'The future of decentralized finance and governance for communities.',
         display: "standalone",
         orientation: "portrait",
         background_color: "#ffffff",
