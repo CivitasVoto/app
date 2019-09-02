@@ -20,16 +20,22 @@
         </router-link>
         <q-btn>Join</q-btn>
       </div>
+      <BuySell />
     </q-card-section>
   </q-card>
 </template>
 
 <script>
+import BuySell from "./BuySell";
+
 export default {
   props: {
     community: {
       type: Object
     }
+  },
+  components: {
+    BuySell
   }
 };
 </script>
