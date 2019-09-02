@@ -3,26 +3,26 @@ pragma solidity 0.4.26;
 contract Community {
     address public network;
     address public owner;
-    string public title;
+    string public name;
     string public tokenName;
     string public tokenSymbol;
-    int public initialPrice;
+    int public tokenInitialPrice;
     string public benefit;
 
     constructor(
         address _owner,
-        string _title,
+        string _name,
         string _tokenName,
         string _tokenSymbol,
-        int _initialPrice,
+        int _tokenInitialPrice,
         string _benefit
     ) public {
         network = msg.sender;
         owner = _owner;
-        title = _title;
+        name = _name;
         tokenName = _tokenName;
         tokenSymbol = _tokenSymbol;
-        initialPrice = _initialPrice;
+        tokenInitialPrice = _tokenInitialPrice;
         benefit = _benefit;
     }
 }

@@ -15,10 +15,10 @@ contract("Community", ([deployer]) => {
   beforeEach(async () => {
     network = await Network.new();
     result = await network.createCommunity(
-      "Wild Water", // Title
+      "Wild Water", // Community Name
       "Waves", // Token Name
       "WAVES", // Token Symbol
-      200, // Initial Price
+      200, // Token Initial Price
       "Access to the water park for 1 month!", // Benefit
       {
         from: deployer // Owner
@@ -37,9 +37,9 @@ contract("Community", ([deployer]) => {
       const owner = await community.owner();
       owner.should.equal(deployer);
     });
-    it("tracks the title", async () => {
-      const title = await community.title();
-      title.should.equal("Wild Water");
+    it("tracks the name", async () => {
+      const name = await community.name();
+      name.should.equal("Wild Water");
     });
     it("tracks the token name", async () => {
       const tokenName = await community.tokenName();
@@ -50,8 +50,8 @@ contract("Community", ([deployer]) => {
       tokenSymbol.should.equal("WAVES");
     });
     it("tracks the initial price", async () => {
-      const initialPrice = await community.initialPrice();
-      initialPrice.toString().should.equal("200");
+      const tokenInitialPrice = await community.tokenInitialPrice();
+      tokenInitialPrice.toString().should.equal("200");
     });
     it("tracks the benefit", async () => {
       const benefit = await community.benefit();
@@ -59,7 +59,7 @@ contract("Community", ([deployer]) => {
     });
     it("emits a CommunityCreated event with the community title", async () => {
       truffleAssert.eventEmitted(result, "CommunityCreated", community => {
-        return community.title === "Wild Water";
+        return community.name === "Wild Water";
       });
     });
   });

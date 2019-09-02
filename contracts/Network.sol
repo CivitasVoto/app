@@ -9,38 +9,38 @@ contract Network {
         address networkAddress,
         address communityAddress,
         address owner,
-        string title,
+        string name,
         string tokenName,
         string tokenSymbol,
-        int initialPrice,
+        int tokenInitialPrice,
         string benefit
     );
 
     /** @dev Create a new community.
       *
-      * @param _title Title of the community to be created
+      * @param _name Name of the community to be created
       * @param _tokenName Name of the community's token
       * @param _tokenSymbol Symbol of the community's token
-      * @param _initialPrice Initial price of the community's token
+      * @param _tokenInitialPrice Initial price of the community's token
       * @param _benefit The benefit of joining the community
       */
     function createCommunity(
-        string _title,
+        string _name,
         string _tokenName,
         string _tokenSymbol,
-        int _initialPrice,
+        int _tokenInitialPrice,
         string _benefit
     ) public returns (Community) {
-        Community community = new Community(msg.sender, _title, _tokenName, _tokenSymbol, _initialPrice, _benefit);
+        Community community = new Community(msg.sender, _name, _tokenName, _tokenSymbol, _tokenInitialPrice, _benefit);
         communities.push(community);
         emit CommunityCreated(
             address(this),
             address(community),
             msg.sender,
-            _title,
+            _name,
             _tokenName,
             _tokenSymbol,
-            _initialPrice,
+            _tokenInitialPrice,
             _benefit
         );
     }
