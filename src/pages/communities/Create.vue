@@ -5,7 +5,7 @@
       <q-form @submit="onSubmit" @reset="onReset" class="q-gutter-md">
         <q-input
           filled
-          v-model="communityName"
+          v-model="name"
           label="Community Name *"
           hint="Name of community"
           lazy-rules
@@ -62,7 +62,7 @@
 export default {
   data() {
     return {
-      communityName: null,
+      name: null,
       tokenName: null,
       tokenSymbol: null,
       tokenInitialPrice: null,
@@ -71,17 +71,17 @@ export default {
   },
 
   methods: {
-    onSubmit() {},
+    onSubmit() {
+      this.$store.dispatch("communities/create", { ...this.$data });
+    },
 
     onReset() {
-      (this.communityName = null),
-        (this.tokenName = null),
-        (this.tokenSymbol = null),
-        (this.tokenInitialPrice = null),
-        (this.benefit = null);
+      this.name = null;
+      this.tokenName = null;
+      this.tokenSymbol = null;
+      this.tokenInitialPrice = null;
+      this.benefit = null;
     }
   }
 };
 </script>
-
-<style></style>

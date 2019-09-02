@@ -1,3 +1,3 @@
-export function getAll(state) {
-  return state.data;
+export function all(state) {
+  return state.communities;
 }

@@ -11,7 +11,7 @@
         <q-card class="full-width">
           <q-card-section>
             <h6 class="q-my-xs">
-              <strong>{{ community.communityName }}</strong>
+              <strong>{{ community.name }}</strong>
             </h6>
             <p>
               Token: {{ community.tokenName }}
@@ -40,7 +40,7 @@
 export default {
   computed: {
     communities() {
-      return this.$store.getters["communities/getAll"];
+      return this.$store.getters["communities/all"];
     }
   }
 };

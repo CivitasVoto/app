@@ -6,8 +6,9 @@
 
 <script>
 export default {
-  name: "App"
+  name: "CommunitETHs",
+  mounted() {
+    this.$store.dispatch("communities/initialize");
+  }
 };
 </script>
-
-<style></style>

@@ -1,8 +1,10 @@
 import Web3 from "web3";
 
+let web3;
+
 // Modern dapp browsers...
 if (window.ethereum) {
-  window.web3 = new Web3(ethereum);
+  web3 = new Web3(ethereum);
   try {
     // Request account access if needed
     ethereum.enable();
@@ -12,7 +14,7 @@ if (window.ethereum) {
 }
 // Legacy dapp browsers...
 else if (window.web3) {
-  window.web3 = new Web3(web3.currentProvider);
+  web3 = new Web3(web3.currentProvider);
 }
 // Non-dapp browsers...
 else {
@@ -20,6 +22,8 @@ else {
     "Non-Ethereum browser detected. You should consider trying MetaMask!"
   );
 }
+
+export { web3 };
 
 export default async ({ Vue }) => {
   Vue.prototype.$web3 = web3;
