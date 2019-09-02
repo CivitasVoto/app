@@ -6,7 +6,7 @@
         v-for="(community, index) in communities"
         :key="index"
         :community="community"
-        class="col-12 col-sm-6 col-md-4 row q-pa-lg"
+        class="col-12 q-pa-lg"
       >
         <q-card class="full-width">
           <q-card-section>
