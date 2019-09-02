@@ -48,7 +48,7 @@
           </template>
         </q-field>
         <div class="text-center">
-          <q-btn label="Join" type="submit" color="primary" />
+          <q-btn label="Join" type="submit" color="primary" class="q-mt-lg" />
         </div>
 
     </div>

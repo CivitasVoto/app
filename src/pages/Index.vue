@@ -25,8 +25,9 @@
             </p>
             <div class="row justify-center q-gutter-md">
               <!-- <router-link :to="{ name: 'community/detail', params: { id: community.communityId } }"> -->
-              <q-btn>Detail</q-btn>
-              <!-- </router-link> -->
+              <router-link to="/communities/1">
+                <q-btn>Detail</q-btn>
+              </router-link>
               <q-btn>Join</q-btn>
             </div>
           </q-card-section>
