@@ -30,7 +30,7 @@ contract Network {
         string _tokenSymbol,
         int _tokenInitialPrice,
         string _benefit
-    ) public returns (Community) {
+    ) public {
         Community community = new Community(msg.sender, _name, _tokenName, _tokenSymbol, _tokenInitialPrice, _benefit);
         communities.push(community);
         emit CommunityCreated(
