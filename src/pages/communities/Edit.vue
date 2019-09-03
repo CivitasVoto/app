@@ -32,16 +32,6 @@
 
         <q-input
           filled
-          type="number"
-          v-model="tokenInitialPrice"
-          label="Initial Token Price *"
-          hint="Initial price of token"
-          lazy-rules
-          :rules="[ val => val && val.length > 0 || 'Please type something']"
-        />
-
-        <q-input
-          filled
           v-model="benefit"
           label="Benefit *"
           hint="Membership reward"
@@ -64,7 +54,6 @@ export default {
       name: null,
       tokenName: null,
       tokenSymbol: null,
-      tokenInitialPrice: null,
       benefit: null
     };
   },
@@ -76,7 +65,6 @@ export default {
       this.name = null;
       this.tokenName = null;
       this.tokenSymbol = null;
-      this.tokenInitialPrice = null;
       this.benefit = null;
     }
   }

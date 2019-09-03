@@ -9,7 +9,7 @@
         <br />
         Symbol: {{ community.tokenSymbol }}
         <br />
-        Initial Price: {{ community.tokenInitialPrice }}
+        Price: {{ community.price }}
         <br />
         Benefit: {{ community.benefit }}
         <br />

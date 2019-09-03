@@ -46,18 +46,6 @@
         </template>
       </q-field>
 
-      <q-field color="grey-5" filled label="Initial Token Price" stack-label>
-        <template v-slot:control>
-          <div
-            class="self-center full-width no-outline"
-            tabindex="0"
-          >{{community.tokenInitialPrice}}</div>
-        </template>
-        <template v-slot:hint>
-          <q-icon name="Initial Price of token" />
-        </template>
-      </q-field>
-
       <q-field color="grey-5" filled label="Benefit" stack-label>
         <template v-slot:control>
           <div class="self-center full-width no-outline" tabindex="0">{{community.benefit}}</div>

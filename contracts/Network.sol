@@ -1,19 +1,16 @@
 pragma solidity 0.4.26;
 
 import "./Community.sol";
+// import "./token/SmartToken.sol";
+import "./token/SmartTokenController.sol";
 
 contract Network {
     Community[] private communities;
 
     event CommunityCreated(
-        address networkAddress,
-        address communityAddress,
-        address owner,
-        string name,
-        string tokenName,
-        string tokenSymbol,
-        uint tokenInitialPrice,
-        string benefit
+        Network network,
+        Community community,
+        SmartTokenController token
     );
 
     /** @dev Create a new community.
@@ -21,33 +18,26 @@ contract Network {
       * @param _name Name of the community to be created
       * @param _tokenName Name of the community's token
       * @param _tokenSymbol Symbol of the community's token
-      * @param _tokenInitialPrice Initial price of the community's token
       * @param _benefit The benefit of joining the community
       */
     function createCommunity(
         string _name,
         string _tokenName,
         string _tokenSymbol,
-        uint _tokenInitialPrice,
         string _benefit
     ) public {
         Community community = new Community(
             msg.sender, // Owner
             _name, // Community Name
             _tokenName, // Token Name
-            _tokenSymbol, _tokenInitialPrice, // Token Symbol
+            _tokenSymbol, // Token Symbol
             _benefit // Community benefit
         );
         communities.push(community);
         emit CommunityCreated(
-            address(this),
-            address(community),
-            msg.sender,
-            _name,
-            _tokenName,
-            _tokenSymbol,
-            _tokenInitialPrice,
-            _benefit
+            this,
+            community,
+            community.tokenController()
         );
     }
 

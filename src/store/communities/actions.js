@@ -20,7 +20,7 @@ export async function initialize(context) {
       name: await community.name(),
       tokenName: await community.tokenName(),
       tokenSymbol: await community.tokenSymbol(),
-      tokenInitialPrice: await community.tokenInitialPrice(),
+      price: 1,
       benefit: await community.benefit()
     });
   });
@@ -34,9 +34,11 @@ export async function create(context, payload) {
     from: account
   });
 
-  const address = receipt.logs[0].args.communityAddress;
+  console.log(receipt);
 
-  context.commit("push", { address, ...payload });
+  // const address = receipt.logs[0].args.communityAddress;
+
+  // context.commit("push", { address, ...payload, price: 1 });
 
   this.$router.push("/");
 }
