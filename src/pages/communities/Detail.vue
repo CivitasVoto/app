@@ -1,8 +1,8 @@
 <template>
   <!-- eslint-disable -->
-  <q-page class="flex flex-center">
-    <div v-if="community" class="column q-pa-md">
-      <h3 class="q-py-xl q-my-xl">{{community.name}}</h3>
+  <q-page>
+    <div v-if="community" class="column">
+      <h3 class="q-py-xl q-my-xl self-center">{{community.name}}</h3>
       <hr class="full-width" />
       <div class="menu-wrap">
         <q-toolbar>

@@ -1,7 +1,6 @@
 <template>
   <!-- eslint-disable -->
   <q-layout view="hHh lpR fFf">
-    <!-- <q-space class="col" /> -->
     <q-header elevated>
       <q-toolbar>
         <q-toolbar-title class="q-px-xs-sm q-px-sm-xl">
@@ -21,7 +20,6 @@
         </q-btn>
       </q-toolbar>
     </q-header>
-    <!-- <q-space class="col" /> -->
 
     <q-page-container>
       <router-view />
