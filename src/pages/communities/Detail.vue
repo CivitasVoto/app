@@ -20,6 +20,7 @@
               :label="item.label"
             >{{ item.label }}</q-route-tab>
           </q-tabs>
+          <q-space />
         </q-toolbar>
       </div>
 
@@ -62,7 +63,7 @@
         </template>
       </q-field>
       <div class="text-center q-pt-lg">
-        <q-btn label="Join" type="submit" color="primary" />
+        <q-btn label="Join" type="submit" color="primary" class="q-mb-xl" />
       </div>
     </div>
   </q-page>
