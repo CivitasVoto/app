@@ -1,18 +1,19 @@
 <template>
   <!-- eslint-disable -->
   <q-layout view="hHh lpR fFf">
+    <!-- <q-space class="col" /> -->
     <q-header elevated>
       <q-toolbar>
         <q-toolbar-title class="q-px-xs-sm q-px-sm-xl">
-          <router-link to="/">
-            <q-btn
-              flat
-              no-caps
-              label="CommunitETHs"
-              icon="people_alt"
-              color="white"
-            />
-          </router-link>
+          <q-btn
+            flat
+            no-caps
+            size="lg"
+            to="/"
+            label="CommunitETHs"
+            icon="people_alt"
+            color="white"
+          />
         </q-toolbar-title>
         <q-space />
         <q-btn flat dense round aria-label="Menu">
@@ -20,6 +21,7 @@
         </q-btn>
       </q-toolbar>
     </q-header>
+    <!-- <q-space class="col" /> -->
 
     <q-page-container>
       <router-view />
