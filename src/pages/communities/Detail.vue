@@ -1,15 +1,27 @@
 <template>
   <!-- eslint-disable -->
   <q-page class="flex flex-center">
-    <div v-if="community" class="q-pa-md" style="max-width: 400px">
-      <q-field color="grey-5" filled label="Community Name" stack-label>
-        <template v-slot:control>
-          <div class="self-center full-width no-outline" tabindex="0">{{community.name}}</div>
-        </template>
-        <template v-slot:hint>
-          <q-icon name="Name of Community" />
-        </template>
-      </q-field>
+    <div v-if="community" class="column q-pa-md">
+      <h3 class="q-py-xl q-my-xl">{{community.name}}</h3>
+      <hr class="full-width" />
+      <div class="menu-wrap">
+        <q-toolbar>
+          <q-tabs
+            flat
+            indicator-color="secondary"
+            active-color="grey-8"
+            class="bg-white text-grey-8 cursor-pointer q-gutter-md"
+            align="right"
+          >
+            <q-route-tab
+              v-for="(item,index) in menu"
+              :key="index"
+              :to="item.to"
+              :label="item.label"
+            >{{ item.label }}</q-route-tab>
+          </q-tabs>
+        </q-toolbar>
+      </div>
 
       <q-field color="grey-5" filled label="Token Name" stack-label>
         <template v-slot:control>
@@ -58,23 +70,29 @@
 
 <script>
 export default {
+  data() {
+    return {
+      menu: [
+        {
+          label: "About",
+          to: "/communities/c1/about"
+        },
+        {
+          label: "Token",
+          to: "/communities/c1/token"
+        },
+        {
+          label: "Members",
+          to: "/communities/c1/members"
+        }
+      ]
+    };
+  },
   computed: {
     community() {
       return this.$store.getters["communities/detailsByAddress"](
         this.$route.params.address
       );
-    }
-  },
-
-  methods: {
-    onSubmit() {},
-
-    onReset() {
-      this.name = null;
-      this.tokenName = null;
-      this.tokenSymbol = null;
-      this.tokenInitialPrice = null;
-      this.benefit = null;
     }
   }
 };
