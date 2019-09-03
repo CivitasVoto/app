@@ -4,24 +4,28 @@
     <div v-if="community" class="column">
       <h3 class="q-py-xl q-my-xl self-center">{{community.name}}</h3>
       <hr class="full-width" />
-      <div class="menu-wrap">
-        <q-toolbar>
-          <q-tabs
-            flat
-            indicator-color="secondary"
-            active-color="grey-8"
-            class="bg-white text-grey-8 cursor-pointer q-gutter-md"
-            align="right"
-          >
-            <q-route-tab
-              v-for="(item,index) in menu"
-              :key="index"
-              :to="item.to"
-              :label="item.label"
-            >{{ item.label }}</q-route-tab>
-          </q-tabs>
+      <div class="row full-width">
+        <q-toolbar class>
+          <q-space class="col" />
+          <div class="col-9 q-gutter-md">
+            <q-tabs
+              class="col-9 text-center bg-white text-grey-8 cursor-pointer q-gutter-md"
+              flat
+              indicator-color="secondary"
+              active-color="grey-8"
+              align="right"
+            >
+              <q-route-tab
+                v-for="(item,index) in menu"
+                :key="index"
+                :to="item.to"
+                :label="item.label"
+              >{{ item.label }}</q-route-tab>
+            </q-tabs>
+          </div>
           <q-space />
         </q-toolbar>
+        <q-space class="col" />
       </div>
 
       <q-field color="grey-5" filled label="Token Name" stack-label>
