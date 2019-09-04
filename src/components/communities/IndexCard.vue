@@ -1,4 +1,5 @@
 <template>
+  <!-- eslint-disable -->
   <q-card>
     <q-card-section>
       <div class="text-h6 q-my-xs">
@@ -18,7 +19,7 @@
         <router-link :to="`communities/${community.address}`">
           <q-btn>Detail</q-btn>
         </router-link>
-        <q-btn>Join</q-btn>
+        <q-btn @click="$store.dispatch('communities/join', {community: community.address})">Join</q-btn>
       </div>
       <BuySell />
     </q-card-section>

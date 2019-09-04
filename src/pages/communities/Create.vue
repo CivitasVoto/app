@@ -61,7 +61,9 @@ export default {
 
   methods: {
     onSubmit() {
-      this.$store.dispatch("communities/create", { ...this.$data });
+      this.$store.dispatch("communities/create", {
+        community: { ...this.$data }
+      });
     },
 
     onReset() {

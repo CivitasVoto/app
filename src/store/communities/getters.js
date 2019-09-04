@@ -1,6 +1,10 @@
+/**
+ * Get all communities.
+ */
 export function all(state) {
   return state.communities;
 }
+
 /**
  * Get a community's details by contract address.
  */
