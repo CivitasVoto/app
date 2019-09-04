@@ -15,7 +15,6 @@
               narrow-indicator
             >
               <q-tab name="about" label="About" />
-              <q-tab name="token" label="Token" />
               <q-tab name="members" label="Members" />
             </q-tabs>
           </div>
@@ -25,19 +24,17 @@
     </section>
     <section class="row full-width">
       <q-space class="col" />
+
       <q-tab-panels v-model="tab" animated class="col-9">
         <q-tab-panel name="about">
           <div class="text-h6">About</div>Lorem ipsum dolor sit amet consectetur adipisicing elit.
-        </q-tab-panel>
-
-        <q-tab-panel name="token">
-          <div class="text-h6">Token</div>Lorem ipsum dolor sit amet consectetur adipisicing elit.
         </q-tab-panel>
 
         <q-tab-panel name="members">
           <div class="text-h6">Members</div>Lorem ipsum dolor sit amet consectetur adipisicing elit.
         </q-tab-panel>
       </q-tab-panels>
+
       <q-space class="col" />
     </section>
   </div>

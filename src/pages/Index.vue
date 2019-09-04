@@ -5,11 +5,7 @@
     <section class="row">
       <div class="row full-width justify-center">
         <div class="text-h4 q-mt-xl">Communities</div>
-        <div
-          v-for="(community, index) in communities"
-          :key="index"
-          class="row full-width q-gutter-lg q-pa-lg"
-        >
+        <div v-for="(community, index) in communities" :key="index" class="row q-gutter-lg q-pa-lg">
           <CommunityCard :community="community" />
         </div>
         <q-btn fab color="primary" size="xl" icon="add" to="/communities/create" />
