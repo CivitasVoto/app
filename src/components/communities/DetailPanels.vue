@@ -23,11 +23,11 @@
       </div>
     </section>
     <section class="row full-width justify-center">
-      <q-space v-if="$q.screen.gt.xs" />
+      <q-space v-if="$q.screen.gt.xs" class="col bg-grey-4" />
 
-      <q-tab-panels v-model="tab" animated class="col-10">
+      <q-tab-panels v-model="tab" animated class="bg-grey-4 col-sm-10">
         <q-tab-panel name="about">
-          <div class="text-h6">About</div>Lorem ipsum dolor sit amet consectetur adipisicing elit.
+          <CommunityAbout />
         </q-tab-panel>
 
         <q-tab-panel name="members">
@@ -35,13 +35,14 @@
         </q-tab-panel>
       </q-tab-panels>
 
-      <q-space v-if="$q.screen.gt.xs" />
+      <q-space v-if="$q.screen.gt.xs" class="col bg-grey-4" />
     </section>
   </div>
 </template>
 
 <script>
 import CommunityMembers from "src/components/communities/Members";
+import CommunityAbout from "src/components/communities/About";
 
 export default {
   data() {
@@ -50,7 +51,8 @@ export default {
     };
   },
   components: {
-    CommunityMembers
+    CommunityMembers,
+    CommunityAbout
   }
 };
 </script>

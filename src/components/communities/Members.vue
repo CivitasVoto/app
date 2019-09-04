@@ -1,8 +1,8 @@
 <template>
   <div class="column text-center">
-    <section>
+    <!-- <section>
       <div class="col q-py-sm q-pt-lg">Members</div>
-    </section>
+    </section>-->
     <section class="column text-center q-px-xs-xs q-px-sm-sm q-px-md-md">
       <div class="row justify-center q-gutter-lg">
         <div v-for="n in 33" :key="n" class="col-grow">

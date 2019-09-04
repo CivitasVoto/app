@@ -1,8 +1,11 @@
 <template>
   <!-- eslint-disable -->
   <q-layout view="hHh lpR fFf">
-    <q-header elevated>
-      <q-toolbar>
+    <!-- <div class="row full-width"> -->
+
+    <q-header elevated class="row full-width">
+      <q-space class="col" />
+      <q-toolbar class="col-10">
         <q-toolbar-title class="q-px-xs-sm q-px-sm-xl">
           <q-btn
             flat
@@ -15,11 +18,14 @@
           />
         </q-toolbar-title>
         <q-space />
-        <q-btn flat dense round aria-label="Menu">
-          <q-icon name="menu" />
-        </q-btn>
+        <!-- <q-btn flat dense round aria-label="Menu">
+            <q-icon name="menu" />
+        </q-btn>-->
       </q-toolbar>
+      <q-space class="col" />
     </q-header>
+
+    <!-- </div> -->
 
     <q-page-container>
       <router-view />

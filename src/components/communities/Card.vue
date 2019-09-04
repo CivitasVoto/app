@@ -1,5 +1,5 @@
 <template>
-  <q-card class="col-grow">
+  <q-card>
     <q-card-section>
       <div class="text-h6 q-my-xs">
         <q-btn flat no-caps :to="`communities/${community.address}`" :label="community.name" />
