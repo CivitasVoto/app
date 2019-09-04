@@ -1,9 +1,9 @@
-pragma solidity 0.4.26;
+pragma solidity ^0.4.26;
 
 import "./interfaces/INetwork.sol";
 
 contract Network is INetwork {
-    Community[] public communities;
+    Community[] private communities;
 
     event CommunityCreated(
         Network network,
@@ -23,7 +23,7 @@ contract Network is INetwork {
         string _benefit,
         string _tokenName,
         string _tokenSymbol
-    ) public {
+    ) public returns (bool success) {
         Community community = new Community(
             msg.sender, // Owner
             _name, // Community Name
@@ -39,5 +39,13 @@ contract Network is INetwork {
             community,
             community.token()
         );
+
+        return true;
     }
+
+    /** @dev Get a list of the network's communities.
+     *
+     * @return An array of the network's communities' addresses.
+     */
+    function getCommunities() public view returns (Community[]) { return communities; }
 }

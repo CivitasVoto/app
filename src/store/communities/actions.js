@@ -15,7 +15,7 @@ SmartToken.setProvider(web3.currentProvider);
 
 export async function initialize(context) {
   const network = await Network.deployed();
-  const addresses = await network.getAllCommunities();
+  const addresses = await network.getCommunities();
 
   addresses.forEach(async address => {
     const community = await Community.at(address);

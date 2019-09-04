@@ -6,5 +6,6 @@ import "../Community.sol";
     Network interface
 */
 contract INetwork {
-    function communities() public pure returns (Community[]) {}
+    function createCommunity(string _name, string _benefit, string _tokenName, string _tokenSymbol) public returns (bool success);
+    function getCommunities() public view returns (Community[]);
 }
