@@ -2,7 +2,7 @@
   <div>
     <section class="row">
       <div class="row full-width">
-        <q-space class="col" />
+        <q-space v-if="$q.screen.gt.xs" />
         <q-toolbar class="row justify-center">
           <div class="column col-10">
             <q-tabs
@@ -19,33 +19,38 @@
             </q-tabs>
           </div>
         </q-toolbar>
-        <q-space class="col" />
+        <q-space v-if="$q.screen.gt.xs" />
       </div>
     </section>
-    <section class="row full-width">
-      <q-space class="col" />
+    <section class="row full-width justify-center">
+      <q-space v-if="$q.screen.gt.xs" />
 
-      <q-tab-panels v-model="tab" animated class="col-9">
+      <q-tab-panels v-model="tab" animated class="col-10">
         <q-tab-panel name="about">
           <div class="text-h6">About</div>Lorem ipsum dolor sit amet consectetur adipisicing elit.
         </q-tab-panel>
 
         <q-tab-panel name="members">
-          <div class="text-h6">Members</div>Lorem ipsum dolor sit amet consectetur adipisicing elit.
+          <CommunityMembers />
         </q-tab-panel>
       </q-tab-panels>
 
-      <q-space class="col" />
+      <q-space v-if="$q.screen.gt.xs" />
     </section>
   </div>
 </template>
 
 <script>
+import CommunityMembers from "src/components/communities/Members";
+
 export default {
   data() {
     return {
       tab: "about"
     };
+  },
+  components: {
+    CommunityMembers
   }
 };
 </script>

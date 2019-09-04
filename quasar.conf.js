@@ -54,7 +54,8 @@ module.exports = function (ctx) {
         "QTabPanel",
         "QTabPanels",
         "QOptionGroup",
-        "QSeparator"
+        "QSeparator",
+        "QAvatar"
       ],
 
       directives: ["Ripple"],

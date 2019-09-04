@@ -2,14 +2,21 @@
   <!-- eslint-disable -->
 
   <q-page class="bg-grey-2">
-    <section class="row">
-      <div class="row full-width justify-center">
-        <div class="text-h4 q-mt-xl">Communities</div>
-        <div v-for="(community, index) in communities" :key="index" class="row q-gutter-lg q-pa-lg">
+    <section class="column text-center q-px-lg">
+      <div class="text-h4 q-my-xl">Communities</div>
+      <div class="row justify-center q-gutter-lg">
+        <div v-for="(community, index) in communities" :key="index">
           <CommunityCard :community="community" />
         </div>
-        <q-btn fab color="primary" size="xl" icon="add" to="/communities/create" />
       </div>
+      <q-btn
+        fab
+        class="self-center q-my-lg"
+        color="primary"
+        size="xl"
+        icon="add"
+        to="/communities/create"
+      />
     </section>
   </q-page>
 </template>

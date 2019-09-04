@@ -1,9 +1,9 @@
 <template>
-  <q-card class="col-auto">
+  <q-card class="col-grow">
     <q-card-section>
-      <h6 class="q-my-xs">
-        <strong>{{ community.name }}</strong>
-      </h6>
+      <div class="text-h6 q-my-xs">
+        <q-btn flat no-caps :to="`communities/${community.address}`" :label="community.name" />
+      </div>
       <p>
         Token: {{ community.tokenName }}
         <br />
