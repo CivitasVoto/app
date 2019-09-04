@@ -1,10 +1,9 @@
 pragma solidity 0.4.26;
 
-import "./Community.sol";
-import "./token/SmartToken.sol";
+import "./interfaces/INetwork.sol";
 
-contract Network {
-    Community[] private communities;
+contract Network is INetwork {
+    Community[] public communities;
 
     event CommunityCreated(
         Network network,
@@ -40,13 +39,5 @@ contract Network {
             community,
             community.token()
         );
-    }
-
-    /** @dev Get all communities' contract addresses.
-      *
-      * @return An array of all communities' contract addresses
-      */
-    function getAllCommunities() external view returns(Community[] memory){
-        return communities;
     }
 }

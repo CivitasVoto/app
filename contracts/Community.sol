@@ -1,9 +1,9 @@
 pragma solidity 0.4.26;
 
-import "./token/SmartToken.sol";
+import "./interfaces/ICommunity.sol";
 // import "./token/SmartTokenController.sol";
 
-contract Community {
+contract Community is ICommunity {
     address public owner;
     string public name;
     string public benefit;
