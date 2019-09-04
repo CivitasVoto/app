@@ -2,32 +2,37 @@
   <!-- eslint-disable -->
   <q-page>
     <div v-if="community" class="column">
-      <h3 class="q-py-xl q-my-xl self-center">{{community.name}}</h3>
-      <hr class="full-width" />
-      <div class="row full-width">
-        <q-toolbar class>
-          <q-space class="col" />
-          <div class="col-9 q-gutter-md">
-            <q-tabs
-              class="col-9 text-center bg-white text-grey-8 cursor-pointer q-gutter-md"
-              flat
-              indicator-color="secondary"
-              active-color="grey-8"
-              align="right"
-            >
-              <q-route-tab
-                v-for="(item,index) in menu"
-                :key="index"
-                :to="item.to"
-                :label="item.label"
-              >{{ item.label }}</q-route-tab>
-            </q-tabs>
-          </div>
-          <q-space />
-        </q-toolbar>
-        <q-space class="col" />
-      </div>
-
+      <section class="column gradient-bg full-width q-mb-md">
+        <div class="self-center text-h3 q-my-xl">{{community.name}}</div>
+        <q-btn label="Join" size="md" color="primary" class="self-center q-mb-xl" />
+      </section>
+      <section class="row">
+        <div class="row full-width">
+          <q-space class="col-2" />
+          <q-toolbar class="row">
+            <q-space class="col" />
+            <div class="row col-9">
+              <q-space class="col-4" />
+              <q-tabs
+                class="col-8 text-left bg-white text-grey-8 cursor-pointer q-gutter-md"
+                flat
+                indicator-color="secondary"
+                active-color="grey-8"
+                align="left"
+              >
+                <q-route-tab
+                  v-for="(item,index) in menu"
+                  :key="index"
+                  :to="item.to"
+                  :label="item.label"
+                >{{ item.label }}</q-route-tab>
+              </q-tabs>
+            </div>
+            <q-space class="col" />
+          </q-toolbar>
+          <q-space class="col-2" />
+        </div>
+      </section>
       <q-field color="grey-5" filled label="Token Name" stack-label>
         <template v-slot:control>
           <div class="self-center full-width no-outline" tabindex="0">{{community.tokenName}}</div>
@@ -90,3 +95,13 @@ export default {
   }
 };
 </script>
+
+<style scoped>
+.gradient-bg {
+  background: linear-gradient(
+    180deg,
+    rgba(255, 255, 255, 1) 67%,
+    rgba(102, 102, 102, 1) 100%
+  );
+}
+</style>
