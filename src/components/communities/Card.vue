@@ -1,5 +1,5 @@
 <template>
-  <q-card class="full-width">
+  <q-card class="col-auto">
     <q-card-section>
       <h6 class="q-my-xs">
         <strong>{{ community.name }}</strong>

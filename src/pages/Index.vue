@@ -1,11 +1,20 @@
 <template>
   <!-- eslint-disable -->
-  <q-page class="flex flex-center column bg-grey-2">
-    <h2>Communities</h2>
-    <div v-for="(community, index) in communities" :key="index" class="col-12 q-pa-lg">
-      <CommunityCard :community="community" />
-    </div>
-    <q-btn fab color="primary" size="xl" icon="add" to="/communities/create" />
+
+  <q-page class="bg-grey-2">
+    <section class="row">
+      <div class="row full-width justify-center">
+        <div class="text-h4 q-mt-xl">Communities</div>
+        <div
+          v-for="(community, index) in communities"
+          :key="index"
+          class="row full-width q-gutter-lg q-pa-lg"
+        >
+          <CommunityCard :community="community" />
+        </div>
+        <q-btn fab color="primary" size="xl" icon="add" to="/communities/create" />
+      </div>
+    </section>
   </q-page>
 </template>
 
