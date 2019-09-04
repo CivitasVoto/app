@@ -3,10 +3,20 @@
     <section class="column text-center q-px-xs-xs q-px-sm-sm q-px-md-md">
       <div class="row justify-center">
         <div class="bg-white full-width text-left q-pa-md">
-          <div class="text-h6 text-grey-8">Total Tennis</div>
+          <div class="text-h6 text-grey-8 q-pb-md">Total Tennis</div>
 
-          <p>Current Price: $24.70</p>
-          <p>24/7 Tennis Court Access</p>
+          <p>
+            Membership Price:
+            <b>$500</b>
+          </p>
+          <p>
+            Token Price:
+            <b>$24.701234</b>
+          </p>
+
+          <p>
+            <b size="lg">24/7 Tennis Court Access</b>
+          </p>
           <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolorum quam quis aut nam atque dolores beatae harum magnam voluptate. Incidunt id vel quasi dolores qui ex, tempore odio veniam possimus.</p>
           <p>Ullam quas vel animi voluptatem, saepe sint odit consequuntur est, rem perspiciatis ratione nostrum ea, facere et? Numquam quasi commodi reprehenderit velit perferendis quo ipsam maiores voluptates architecto. Nulla, nostrum!</p>
           <p>Asperiores, omnis quod? Aliquid officia vel, ratione at totam est maiores hic distinctio qui explicabo doloremque perferendis corporis, labore doloribus tempore ipsam? Magni libero cupiditate voluptatem alias at a perferendis?</p>
