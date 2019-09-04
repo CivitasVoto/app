@@ -9,7 +9,7 @@
         <q-space v-if="$q.screen.gt.xs" />
         <div class="col-10 row justify-center q-gutter-lg">
           <div v-for="(community, index) in communities" :key="index" class="col-grow">
-            <CommunityCard :community="community" />
+            <CommunityIndexCard :community="community" />
           </div>
         </div>
         <q-space v-if="$q.screen.gt.xs" />
@@ -28,7 +28,7 @@
 </template>
 
 <script>
-import CommunityCard from "src/components/communities/Card";
+import CommunityIndexCard from "src/components/communities/IndexCard";
 
 export default {
   computed: {
@@ -37,7 +37,7 @@ export default {
     }
   },
   components: {
-    CommunityCard
+    CommunityIndexCard
   }
 };
 </script>
