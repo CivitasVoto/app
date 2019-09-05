@@ -23,7 +23,7 @@ contract Community is ICommunity {
         owner = _owner;
         name = _name;
         benefit = _benefit;
-        token = new SmartToken(_tokenName, _tokenSymbol, uint8(1e18));
+        token = new SmartToken(_tokenName, _tokenSymbol, 18);
         // tokenController = new SmartTokenController(token);
 
         memberExists[owner] = true;
@@ -31,7 +31,7 @@ contract Community is ICommunity {
     }
 
     function join() public returns (bool success) {
-        require(!memberExists[msg.sender], "User already exists.");
+        require(!memberExists[msg.sender], "User is already a member.");
 
         memberExists[msg.sender] = true;
         members.push(msg.sender);
