@@ -6,26 +6,29 @@
         <b>{{ trade.receive }}</b>
       </div>
       <q-form @submit="onSubmit" @reset="onReset" class="column items-center">
-        <q-input
-          outlined
-          v-model="disburse"
-          label="Disburse *"
-          lazy-rules
-          :rules="[ val => val && val.length > 0 || 'Please type something']"
-        />
-        <q-select
-          v-model="token"
-          :options="tokens"
-          label="Label (stacked)"
-          stack-label
-          :dense="dense"
-          :options-dense="denseOpts"
-        />
-        <q-btn flat size="lg" icon="swap_vertical_circle" color="primary" />
+        <div class="row full-width">
+          <q-input
+            outlined
+            v-model="trade.spend"
+            label="Spend *"
+            lazy-rules
+            :rules="[ val => val && val.length > 0 || 'Please type something']"
+          />
+          <!-- <q-select
+            v-model="token"
+            :options="tokens"
+            label="Token"
+            stack-label
+            :dense="dense"
+            :options-dense="denseOpts"
+          />-->
+          <q-select v-model="model" :options="options" label="Token" stack-label />
+        </div>
+        <q-btn flat size="lg" icon="swap_vertical_circle" color="primary" class="q-mb-lg" />
 
         <q-input
           outlined
-          v-model="tokenName"
+          v-model="trade.receive"
           label="Receive *"
           lazy-rules
           :rules="[ val => val && val.length > 0 || 'Please type something']"
@@ -49,32 +52,30 @@ export default {
   },
   data() {
     return {
+      dense: true,
+      denseOpts: true,
       trade: {
-        payWith: "ETH",
-        payWithAmount: "",
+        spend: "ETH",
+        spendAmount: "",
         receive: "MYCOM",
         receiveAmount: ""
       },
-      token: null,
-      tokens: [
-        {
-          name: "ETH",
-          tokens: "23.456789"
-        },
-        {
-          name: "BNT",
-          tokens: "12.345678"
-        },
-        {
-          name: "Planet Earth",
-          tokens: "23.456789"
-        },
-        {
-          name: "Greenpeace",
-          tokens: "12.345678"
-        }
-      ]
+      model: null,
+      options: ["ETH", "BNT", "PLNTE", "GRNPC"]
     };
+  },
+  methods: {
+    onSubmit() {
+      // this.$store.dispatch("communities/create", {
+      //   community: { ...this.$data }
+      // });
+    },
+    onReset() {
+      // this.name = null;
+      // this.tokenName = null;
+      // this.tokenSymbol = null;
+      // this.benefit = null;
+    }
   }
 };
 </script>
