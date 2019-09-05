@@ -1,14 +1,14 @@
 <template>
   <!-- eslint-disable -->
-  <q-page>
-    <div v-if="user" class="column">
+  <q-page class="column bg-grey-4">
+    <div v-if="user" class="column bg-grey-4">
       <section class="column items-center gradient-bg full-width q-mb-md">
         <div class="text-h6 q-mt-xl">User:</div>
         <div class="row q-mb-xl col-shrink">
           <div class="col-12 ow">{{user.name}}</div>
         </div>
       </section>
-      <TradeWidget />
+      <TradeWidget :user="user" />
     </div>
   </q-page>
 </template>
@@ -23,13 +23,13 @@ export default {
     return {
       user: {
         name: "0xFC680634ca2E37b342266412c4BAB1F0D2aad1f8",
-        communities: [
+        communitiesHeld: [
           {
             name: "Greenpeace",
             tokens: "23.456789"
           },
           {
-            name: "PETA",
+            name: "Planet Earth",
             tokens: "12.345678"
           }
         ]
