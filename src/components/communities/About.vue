@@ -1,4 +1,5 @@
 <template>
+  <!-- eslint-disable -->
   <div class="column text-center">
     <section class="column text-center q-px-xs-xs q-px-sm-sm q-px-md-md">
       <div class="row justify-center">

@@ -4,7 +4,13 @@
     <div v-if="community" class="column">
       <section class="column gradient-bg full-width q-mb-md">
         <div class="self-center text-h3 q-my-xl">{{community.name}}</div>
-        <q-btn label="Join" size="md" color="primary" class="self-center q-mb-xl" />
+        <q-btn
+          label="Join"
+          size="md"
+          color="primary"
+          class="self-center q-mb-xl"
+          @click="$store.dispatch('communities/join', {community: community.address})"
+        />
       </section>
       <CommunityDetailPanels />
     </div>

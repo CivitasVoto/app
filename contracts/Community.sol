@@ -9,6 +9,9 @@ contract Community is ICommunity {
     string public benefit;
     SmartToken public token;
     // SmartTokenController public tokenController;
+    address[] private members;
+
+    mapping (address => bool) public memberExists;
 
     constructor(
         address _owner,
@@ -22,5 +25,22 @@ contract Community is ICommunity {
         benefit = _benefit;
         token = new SmartToken(_tokenName, _tokenSymbol, uint8(1e18));
         // tokenController = new SmartTokenController(token);
+
+        memberExists[owner] = true;
+        members.push(owner);
     }
+
+    function join() public returns (bool success) {
+        require(!memberExists[msg.sender], "User already exists.");
+
+        memberExists[msg.sender] = true;
+        members.push(msg.sender);
+        return true;
+    }
+
+    /** @dev Get a list of the community's members.
+     *
+     * @return An array of the community's members' addresses.
+     */
+    function getMembers() public view returns (address[]) { return members; }
 }

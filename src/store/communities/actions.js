@@ -22,12 +22,15 @@ export async function initialize(context) {
     const token = await SmartToken.at(await community.token());
 
     context.commit("push", {
-      address,
-      name: await community.name(),
-      benefit: await community.benefit(),
-      tokenName: await token.name(),
-      tokenSymbol: await token.symbol(),
-      price: 1
+      community: {
+        address,
+        name: await community.name(),
+        benefit: await community.benefit(),
+        tokenName: await token.name(),
+        tokenSymbol: await token.symbol(),
+        price: 1,
+        members: await community.getMembers()
+      }
     });
   });
 }
@@ -36,13 +39,42 @@ export async function create(context, payload) {
   const network = await Network.deployed();
   const [account] = await web3.eth.getAccounts();
 
-  const receipt = await network.createCommunity(...Object.values(payload), {
-    from: account
-  });
+  const receipt = await network.createCommunity(
+    ...Object.values(payload.community),
+    {
+      from: account
+    }
+  );
 
   const address = receipt.logs[0].args.community;
 
-  context.commit("push", { address, ...payload, price: 1 });
+  context.commit("push", {
+    community: {
+      address,
+      ...payload.community,
+      price: 1,
+      members: []
+    }
+  });
 
-  this.$router.push("/");
+  context.commit("pushMember", {
+    community: address,
+    member: account
+  });
+
+  this.$router.push(`/communities/${address}`);
+}
+
+export async function join(context, payload) {
+  const community = await Community.at(payload.community);
+  const [account] = await web3.eth.getAccounts();
+
+  await community.join({ from: account });
+
+  context.commit("pushMember", {
+    community: payload.community,
+    member: account
+  });
+
+  this.$router.push(`/communities/${payload.community}`);
 }

@@ -13,8 +13,6 @@
   </q-page>
 </template>
 
-
-
 <script>
 import TradeWidget from "src/components/TradeWidget";
 
