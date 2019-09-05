@@ -19,7 +19,10 @@
         <router-link :to="`communities/${community.address}`">
           <q-btn>Detail</q-btn>
         </router-link>
-        <q-btn @click="$store.dispatch('communities/join', {community: community.address})">Join</q-btn>
+        <q-btn
+          :disabled="isMember()"
+          @click="$store.dispatch('communities/join', {community: community.address})"
+        >Join</q-btn>
       </div>
       <BuySell />
     </q-card-section>
@@ -33,6 +36,22 @@ export default {
   props: {
     community: {
       type: Object
+    }
+  },
+  data() {
+    return {
+      account: ""
+    };
+  },
+  async mounted() {
+    [this.account] = await this.$web3.eth.getAccounts();
+  },
+  methods: {
+    isMember() {
+      const member = this.$props.community.members.find(
+        member => member == this.account
+      );
+      return Boolean(member);
     }
   },
   components: {
