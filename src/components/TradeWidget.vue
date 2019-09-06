@@ -1,21 +1,45 @@
 <template>
   <div class="row full-width justify-center">
-    <q-card class="col-xs-11 col-sm-6 column text-left q-pa-lg">
+    <q-card class="col-xs-11 col-sm-8 col-md-6 column text-left q-pa-lg">
       <!-- Convert Title -->
-      <div class="col q-py-md">
-        Convert to:
-        <b>{{ trade.receive }}</b>
-      </div>
-      <!-- SPEND -->
-      <q-form @submit="onSubmit" @reset="onReset" class="column items-center">
-        <div class="row full-width">
-          <q-input outlined v-model="trade.spendAmount" label="Send *" lazy-rules />
-          <q-select v-model="model" :options="options" label="Token" stack-label />
+      <div class="row full-width q-py-md justify-center">
+        <div>
+          Convert to:
+          <b>{{ trade.receiveToken }}</b>
         </div>
-        <q-btn flat size="lg" icon="swap_vertical_circle" color="primary" class="q-mb-lg" />
+      </div>
+      <q-form @submit="onSubmit" @reset="onReset" class="column items-center">
+        <!-- SPEND -->
+        <div class="row full-width justify-center">
+          <q-input outlined v-model="trade.sendAmount" label="Send Amount *" lazy-rules />
+          <q-select
+            outlined
+            class="col-4 q-pa-md"
+            v-model="sendModel"
+            :options="options"
+            label="Token"
+            stack-label
+          />
+        </div>
+        <!-- SWAP BUTTON -->
+        <q-btn flat size="lg" icon="swap_vertical_circle" color="primary" class="q-my-xs" />
 
-        <q-input outlined v-model="trade.receiveAmount" label="Receive *" lazy-rules />
+        <!-- RECEIVE -->
+        <!-- <q-input outlined v-model="trade.receiveAmount" label="Receive Amount *" lazy-rules /> -->
 
+        <div class="row full-width justify-center">
+          <q-input outlined v-model="trade.receiveAmount" label="Receieve Amount *" lazy-rules />
+          <q-select
+            outlined
+            class="col-4 q-pa-md"
+            v-model="receiveModel"
+            :options="options"
+            label="Token"
+            stack-label
+          />
+        </div>
+
+        <!-- CONVERT BUTTON -->
         <div>
           <q-btn label="Convert" type="submit" color="primary" />
           <q-btn label="Reset" type="reset" color="primary" flat class="q-ml-sm" />
@@ -39,13 +63,14 @@ export default {
       dense: true,
       denseOpts: true,
       trade: {
-        spend: "ETH",
-        spendAmount: "",
-        receive: "MYCOM",
+        sendToken: "ETH",
+        sendAmount: "",
+        receiveToken: "MYCOM",
         receiveAmount: ""
       },
-      model: null,
-      options: ["ETH", "BNT", "PLNTE", "GRNPC"]
+      sendModel: null,
+      receiveModel: "MYCOM",
+      options: ["ETH", "MYCOM", "BNT", "PLNTE", "GRNPC"]
     };
   },
   methods: {
