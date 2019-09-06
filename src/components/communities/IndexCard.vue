@@ -36,6 +36,9 @@ export default {
   props: {
     community: {
       type: Object
+    },
+    user: {
+      type: Object
     }
   },
   data() {
@@ -44,14 +47,16 @@ export default {
     };
   },
   async mounted() {
-    [this.account] = await this.$web3.eth.getAccounts();
+    // UNCOMMENT FOR PRODUCTION
+    // [this.account] = await this.$web3.eth.getAccounts();
   },
   methods: {
     isMember() {
-      const member = this.$props.community.members.find(
-        member => member == this.account
-      );
-      return Boolean(member);
+      // UNCOMMENT FOR PRODUCTION
+      // const member = this.$props.community.members.find(
+      //   member => member == this.account
+      // );
+      // return Boolean(member);
     }
   },
   components: {
