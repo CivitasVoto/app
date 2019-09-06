@@ -1,46 +1,30 @@
 <template>
   <div class="row full-width justify-center">
-    <q-card class="column text-left q-pa-lg">
+    <q-card class="col-xs-11 col-sm-6 column text-left q-pa-lg">
+      <!-- Convert Title -->
       <div class="col q-py-md">
         Convert to:
         <b>{{ trade.receive }}</b>
       </div>
+      <!-- SPEND -->
       <q-form @submit="onSubmit" @reset="onReset" class="column items-center">
         <div class="row full-width">
-          <q-input
-            outlined
-            v-model="trade.spend"
-            label="Spend *"
-            lazy-rules
-            :rules="[ val => val && val.length > 0 || 'Please type something']"
-          />
-          <!-- <q-select
-            v-model="token"
-            :options="tokens"
-            label="Token"
-            stack-label
-            :dense="dense"
-            :options-dense="denseOpts"
-          />-->
+          <q-input outlined v-model="trade.spendAmount" label="Send *" lazy-rules />
           <q-select v-model="model" :options="options" label="Token" stack-label />
         </div>
         <q-btn flat size="lg" icon="swap_vertical_circle" color="primary" class="q-mb-lg" />
 
-        <q-input
-          outlined
-          v-model="trade.receive"
-          label="Receive *"
-          lazy-rules
-          :rules="[ val => val && val.length > 0 || 'Please type something']"
-        />
+        <q-input outlined v-model="trade.receiveAmount" label="Receive *" lazy-rules />
 
         <div>
-          <q-btn label="Submit" type="submit" color="primary" />
+          <q-btn label="Convert" type="submit" color="primary" />
           <q-btn label="Reset" type="reset" color="primary" flat class="q-ml-sm" />
         </div>
       </q-form>
     </q-card>
   </div>
+  <!-- Unused rules -->
+  <!-- :rules="[ val => val && val.length > 0 || 'Please type something']" -->
 </template>
 
 <script>
