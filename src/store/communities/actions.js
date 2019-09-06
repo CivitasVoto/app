@@ -28,8 +28,8 @@ export async function initialize(context) {
         benefit: await community.benefit(),
         tokenName: await token.name(),
         tokenSymbol: await token.symbol(),
-        price: 1 //,
-        //members: await community.getMembers()
+        price: 1,
+        members: await community.getMembers()
       }
     });
   });

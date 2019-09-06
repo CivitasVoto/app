@@ -8,26 +8,37 @@
           <div class="col-12 ow">{{user.name}}</div>
         </div>
       </section>
+
       <TradeWidget :user="user" />
     </div>
   </q-page>
 </template>
 
 <script>
-import TradeWidget from "src/components/TradeWidget";
+import TradeWidget from "src/components/global/TradeWidget";
 
 export default {
   data() {
     return {
       user: {
         name: "0xFC680634ca2E37b342266412c4BAB1F0D2aad1f8",
-        communitiesHeld: [
+        communitiesJoined: [
           {
             name: "Greenpeace",
             tokens: "23.456789"
           },
           {
             name: "Planet Earth",
+            tokens: "12.345678"
+          }
+        ],
+        tokensHeld: [
+          {
+            name: "ETH",
+            tokens: "23.456789"
+          },
+          {
+            name: "MYCOM",
             tokens: "12.345678"
           }
         ]
