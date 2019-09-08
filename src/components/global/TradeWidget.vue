@@ -1,6 +1,6 @@
 <template>
   <div class="row full-width justify-center">
-    <q-card class="col-xs-11 col-sm-8 col-md-6 column text-left q-pa-lg">
+    <q-card class="col-12 column text-left q-pa-lg">
       <!-- Convert Title -->
       <div class="row full-width q-py-md justify-center">
         <div>
@@ -9,12 +9,12 @@
         </div>
       </div>
       <q-form @submit="onSubmit" @reset="onReset" class="column items-center">
-        <!-- SPEND -->
+        <!-- SEND -->
         <div class="row full-width justify-center">
           <q-input outlined v-model="trade.sendAmount" label="Send Amount *" lazy-rules />
           <q-select
             outlined
-            class="col-4 q-pa-md"
+            class="col-6 col-sm-4 q-pa-md"
             v-model="sendModel"
             :options="options"
             label="Token"
@@ -31,7 +31,7 @@
           <q-input outlined v-model="trade.receiveAmount" label="Receive Amount *" lazy-rules />
           <q-select
             outlined
-            class="col-4 q-pa-md"
+            class="col-6 col-sm-4 q-pa-md"
             v-model="receiveModel"
             :options="options"
             label="Token"
@@ -68,7 +68,7 @@ export default {
         receiveToken: "MYCOM",
         receiveAmount: ""
       },
-      sendModel: null,
+      sendModel: "ETH",
       receiveModel: "MYCOM",
       options: ["ETH", "MYCOM", "BNT", "PLNTE", "GRNPC"]
     };

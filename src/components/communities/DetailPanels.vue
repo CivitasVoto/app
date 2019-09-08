@@ -2,9 +2,9 @@
   <div>
     <section class="row">
       <div class="row full-width">
-        <q-space v-if="$q.screen.gt.xs" />
+        <!-- <q-space v-if="$q.screen.gt.xs" /> -->
         <q-toolbar class="row justify-center">
-          <div class="column col-10">
+          <div class="column col-12">
             <q-tabs
               v-model="tab"
               no-caps
@@ -19,12 +19,10 @@
             </q-tabs>
           </div>
         </q-toolbar>
-        <q-space v-if="$q.screen.gt.xs" />
+        <!-- <q-space v-if="$q.screen.gt.xs" /> -->
       </div>
     </section>
-    <section class="row full-width justify-center">
-      <q-space v-if="$q.screen.gt.xs" class="col bg-grey-4" />
-
+    <section class="row full-width justify-center bg-grey-4">
       <q-tab-panels v-model="tab" animated class="bg-grey-4 col-sm-10">
         <q-tab-panel name="about">
           <CommunityAbout />
@@ -34,8 +32,6 @@
           <CommunityMembers />
         </q-tab-panel>
       </q-tab-panels>
-
-      <q-space v-if="$q.screen.gt.xs" class="col bg-grey-4" />
     </section>
   </div>
 </template>

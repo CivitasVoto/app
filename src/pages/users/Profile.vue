@@ -5,11 +5,12 @@
       <section class="column items-center gradient-bg full-width q-mb-md">
         <div class="text-h6 q-mt-xl">User:</div>
         <div class="row q-mb-xl col-shrink">
-          <div class="col-12 ow">{{user.name}}</div>
+          <div class="col-12">{{user.name}}</div>
         </div>
       </section>
-
-      <TradeWidget :user="user" />
+      <div class="row full-width justify-center">
+        <TradeWidget :user="user" />
+      </div>
     </div>
   </q-page>
 </template>
