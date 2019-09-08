@@ -2,7 +2,7 @@
   <div class="row full-width justify-center">
     <q-card class="col-12 column text-left q-pa-lg">
       <!-- Convert Title -->
-      <div class="row full-width q-py-md justify-center">
+      <div class="row full-width q-pb-md justify-center">
         <div>
           Convert to:
           <b>{{ trade.receiveToken }}</b>
@@ -11,10 +11,16 @@
       <q-form @submit="onSubmit" @reset="onReset" class="column items-center">
         <!-- SEND -->
         <div class="row full-width justify-center">
-          <q-input outlined v-model="trade.sendAmount" label="Send Amount *" lazy-rules />
+          <q-input
+            class="col-grow"
+            outlined
+            v-model="trade.sendAmount"
+            label="Send Amount *"
+            lazy-rules
+          />
           <q-select
             outlined
-            class="col-6 col-sm-4 q-pa-md"
+            class="col-grow"
             v-model="sendModel"
             :options="options"
             label="Token"
@@ -28,10 +34,16 @@
         <!-- <q-input outlined v-model="trade.receiveAmount" label="Receive Amount *" lazy-rules /> -->
 
         <div class="row full-width justify-center">
-          <q-input outlined v-model="trade.receiveAmount" label="Receive Amount *" lazy-rules />
+          <q-input
+            class="col-grow"
+            outlined
+            v-model="trade.receiveAmount"
+            label="Receive Amount *"
+            lazy-rules
+          />
           <q-select
             outlined
-            class="col-6 col-sm-4 q-pa-md"
+            class="col-grow"
             v-model="receiveModel"
             :options="options"
             label="Token"
@@ -40,7 +52,7 @@
         </div>
 
         <!-- CONVERT BUTTON -->
-        <div>
+        <div class="q-pt-md">
           <q-btn label="Convert" type="submit" color="primary" />
           <q-btn label="Reset" type="reset" color="primary" flat class="q-ml-sm" />
         </div>

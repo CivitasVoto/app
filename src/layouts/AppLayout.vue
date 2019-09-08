@@ -5,7 +5,7 @@
 
     <q-header elevated class="row full-width">
       <q-space class="col" />
-      <q-toolbar class="col-10">
+      <q-toolbar class="col-12 col-sm-11 col-md-10">
         <q-toolbar-title class="q-px-xs-sm q-px-sm-xl">
           <q-btn
             flat

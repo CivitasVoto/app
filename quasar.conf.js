@@ -56,7 +56,11 @@ module.exports = function (ctx) {
         "QOptionGroup",
         "QSeparator",
         "QAvatar",
-        "QSelect"
+        "QSelect",
+        "QTable",
+        "QTh",
+        "QTr",
+        "QTd"
       ],
 
       directives: ["Ripple"],

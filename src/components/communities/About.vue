@@ -1,7 +1,7 @@
 <template>
   <!-- eslint-disable -->
   <!-- <div class="row text-center full-width"> -->
-  <section class="row items-start justify-center full-width text-center">
+  <section class="row items-start justify-center full-width text-center q-col-gutter-md">
     <div class="col-12 col-md-4 column">
       <div class="bg-white rounded-borders q-my-md q-pa-md">
         Postal Address:
@@ -10,7 +10,7 @@
       <TradeWidget />
     </div>
 
-    <div class="col-12 col-md-7 justify-center q-ml-sm-md">
+    <div class="col-12 col-md-7 justify-center">
       <div class="bg-white rounded-borders full-width text-left q-my-md q-pa-md">
         <div class="text-h6 text-grey-8 q-pb-md">Total Tennis</div>
 

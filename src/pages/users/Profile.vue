@@ -8,15 +8,29 @@
           <div class="col-12">{{user.name}}</div>
         </div>
       </section>
-      <div class="row full-width justify-center">
-        <TradeWidget :user="user" />
-      </div>
+
+      <section
+        class="row items-start justify-center full-width text-center q-col-gutter-md q-pr-md"
+      >
+        <div class="col-12 col-md-7 justify-center">
+          <div class="bg-white rounded-borders full-width text-left q-pa-xs">
+            <CommunitiesJoined />
+            <TokensHeld />
+          </div>
+        </div>
+
+        <div class="col-12 col-md-4 column">
+          <TradeWidget :user="user" />
+        </div>
+      </section>
     </div>
   </q-page>
 </template>
 
 <script>
 import TradeWidget from "src/components/global/TradeWidget";
+import CommunitiesJoined from "src/components/global/CommunitiesJoined";
+import TokensHeld from "src/components/global/TokensHeld";
 
 export default {
   data() {
@@ -54,20 +68,14 @@ export default {
     // }
   },
   components: {
-    TradeWidget
+    TradeWidget,
+    CommunitiesJoined,
+    TokensHeld
   }
 };
 </script>
 
 <style scoped>
-.ow {
-  overflow-wrap: break-word;
-  word-wrap: break-word;
-  hyphens: auto;
-  max-width: 170px;
-  text-align: center;
-}
-
 .gradient-bg {
   background: linear-gradient(
     180deg,
