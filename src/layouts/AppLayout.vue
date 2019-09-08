@@ -13,7 +13,7 @@
             size="lg"
             to="/"
             label="CommunitETHs"
-            icon="people_alt"
+            icon="nature_people"
             color="white"
           />
         </q-toolbar-title>
