@@ -1,6 +1,6 @@
 pragma solidity ^0.4.24;
 
-import "../token/SmartToken.sol";
+import "../bancor/token/SmartToken.sol";
 
 /*
     Community interface
