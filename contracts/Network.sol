@@ -11,6 +11,8 @@ contract Network is INetwork {
         SmartToken token
     );
 
+    mapping (address => Community[]) userCommunities;
+
     /** @dev Create a new community and add to the network's communities.
       *
       * @param _name Name of the community to be created
@@ -48,4 +50,9 @@ contract Network is INetwork {
      * @return An array of the network's communities' addresses.
      */
     function getCommunities() public view returns (Community[]) { return communities; }
+
+    function joinCommunity(Community community) public {
+        community.join();
+        userCommunities[msg.sender].push(community);
+    }
 }

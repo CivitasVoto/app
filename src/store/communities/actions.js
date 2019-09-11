@@ -66,10 +66,10 @@ export async function create(context, payload) {
 }
 
 export async function join(context, payload) {
-  const community = await Community.at(payload.community);
+  const network = await Network.deployed();
   const [account] = await web3.eth.getAccounts();
 
-  await community.join({ from: account });
+  await network.joinCommunity(payload.community, { from: account });
 
   context.commit("pushMember", {
     community: payload.community,
