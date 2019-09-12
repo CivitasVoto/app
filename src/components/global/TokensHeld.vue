@@ -1,4 +1,5 @@
 <template>
+  <!-- eslint-disable -->
   <div>
     <template>
       <div class="q-pa-sm">

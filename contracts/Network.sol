@@ -5,11 +5,17 @@ import "./interfaces/INetwork.sol";
 contract Network is INetwork {
     Community[] private communities;
 
+    /** @dev Network, Community, and Token addresses of a new community.
+     */
     event CommunityCreated(
         Network network,
         Community community,
         SmartToken token
     );
+
+    /** @dev Return joined communities by user address.
+     */
+    mapping (address => Community[]) userCommunities;
 
     /** @dev Create a new community and add to the network's communities.
       *
@@ -48,4 +54,13 @@ contract Network is INetwork {
      * @return An array of the network's communities' addresses.
      */
     function getCommunities() public view returns (Community[]) { return communities; }
+
+    /** @dev Add current user to community.
+     *
+     * @param _community Community to add current user to.
+     */
+    function joinCommunity(Community _community) public {
+        require(_community.join(msg.sender), "Unable to add user to community.");
+        userCommunities[msg.sender].push(_community);
+    }
 }

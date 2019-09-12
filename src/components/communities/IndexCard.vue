@@ -47,16 +47,14 @@ export default {
     };
   },
   async mounted() {
-    // UNCOMMENT FOR PRODUCTION
-    // [this.account] = await this.$web3.eth.getAccounts();
+    [this.account] = await this.$web3.eth.getAccounts();
   },
   methods: {
     isMember() {
-      // UNCOMMENT FOR PRODUCTION
-      // const member = this.$props.community.members.find(
-      //   member => member == this.account
-      // );
-      // return Boolean(member);
+      const member = this.$props.community.members.find(
+        member => member == this.account
+      );
+      return Boolean(member);
     }
   },
   components: {

@@ -21,7 +21,7 @@ export async function initialize(context) {
     const community = await Community.at(address);
     const token = await SmartToken.at(await community.token());
 
-    context.commit("push", {
+    context.commit("add", {
       community: {
         address,
         name: await community.name(),
@@ -48,7 +48,7 @@ export async function create(context, payload) {
 
   const address = receipt.logs[0].args.community;
 
-  context.commit("push", {
+  context.commit("add", {
     community: {
       address,
       ...payload.community,
@@ -57,7 +57,7 @@ export async function create(context, payload) {
     }
   });
 
-  context.commit("pushMember", {
+  context.commit("addMember", {
     community: address,
     member: account
   });
@@ -66,12 +66,12 @@ export async function create(context, payload) {
 }
 
 export async function join(context, payload) {
-  const community = await Community.at(payload.community);
+  const network = await Network.deployed();
   const [account] = await web3.eth.getAccounts();
 
-  await community.join({ from: account });
+  await network.joinCommunity(payload.community, { from: account });
 
-  context.commit("pushMember", {
+  context.commit("addMember", {
     community: payload.community,
     member: account
   });

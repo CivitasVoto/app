@@ -1,4 +1,5 @@
 <template>
+  <!-- eslint-disable -->
   <div class="row full-width justify-center">
     <q-card class="col-12 column text-left q-pa-lg">
       <!-- Convert Title -->
