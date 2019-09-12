@@ -26,7 +26,7 @@ contract("BancorConverter", ([deployer, bancorTester]) => {
     nonStandardTokenRegistry = await NonStandardTokenRegistry.deployed();
 
     etherToken = await EtherToken.new();
-    await etherToken.deposit({ value: 107706655 });
+    await etherToken.deposit({ value: 107706655 }); // ~ circulating supply of ETH
 
     await bancorNetwork.registerEtherToken(etherToken.address, true);
 
@@ -72,7 +72,7 @@ contract("BancorConverter", ([deployer, bancorTester]) => {
     await converter.acceptTokenOwnership();
   });
 
-  describe("bancor", () => {
+  describe("purchase and sale of smart tokens", () => {
     it("allows for purchase of Smart Token from Ether token", async () => {
       ETHCNTBuyPath = [
         etherToken.address,
