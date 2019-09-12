@@ -30,11 +30,11 @@ contract Community is ICommunity {
         members.push(owner);
     }
 
-    function join() public returns (bool success) {
-        require(!memberExists[msg.sender], "User is already a member.");
+    function join(address _user) public returns (bool success) {
+        require(!memberExists[_user], "User is already a member.");
 
-        memberExists[msg.sender] = true;
-        members.push(msg.sender);
+        memberExists[_user] = true;
+        members.push(_user);
         return true;
     }
 
