@@ -1,14 +1,14 @@
 /**
  * Add community to state.
  */
-export function push(state, payload) {
+export function add(state, payload) {
   state.communities.push(payload.community);
 }
 
 /**
  * Add member to community.
  */
-export function pushMember(state, payload) {
+export function addMember(state, payload) {
   const community = state.communities.find(
     community => community.address === payload.community
   );
