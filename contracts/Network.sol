@@ -1,9 +1,15 @@
 pragma solidity ^0.4.26;
 
 import "./interfaces/INetwork.sol";
+import "./bancor/utility/ContractRegistry.sol";
+import "./bancor/converter/BancorConverter.sol";
+// import "./bancor/BancorConverterRegistry.sol";
 
 contract Network is INetwork {
     Community[] private communities;
+    SmartToken public networkToken;
+    ContractRegistry public contractRegistry;
+    // BancorConverterRegistry public converterRegistry;
 
     /** @dev Network, Community, and Token addresses of a new community.
      */
@@ -17,19 +23,29 @@ contract Network is INetwork {
      */
     mapping (address => Community[]) userCommunities;
 
+    constructor(
+        SmartToken _networkToken,
+        ContractRegistry _contractRegistry
+        // BancorConverterRegistry _converterRegistry
+    ) public {
+        networkToken = _networkToken;
+        contractRegistry = _contractRegistry;
+        // converterRegistry = _converterRegistry;
+    }
+
     /** @dev Create a new community and add to the network's communities.
       *
       * @param _name Name of the community to be created
+      * @param _benefit The benefit of joining the community
       * @param _tokenName Name of the community's token
       * @param _tokenSymbol Symbol of the community's token
-      * @param _benefit The benefit of joining the community
       */
     function createCommunity(
         string _name,
         string _benefit,
         string _tokenName,
         string _tokenSymbol
-    ) public returns (bool success) {
+    ) public {
         Community community = new Community(
             msg.sender, // Owner
             _name, // Community Name
@@ -45,8 +61,6 @@ contract Network is INetwork {
             community,
             community.token()
         );
-
-        return true;
     }
 
     /** @dev Get a list of the network's communities.
