@@ -4,8 +4,6 @@ const ContractFeatures = artifacts.require("ContractFeatures");
 const BancorGasPriceLimit = artifacts.require("BancorGasPriceLimit");
 const BancorFormula = artifacts.require("BancorFormula");
 const NonStandardTokenRegistry = artifacts.require("NonStandardTokenRegistry");
-const BancorConverterFactory = artifacts.require("BancorConverterFactory");
-const BancorConverterUpgrader = artifacts.require("BancorConverterUpgrader");
 const BancorNetwork = artifacts.require("BancorNetwork");
 
 module.exports = async function(deployer, network, accounts) {
@@ -64,22 +62,4 @@ module.exports = async function(deployer, network, accounts) {
     bancorNetwork.address
   );
   await bancorNetwork.setSignerAddress(account);
-
-  // BancorConverterFactory
-  await deployer.deploy(BancorConverterFactory);
-  const factory = await BancorConverterFactory.deployed();
-  const bancorConverterFactoryId = await contractIds.BANCOR_CONVERTER_FACTORY.call();
-  await contractRegistry.registerAddress(
-    bancorConverterFactoryId,
-    factory.address
-  );
-
-  // BancorConverterUpgrader
-  await deployer.deploy(BancorConverterUpgrader, contractRegistry.address);
-  const upgrader = await BancorConverterUpgrader.deployed();
-  const bancorConverterUpgraderId = await contractIds.BANCOR_CONVERTER_UPGRADER.call();
-  await contractRegistry.registerAddress(
-    bancorConverterUpgraderId,
-    upgrader.address
-  );
 };

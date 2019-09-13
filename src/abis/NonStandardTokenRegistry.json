@@ -1,0 +1,900 @@
+{
+  "contractName": "NonStandardTokenRegistry",
+  "abi": [
+    {
+      "constant": false,
+      "inputs": [],
+      "name": "acceptOwnership",
+      "outputs": [],
+      "payable": false,
+      "stateMutability": "nonpayable",
+      "type": "function"
+    },
+    {
+      "constant": true,
+      "inputs": [],
+      "name": "owner",
+      "outputs": [
+        {
+          "name": "",
+          "type": "address"
+        }
+      ],
+      "payable": false,
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "constant": true,
+      "inputs": [
+        {
+          "name": "",
+          "type": "address"
+        }
+      ],
+      "name": "listedAddresses",
+      "outputs": [
+        {
+          "name": "",
+          "type": "bool"
+        }
+      ],
+      "payable": false,
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "constant": true,
+      "inputs": [],
+      "name": "newOwner",
+      "outputs": [
+        {
+          "name": "",
+          "type": "address"
+        }
+      ],
+      "payable": false,
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "constant": false,
+      "inputs": [
+        {
+          "name": "_newOwner",
+          "type": "address"
+        }
+      ],
+      "name": "transferOwnership",
+      "outputs": [],
+      "payable": false,
+      "stateMutability": "nonpayable",
+      "type": "function"
+    },
+    {
+      "inputs": [],
+      "payable": false,
+      "stateMutability": "nonpayable",
+      "type": "constructor"
+    },
+    {
+      "anonymous": false,
+      "inputs": [
+        {
+          "indexed": true,
+          "name": "_prevOwner",
+          "type": "address"
+        },
+        {
+          "indexed": true,
+          "name": "_newOwner",
+          "type": "address"
+        }
+      ],
+      "name": "OwnerUpdate",
+      "type": "event"
+    },
+    {
+      "constant": false,
+      "inputs": [
+        {
+          "name": "token",
+          "type": "address"
+        },
+        {
+          "name": "register",
+          "type": "bool"
+        }
+      ],
+      "name": "setAddress",
+      "outputs": [],
+      "payable": false,
+      "stateMutability": "nonpayable",
+      "type": "function"
+    }
+  ],
+  "metadata": "{\"compiler\":{\"version\":\"0.4.26+commit.4563c3fc\"},\"language\":\"Solidity\",\"output\":{\"abi\":[{\"constant\":false,\"inputs\":[{\"name\":\"token\",\"type\":\"address\"},{\"name\":\"register\",\"type\":\"bool\"}],\"name\":\"setAddress\",\"outputs\":[],\"payable\":false,\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"constant\":false,\"inputs\":[],\"name\":\"acceptOwnership\",\"outputs\":[],\"payable\":false,\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"constant\":true,\"inputs\":[],\"name\":\"owner\",\"outputs\":[{\"name\":\"\",\"type\":\"address\"}],\"payable\":false,\"stateMutability\":\"view\",\"type\":\"function\"},{\"constant\":true,\"inputs\":[{\"name\":\"\",\"type\":\"address\"}],\"name\":\"listedAddresses\",\"outputs\":[{\"name\":\"\",\"type\":\"bool\"}],\"payable\":false,\"stateMutability\":\"view\",\"type\":\"function\"},{\"constant\":true,\"inputs\":[],\"name\":\"newOwner\",\"outputs\":[{\"name\":\"\",\"type\":\"address\"}],\"payable\":false,\"stateMutability\":\"view\",\"type\":\"function\"},{\"constant\":false,\"inputs\":[{\"name\":\"_newOwner\",\"type\":\"address\"}],\"name\":\"transferOwnership\",\"outputs\":[],\"payable\":false,\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"inputs\":[],\"payable\":false,\"stateMutability\":\"nonpayable\",\"type\":\"constructor\"},{\"anonymous\":false,\"inputs\":[{\"indexed\":true,\"name\":\"_prevOwner\",\"type\":\"address\"},{\"indexed\":true,\"name\":\"_newOwner\",\"type\":\"address\"}],\"name\":\"OwnerUpdate\",\"type\":\"event\"}],\"devdoc\":{\"methods\":{\"acceptOwnership()\":{\"details\":\"used by a new owner to accept an ownership transfer\\r\"},\"setAddress(address,bool)\":{\"details\":\"registers/unregisters a new non standard ERC20 token in the registry\\r \\r\",\"params\":{\"register\":\"true to register the token, false to remove it\\r\",\"token\":\"token address\\r\"}},\"transferOwnership(address)\":{\"details\":\"allows transferring the contract ownership\\r the new owner still needs to accept the transfer\\r can only be called by the contract owner\\r \\r\",\"params\":{\"_newOwner\":\"new contract owner\\r\"}}}},\"userdoc\":{\"methods\":{}}},\"settings\":{\"compilationTarget\":{\"/Users/cryptotom/code/gitcoin/communiteths/contracts/bancor/utility/NonStandardTokenRegistry.sol\":\"NonStandardTokenRegistry\"},\"evmVersion\":\"byzantium\",\"libraries\":{},\"optimizer\":{\"enabled\":true,\"runs\":200},\"remappings\":[]},\"sources\":{\"/Users/cryptotom/code/gitcoin/communiteths/contracts/bancor/utility/NonStandardTokenRegistry.sol\":{\"keccak256\":\"0x6460ac2dc80c6baf61bec75b04cf161fca449399050de4638cf979c0a5f2a706\",\"urls\":[\"bzzr://89a7bcfe330781f7c6eea3466786a22b9dd056b48c4d3967dc5f8013ffd995a4\"]},\"/Users/cryptotom/code/gitcoin/communiteths/contracts/bancor/utility/Owned.sol\":{\"keccak256\":\"0x599f08617f7ec2d1e250ec6f90852319cb94944d82026c459bb66a39c93138bf\",\"urls\":[\"bzzr://0e04734a4b9a2343cea3476f13d616b0fcf174e76bd0fc5478335786e0336bef\"]},\"/Users/cryptotom/code/gitcoin/communiteths/contracts/bancor/utility/interfaces/IAddressList.sol\":{\"keccak256\":\"0x3de4d53e90ce340cf45e9fde143fa6956ff0ab2c40a8ac7f155995ab09736390\",\"urls\":[\"bzzr://cc8bbe33aa156cd273b4f60ef678bd489c9a052962323c48ae571625ec5f686a\"]},\"/Users/cryptotom/code/gitcoin/communiteths/contracts/bancor/utility/interfaces/IOwned.sol\":{\"keccak256\":\"0x3bfadfd06a9f37a8687474694252513f00d84ff9074c9d3c69c311d62686e588\",\"urls\":[\"bzzr://b168ba3d91c3119b53b54679bec05592fe124e42f2345e785a4fd08c8225b39e\"]}},\"version\":1}",
+  "bytecode": "0x608060405234801561001057600080fd5b5060018054600160a060020a031916331790556102e1806100326000396000f3006080604052600436106100775763ffffffff7c0100000000000000000000000000000000000000000000000000000000600035041663608b326f811461007c57806379ba5097146100a45780638da5cb5b146100b9578063aeea10bd146100ea578063d4ee1d901461011f578063f2fde38b14610134575b600080fd5b34801561008857600080fd5b506100a2600160a060020a03600435166024351515610155565b005b3480156100b057600080fd5b506100a2610197565b3480156100c557600080fd5b506100ce610221565b60408051600160a060020a039092168252519081900360200190f35b3480156100f657600080fd5b5061010b600160a060020a0360043516610230565b604080519115158252519081900360200190f35b34801561012b57600080fd5b506100ce610245565b34801561014057600080fd5b506100a2600160a060020a0360043516610254565b600154600160a060020a0316331461016c57600080fd5b600160a060020a03919091166000908152600360205260409020805460ff1916911515919091179055565b600254600160a060020a031633146101ae57600080fd5b600254600154604051600160a060020a0392831692909116907f343765429aea5a34b3ff6a3785a98a5abb2597aca87bfbb58632c173d585373a90600090a3600280546001805473ffffffffffffffffffffffffffffffffffffffff19908116600160a060020a03841617909155169055565b600154600160a060020a031681565b60036020526000908152604090205460ff1681565b600254600160a060020a031681565b600154600160a060020a0316331461026b57600080fd5b600154600160a060020a038281169116141561028657600080fd5b6002805473ffffffffffffffffffffffffffffffffffffffff1916600160a060020a03929092169190911790555600a165627a7a72305820105b410e4c57185519e48eef2d48b70c7bca609eb8b56e94df84fa24e2d8041a0029",
+  "deployedBytecode": "0x6080604052600436106100775763ffffffff7c0100000000000000000000000000000000000000000000000000000000600035041663608b326f811461007c57806379ba5097146100a45780638da5cb5b146100b9578063aeea10bd146100ea578063d4ee1d901461011f578063f2fde38b14610134575b600080fd5b34801561008857600080fd5b506100a2600160a060020a03600435166024351515610155565b005b3480156100b057600080fd5b506100a2610197565b3480156100c557600080fd5b506100ce610221565b60408051600160a060020a039092168252519081900360200190f35b3480156100f657600080fd5b5061010b600160a060020a0360043516610230565b604080519115158252519081900360200190f35b34801561012b57600080fd5b506100ce610245565b34801561014057600080fd5b506100a2600160a060020a0360043516610254565b600154600160a060020a0316331461016c57600080fd5b600160a060020a03919091166000908152600360205260409020805460ff1916911515919091179055565b600254600160a060020a031633146101ae57600080fd5b600254600154604051600160a060020a0392831692909116907f343765429aea5a34b3ff6a3785a98a5abb2597aca87bfbb58632c173d585373a90600090a3600280546001805473ffffffffffffffffffffffffffffffffffffffff19908116600160a060020a03841617909155169055565b600154600160a060020a031681565b60036020526000908152604090205460ff1681565b600254600160a060020a031681565b600154600160a060020a0316331461026b57600080fd5b600154600160a060020a038281169116141561028657600080fd5b6002805473ffffffffffffffffffffffffffffffffffffffff1916600160a060020a03929092169190911790555600a165627a7a72305820105b410e4c57185519e48eef2d48b70c7bca609eb8b56e94df84fa24e2d8041a0029",
+  "sourceMap": "257:586:47:-;;;463:29;8:9:-1;5:2;;;30:1;27;20:12;5:2;-1:-1;560:5:48;:18;;-1:-1:-1;;;;;;560:18:48;568:10;560:18;;;257:586:47;;;;;;",
+  "deployedSourceMap": "257:586:47:-;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;721:119;;8:9:-1;5:2;;;30:1;27;20:12;5:2;-1:-1;721:119:47;-1:-1:-1;;;;;721:119:47;;;;;;;;;;;1194:187:48;;8:9:-1;5:2;;;30:1;27;20:12;5:2;1194:187:48;;;;168:20;;8:9:-1;5:2;;;30:1;27;20:12;5:2;168:20:48;;;;;;;;-1:-1:-1;;;;;168:20:48;;;;;;;;;;;;;;323:48:47;;8:9:-1;5:2;;;30:1;27;20:12;5:2;-1:-1;323:48:47;-1:-1:-1;;;;;323:48:47;;;;;;;;;;;;;;;;;;;;;;;195:23:48;;8:9:-1;5:2;;;30:1;27;20:12;5:2;195:23:48;;;;963:140;;8:9:-1;5:2;;;30:1;27;20:12;5:2;-1:-1;963:140:48;-1:-1:-1;;;;;963:140:48;;;;;721:119:47;689:5:48;;-1:-1:-1;;;;;689:5:48;675:10;:19;667:28;;;;;;-1:-1:-1;;;;;799:22:47;;;;;;;;:15;:22;;;;;:33;;-1:-1:-1;;799:33:47;;;;;;;;;;721:119::o;1194:187:48:-;1261:8;;-1:-1:-1;;;;;1261:8:48;1247:10;:22;1239:31;;;;;;1305:8;;;1298:5;1286:28;;-1:-1:-1;;;;;1305:8:48;;;;1298:5;;;;1286:28;;1305:8;;1286:28;1333:8;;;;1325:16;;-1:-1:-1;;1325:16:48;;;-1:-1:-1;;;;;1333:8:48;;1325:16;;;;1352:21;;;1194:187::o;168:20::-;;;-1:-1:-1;;;;;168:20:48;;:::o;323:48:47:-;;;;;;;;;;;;;;;:::o;195:23:48:-;;;-1:-1:-1;;;;;195:23:48;;:::o;963:140::-;689:5;;-1:-1:-1;;;;;689:5:48;675:10;:19;667:28;;;;;;1058:5;;-1:-1:-1;;;;;1045:18:48;;;1058:5;;1045:18;;1037:27;;;;;;1075:8;:20;;-1:-1:-1;;1075:20:48;-1:-1:-1;;;;;1075:20:48;;;;;;;;;;963:140::o",
+  "source": "pragma solidity ^0.4.24;\r\nimport './Owned.sol';\r\nimport './interfaces/IAddressList.sol';\r\n\r\n/**\r\n  * @dev Non standard token registry\r\n  * \r\n  * manages tokens who don't return true/false on transfer/transferFrom/approve but revert on failure instead \r\n*/\r\ncontract NonStandardTokenRegistry is IAddressList, Owned {\r\n\r\n    mapping (address => bool) public listedAddresses;\r\n\r\n    /**\r\n      * @dev initializes a new NonStandardTokenRegistry instance\r\n    */\r\n    constructor() public {\r\n    }\r\n\r\n    /**\r\n      * @dev registers/unregisters a new non standard ERC20 token in the registry\r\n      * \r\n      * @param token    token address\r\n      * @param register true to register the token, false to remove it\r\n    */\r\n    function setAddress(address token, bool register) public ownerOnly {\r\n        listedAddresses[token] = register;\r\n    }\r\n}",
+  "sourcePath": "/Users/cryptotom/code/gitcoin/communiteths/contracts/bancor/utility/NonStandardTokenRegistry.sol",
+  "ast": {
+    "absolutePath": "/Users/cryptotom/code/gitcoin/communiteths/contracts/bancor/utility/NonStandardTokenRegistry.sol",
+    "exportedSymbols": {
+      "NonStandardTokenRegistry": [
+        12469
+      ]
+    },
+    "id": 12470,
+    "nodeType": "SourceUnit",
+    "nodes": [
+      {
+        "id": 12438,
+        "literals": [
+          "solidity",
+          "^",
+          "0.4",
+          ".24"
+        ],
+        "nodeType": "PragmaDirective",
+        "src": "0:24:47"
+      },
+      {
+        "absolutePath": "/Users/cryptotom/code/gitcoin/communiteths/contracts/bancor/utility/Owned.sol",
+        "file": "./Owned.sol",
+        "id": 12439,
+        "nodeType": "ImportDirective",
+        "scope": 12470,
+        "sourceUnit": 12550,
+        "src": "26:21:47",
+        "symbolAliases": [],
+        "unitAlias": ""
+      },
+      {
+        "absolutePath": "/Users/cryptotom/code/gitcoin/communiteths/contracts/bancor/utility/interfaces/IAddressList.sol",
+        "file": "./interfaces/IAddressList.sol",
+        "id": 12440,
+        "nodeType": "ImportDirective",
+        "scope": 12470,
+        "sourceUnit": 12896,
+        "src": "49:39:47",
+        "symbolAliases": [],
+        "unitAlias": ""
+      },
+      {
+        "baseContracts": [
+          {
+            "arguments": null,
+            "baseName": {
+              "contractScope": null,
+              "id": 12441,
+              "name": "IAddressList",
+              "nodeType": "UserDefinedTypeName",
+              "referencedDeclaration": 12895,
+              "src": "294:12:47",
+              "typeDescriptions": {
+                "typeIdentifier": "t_contract$_IAddressList_$12895",
+                "typeString": "contract IAddressList"
+              }
+            },
+            "id": 12442,
+            "nodeType": "InheritanceSpecifier",
+            "src": "294:12:47"
+          },
+          {
+            "arguments": null,
+            "baseName": {
+              "contractScope": null,
+              "id": 12443,
+              "name": "Owned",
+              "nodeType": "UserDefinedTypeName",
+              "referencedDeclaration": 12549,
+              "src": "308:5:47",
+              "typeDescriptions": {
+                "typeIdentifier": "t_contract$_Owned_$12549",
+                "typeString": "contract Owned"
+              }
+            },
+            "id": 12444,
+            "nodeType": "InheritanceSpecifier",
+            "src": "308:5:47"
+          }
+        ],
+        "contractDependencies": [
+          12549,
+          12895,
+          12948
+        ],
+        "contractKind": "contract",
+        "documentation": "@dev Non standard token registry\r\n\r\nmanages tokens who don't return true/false on transfer/transferFrom/approve but revert on failure instead \r",
+        "fullyImplemented": true,
+        "id": 12469,
+        "linearizedBaseContracts": [
+          12469,
+          12549,
+          12948,
+          12895
+        ],
+        "name": "NonStandardTokenRegistry",
+        "nodeType": "ContractDefinition",
+        "nodes": [
+          {
+            "constant": false,
+            "id": 12448,
+            "name": "listedAddresses",
+            "nodeType": "VariableDeclaration",
+            "scope": 12469,
+            "src": "323:48:47",
+            "stateVariable": true,
+            "storageLocation": "default",
+            "typeDescriptions": {
+              "typeIdentifier": "t_mapping$_t_address_$_t_bool_$",
+              "typeString": "mapping(address => bool)"
+            },
+            "typeName": {
+              "id": 12447,
+              "keyType": {
+                "id": 12445,
+                "name": "address",
+                "nodeType": "ElementaryTypeName",
+                "src": "332:7:47",
+                "typeDescriptions": {
+                  "typeIdentifier": "t_address",
+                  "typeString": "address"
+                }
+              },
+              "nodeType": "Mapping",
+              "src": "323:25:47",
+              "typeDescriptions": {
+                "typeIdentifier": "t_mapping$_t_address_$_t_bool_$",
+                "typeString": "mapping(address => bool)"
+              },
+              "valueType": {
+                "id": 12446,
+                "name": "bool",
+                "nodeType": "ElementaryTypeName",
+                "src": "343:4:47",
+                "typeDescriptions": {
+                  "typeIdentifier": "t_bool",
+                  "typeString": "bool"
+                }
+              }
+            },
+            "value": null,
+            "visibility": "public"
+          },
+          {
+            "body": {
+              "id": 12451,
+              "nodeType": "Block",
+              "src": "484:8:47",
+              "statements": []
+            },
+            "documentation": "@dev initializes a new NonStandardTokenRegistry instance\r",
+            "id": 12452,
+            "implemented": true,
+            "isConstructor": true,
+            "isDeclaredConst": false,
+            "modifiers": [],
+            "name": "",
+            "nodeType": "FunctionDefinition",
+            "parameters": {
+              "id": 12449,
+              "nodeType": "ParameterList",
+              "parameters": [],
+              "src": "474:2:47"
+            },
+            "payable": false,
+            "returnParameters": {
+              "id": 12450,
+              "nodeType": "ParameterList",
+              "parameters": [],
+              "src": "484:0:47"
+            },
+            "scope": 12469,
+            "src": "463:29:47",
+            "stateMutability": "nonpayable",
+            "superFunction": null,
+            "visibility": "public"
+          },
+          {
+            "body": {
+              "id": 12467,
+              "nodeType": "Block",
+              "src": "788:52:47",
+              "statements": [
+                {
+                  "expression": {
+                    "argumentTypes": null,
+                    "id": 12465,
+                    "isConstant": false,
+                    "isLValue": false,
+                    "isPure": false,
+                    "lValueRequested": false,
+                    "leftHandSide": {
+                      "argumentTypes": null,
+                      "baseExpression": {
+                        "argumentTypes": null,
+                        "id": 12461,
+                        "name": "listedAddresses",
+                        "nodeType": "Identifier",
+                        "overloadedDeclarations": [],
+                        "referencedDeclaration": 12448,
+                        "src": "799:15:47",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_mapping$_t_address_$_t_bool_$",
+                          "typeString": "mapping(address => bool)"
+                        }
+                      },
+                      "id": 12463,
+                      "indexExpression": {
+                        "argumentTypes": null,
+                        "id": 12462,
+                        "name": "token",
+                        "nodeType": "Identifier",
+                        "overloadedDeclarations": [],
+                        "referencedDeclaration": 12454,
+                        "src": "815:5:47",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_address",
+                          "typeString": "address"
+                        }
+                      },
+                      "isConstant": false,
+                      "isLValue": true,
+                      "isPure": false,
+                      "lValueRequested": true,
+                      "nodeType": "IndexAccess",
+                      "src": "799:22:47",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_bool",
+                        "typeString": "bool"
+                      }
+                    },
+                    "nodeType": "Assignment",
+                    "operator": "=",
+                    "rightHandSide": {
+                      "argumentTypes": null,
+                      "id": 12464,
+                      "name": "register",
+                      "nodeType": "Identifier",
+                      "overloadedDeclarations": [],
+                      "referencedDeclaration": 12456,
+                      "src": "824:8:47",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_bool",
+                        "typeString": "bool"
+                      }
+                    },
+                    "src": "799:33:47",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_bool",
+                      "typeString": "bool"
+                    }
+                  },
+                  "id": 12466,
+                  "nodeType": "ExpressionStatement",
+                  "src": "799:33:47"
+                }
+              ]
+            },
+            "documentation": "@dev registers/unregisters a new non standard ERC20 token in the registry\r\n\r\n@param token    token address\r\n@param register true to register the token, false to remove it\r",
+            "id": 12468,
+            "implemented": true,
+            "isConstructor": false,
+            "isDeclaredConst": false,
+            "modifiers": [
+              {
+                "arguments": null,
+                "id": 12459,
+                "modifierName": {
+                  "argumentTypes": null,
+                  "id": 12458,
+                  "name": "ownerOnly",
+                  "nodeType": "Identifier",
+                  "overloadedDeclarations": [],
+                  "referencedDeclaration": 12504,
+                  "src": "778:9:47",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_modifier$__$",
+                    "typeString": "modifier ()"
+                  }
+                },
+                "nodeType": "ModifierInvocation",
+                "src": "778:9:47"
+              }
+            ],
+            "name": "setAddress",
+            "nodeType": "FunctionDefinition",
+            "parameters": {
+              "id": 12457,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 12454,
+                  "name": "token",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 12468,
+                  "src": "741:13:47",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_address",
+                    "typeString": "address"
+                  },
+                  "typeName": {
+                    "id": 12453,
+                    "name": "address",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "741:7:47",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_address",
+                      "typeString": "address"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 12456,
+                  "name": "register",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 12468,
+                  "src": "756:13:47",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_bool",
+                    "typeString": "bool"
+                  },
+                  "typeName": {
+                    "id": 12455,
+                    "name": "bool",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "756:4:47",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_bool",
+                      "typeString": "bool"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                }
+              ],
+              "src": "740:30:47"
+            },
+            "payable": false,
+            "returnParameters": {
+              "id": 12460,
+              "nodeType": "ParameterList",
+              "parameters": [],
+              "src": "788:0:47"
+            },
+            "scope": 12469,
+            "src": "721:119:47",
+            "stateMutability": "nonpayable",
+            "superFunction": null,
+            "visibility": "public"
+          }
+        ],
+        "scope": 12470,
+        "src": "257:586:47"
+      }
+    ],
+    "src": "0:843:47"
+  },
+  "legacyAST": {
+    "absolutePath": "/Users/cryptotom/code/gitcoin/communiteths/contracts/bancor/utility/NonStandardTokenRegistry.sol",
+    "exportedSymbols": {
+      "NonStandardTokenRegistry": [
+        12469
+      ]
+    },
+    "id": 12470,
+    "nodeType": "SourceUnit",
+    "nodes": [
+      {
+        "id": 12438,
+        "literals": [
+          "solidity",
+          "^",
+          "0.4",
+          ".24"
+        ],
+        "nodeType": "PragmaDirective",
+        "src": "0:24:47"
+      },
+      {
+        "absolutePath": "/Users/cryptotom/code/gitcoin/communiteths/contracts/bancor/utility/Owned.sol",
+        "file": "./Owned.sol",
+        "id": 12439,
+        "nodeType": "ImportDirective",
+        "scope": 12470,
+        "sourceUnit": 12550,
+        "src": "26:21:47",
+        "symbolAliases": [],
+        "unitAlias": ""
+      },
+      {
+        "absolutePath": "/Users/cryptotom/code/gitcoin/communiteths/contracts/bancor/utility/interfaces/IAddressList.sol",
+        "file": "./interfaces/IAddressList.sol",
+        "id": 12440,
+        "nodeType": "ImportDirective",
+        "scope": 12470,
+        "sourceUnit": 12896,
+        "src": "49:39:47",
+        "symbolAliases": [],
+        "unitAlias": ""
+      },
+      {
+        "baseContracts": [
+          {
+            "arguments": null,
+            "baseName": {
+              "contractScope": null,
+              "id": 12441,
+              "name": "IAddressList",
+              "nodeType": "UserDefinedTypeName",
+              "referencedDeclaration": 12895,
+              "src": "294:12:47",
+              "typeDescriptions": {
+                "typeIdentifier": "t_contract$_IAddressList_$12895",
+                "typeString": "contract IAddressList"
+              }
+            },
+            "id": 12442,
+            "nodeType": "InheritanceSpecifier",
+            "src": "294:12:47"
+          },
+          {
+            "arguments": null,
+            "baseName": {
+              "contractScope": null,
+              "id": 12443,
+              "name": "Owned",
+              "nodeType": "UserDefinedTypeName",
+              "referencedDeclaration": 12549,
+              "src": "308:5:47",
+              "typeDescriptions": {
+                "typeIdentifier": "t_contract$_Owned_$12549",
+                "typeString": "contract Owned"
+              }
+            },
+            "id": 12444,
+            "nodeType": "InheritanceSpecifier",
+            "src": "308:5:47"
+          }
+        ],
+        "contractDependencies": [
+          12549,
+          12895,
+          12948
+        ],
+        "contractKind": "contract",
+        "documentation": "@dev Non standard token registry\r\n\r\nmanages tokens who don't return true/false on transfer/transferFrom/approve but revert on failure instead \r",
+        "fullyImplemented": true,
+        "id": 12469,
+        "linearizedBaseContracts": [
+          12469,
+          12549,
+          12948,
+          12895
+        ],
+        "name": "NonStandardTokenRegistry",
+        "nodeType": "ContractDefinition",
+        "nodes": [
+          {
+            "constant": false,
+            "id": 12448,
+            "name": "listedAddresses",
+            "nodeType": "VariableDeclaration",
+            "scope": 12469,
+            "src": "323:48:47",
+            "stateVariable": true,
+            "storageLocation": "default",
+            "typeDescriptions": {
+              "typeIdentifier": "t_mapping$_t_address_$_t_bool_$",
+              "typeString": "mapping(address => bool)"
+            },
+            "typeName": {
+              "id": 12447,
+              "keyType": {
+                "id": 12445,
+                "name": "address",
+                "nodeType": "ElementaryTypeName",
+                "src": "332:7:47",
+                "typeDescriptions": {
+                  "typeIdentifier": "t_address",
+                  "typeString": "address"
+                }
+              },
+              "nodeType": "Mapping",
+              "src": "323:25:47",
+              "typeDescriptions": {
+                "typeIdentifier": "t_mapping$_t_address_$_t_bool_$",
+                "typeString": "mapping(address => bool)"
+              },
+              "valueType": {
+                "id": 12446,
+                "name": "bool",
+                "nodeType": "ElementaryTypeName",
+                "src": "343:4:47",
+                "typeDescriptions": {
+                  "typeIdentifier": "t_bool",
+                  "typeString": "bool"
+                }
+              }
+            },
+            "value": null,
+            "visibility": "public"
+          },
+          {
+            "body": {
+              "id": 12451,
+              "nodeType": "Block",
+              "src": "484:8:47",
+              "statements": []
+            },
+            "documentation": "@dev initializes a new NonStandardTokenRegistry instance\r",
+            "id": 12452,
+            "implemented": true,
+            "isConstructor": true,
+            "isDeclaredConst": false,
+            "modifiers": [],
+            "name": "",
+            "nodeType": "FunctionDefinition",
+            "parameters": {
+              "id": 12449,
+              "nodeType": "ParameterList",
+              "parameters": [],
+              "src": "474:2:47"
+            },
+            "payable": false,
+            "returnParameters": {
+              "id": 12450,
+              "nodeType": "ParameterList",
+              "parameters": [],
+              "src": "484:0:47"
+            },
+            "scope": 12469,
+            "src": "463:29:47",
+            "stateMutability": "nonpayable",
+            "superFunction": null,
+            "visibility": "public"
+          },
+          {
+            "body": {
+              "id": 12467,
+              "nodeType": "Block",
+              "src": "788:52:47",
+              "statements": [
+                {
+                  "expression": {
+                    "argumentTypes": null,
+                    "id": 12465,
+                    "isConstant": false,
+                    "isLValue": false,
+                    "isPure": false,
+                    "lValueRequested": false,
+                    "leftHandSide": {
+                      "argumentTypes": null,
+                      "baseExpression": {
+                        "argumentTypes": null,
+                        "id": 12461,
+                        "name": "listedAddresses",
+                        "nodeType": "Identifier",
+                        "overloadedDeclarations": [],
+                        "referencedDeclaration": 12448,
+                        "src": "799:15:47",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_mapping$_t_address_$_t_bool_$",
+                          "typeString": "mapping(address => bool)"
+                        }
+                      },
+                      "id": 12463,
+                      "indexExpression": {
+                        "argumentTypes": null,
+                        "id": 12462,
+                        "name": "token",
+                        "nodeType": "Identifier",
+                        "overloadedDeclarations": [],
+                        "referencedDeclaration": 12454,
+                        "src": "815:5:47",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_address",
+                          "typeString": "address"
+                        }
+                      },
+                      "isConstant": false,
+                      "isLValue": true,
+                      "isPure": false,
+                      "lValueRequested": true,
+                      "nodeType": "IndexAccess",
+                      "src": "799:22:47",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_bool",
+                        "typeString": "bool"
+                      }
+                    },
+                    "nodeType": "Assignment",
+                    "operator": "=",
+                    "rightHandSide": {
+                      "argumentTypes": null,
+                      "id": 12464,
+                      "name": "register",
+                      "nodeType": "Identifier",
+                      "overloadedDeclarations": [],
+                      "referencedDeclaration": 12456,
+                      "src": "824:8:47",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_bool",
+                        "typeString": "bool"
+                      }
+                    },
+                    "src": "799:33:47",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_bool",
+                      "typeString": "bool"
+                    }
+                  },
+                  "id": 12466,
+                  "nodeType": "ExpressionStatement",
+                  "src": "799:33:47"
+                }
+              ]
+            },
+            "documentation": "@dev registers/unregisters a new non standard ERC20 token in the registry\r\n\r\n@param token    token address\r\n@param register true to register the token, false to remove it\r",
+            "id": 12468,
+            "implemented": true,
+            "isConstructor": false,
+            "isDeclaredConst": false,
+            "modifiers": [
+              {
+                "arguments": null,
+                "id": 12459,
+                "modifierName": {
+                  "argumentTypes": null,
+                  "id": 12458,
+                  "name": "ownerOnly",
+                  "nodeType": "Identifier",
+                  "overloadedDeclarations": [],
+                  "referencedDeclaration": 12504,
+                  "src": "778:9:47",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_modifier$__$",
+                    "typeString": "modifier ()"
+                  }
+                },
+                "nodeType": "ModifierInvocation",
+                "src": "778:9:47"
+              }
+            ],
+            "name": "setAddress",
+            "nodeType": "FunctionDefinition",
+            "parameters": {
+              "id": 12457,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 12454,
+                  "name": "token",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 12468,
+                  "src": "741:13:47",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_address",
+                    "typeString": "address"
+                  },
+                  "typeName": {
+                    "id": 12453,
+                    "name": "address",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "741:7:47",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_address",
+                      "typeString": "address"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 12456,
+                  "name": "register",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 12468,
+                  "src": "756:13:47",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_bool",
+                    "typeString": "bool"
+                  },
+                  "typeName": {
+                    "id": 12455,
+                    "name": "bool",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "756:4:47",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_bool",
+                      "typeString": "bool"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                }
+              ],
+              "src": "740:30:47"
+            },
+            "payable": false,
+            "returnParameters": {
+              "id": 12460,
+              "nodeType": "ParameterList",
+              "parameters": [],
+              "src": "788:0:47"
+            },
+            "scope": 12469,
+            "src": "721:119:47",
+            "stateMutability": "nonpayable",
+            "superFunction": null,
+            "visibility": "public"
+          }
+        ],
+        "scope": 12470,
+        "src": "257:586:47"
+      }
+    ],
+    "src": "0:843:47"
+  },
+  "compiler": {
+    "name": "solc",
+    "version": "0.4.26+commit.4563c3fc.Emscripten.clang"
+  },
+  "networks": {
+    "3": {
+      "events": {},
+      "links": {},
+      "address": "0x1A052dAAedb13F09a849578dc5D842BAC6D3AA49",
+      "transactionHash": "0x3dc2ee70bcea790b690b47b6dfc414307060aa82cb4311b047ebd884de54c623"
+    },
+    "5777": {
+      "events": {},
+      "links": {},
+      "address": "0x84d412E564474Cd033D1d10BFA8652e3cD014EA8",
+      "transactionHash": "0xfbf0072f5ba357c639569e2436889fad2039f6945bd62632ec36376b4a41626d"
+    }
+  },
+  "schemaVersion": "3.0.11",
+  "updatedAt": "2019-09-13T02:31:10.452Z",
+  "devdoc": {
+    "methods": {
+      "acceptOwnership()": {
+        "details": "used by a new owner to accept an ownership transfer\r"
+      },
+      "setAddress(address,bool)": {
+        "details": "registers/unregisters a new non standard ERC20 token in the registry\r \r",
+        "params": {
+          "register": "true to register the token, false to remove it\r",
+          "token": "token address\r"
+        }
+      },
+      "transferOwnership(address)": {
+        "details": "allows transferring the contract ownership\r the new owner still needs to accept the transfer\r can only be called by the contract owner\r \r",
+        "params": {
+          "_newOwner": "new contract owner\r"
+        }
+      }
+    }
+  },
+  "userdoc": {
+    "methods": {}
+  }
+}

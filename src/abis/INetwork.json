@@ -1,0 +1,632 @@
+{
+  "contractName": "INetwork",
+  "abi": [
+    {
+      "constant": false,
+      "inputs": [
+        {
+          "name": "_name",
+          "type": "string"
+        },
+        {
+          "name": "_benefit",
+          "type": "string"
+        },
+        {
+          "name": "_tokenName",
+          "type": "string"
+        },
+        {
+          "name": "_tokenSymbol",
+          "type": "string"
+        }
+      ],
+      "name": "createCommunity",
+      "outputs": [
+        {
+          "name": "success",
+          "type": "bool"
+        }
+      ],
+      "payable": false,
+      "stateMutability": "nonpayable",
+      "type": "function"
+    },
+    {
+      "constant": true,
+      "inputs": [],
+      "name": "getCommunities",
+      "outputs": [
+        {
+          "name": "",
+          "type": "address[]"
+        }
+      ],
+      "payable": false,
+      "stateMutability": "view",
+      "type": "function"
+    }
+  ],
+  "metadata": "",
+  "bytecode": "0x",
+  "deployedBytecode": "0x",
+  "sourceMap": "",
+  "deployedSourceMap": "",
+  "source": "pragma solidity ^0.4.24;\n\nimport \"../Community.sol\";\n\n/*\n    Network interface\n*/\ncontract INetwork {\n    function createCommunity(string _name, string _benefit, string _tokenName, string _tokenSymbol) public returns (bool success);\n    function getCommunities() public view returns (Community[]);\n}\n",
+  "sourcePath": "/Users/cryptotom/code/gitcoin/communiteths/contracts/interfaces/INetwork.sol",
+  "ast": {
+    "absolutePath": "/Users/cryptotom/code/gitcoin/communiteths/contracts/interfaces/INetwork.sol",
+    "exportedSymbols": {
+      "INetwork": [
+        13025
+      ]
+    },
+    "id": 13026,
+    "nodeType": "SourceUnit",
+    "nodes": [
+      {
+        "id": 13004,
+        "literals": [
+          "solidity",
+          "^",
+          "0.4",
+          ".24"
+        ],
+        "nodeType": "PragmaDirective",
+        "src": "0:24:60"
+      },
+      {
+        "absolutePath": "/Users/cryptotom/code/gitcoin/communiteths/contracts/Community.sol",
+        "file": "../Community.sol",
+        "id": 13005,
+        "nodeType": "ImportDirective",
+        "scope": 13026,
+        "sourceUnit": 117,
+        "src": "26:26:60",
+        "symbolAliases": [],
+        "unitAlias": ""
+      },
+      {
+        "baseContracts": [],
+        "contractDependencies": [],
+        "contractKind": "contract",
+        "documentation": null,
+        "fullyImplemented": false,
+        "id": 13025,
+        "linearizedBaseContracts": [
+          13025
+        ],
+        "name": "INetwork",
+        "nodeType": "ContractDefinition",
+        "nodes": [
+          {
+            "body": null,
+            "documentation": null,
+            "id": 13018,
+            "implemented": false,
+            "isConstructor": false,
+            "isDeclaredConst": false,
+            "modifiers": [],
+            "name": "createCommunity",
+            "nodeType": "FunctionDefinition",
+            "parameters": {
+              "id": 13014,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 13007,
+                  "name": "_name",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 13018,
+                  "src": "131:12:60",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_string_memory_ptr",
+                    "typeString": "string"
+                  },
+                  "typeName": {
+                    "id": 13006,
+                    "name": "string",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "131:6:60",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_string_storage_ptr",
+                      "typeString": "string"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 13009,
+                  "name": "_benefit",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 13018,
+                  "src": "145:15:60",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_string_memory_ptr",
+                    "typeString": "string"
+                  },
+                  "typeName": {
+                    "id": 13008,
+                    "name": "string",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "145:6:60",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_string_storage_ptr",
+                      "typeString": "string"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 13011,
+                  "name": "_tokenName",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 13018,
+                  "src": "162:17:60",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_string_memory_ptr",
+                    "typeString": "string"
+                  },
+                  "typeName": {
+                    "id": 13010,
+                    "name": "string",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "162:6:60",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_string_storage_ptr",
+                      "typeString": "string"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 13013,
+                  "name": "_tokenSymbol",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 13018,
+                  "src": "181:19:60",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_string_memory_ptr",
+                    "typeString": "string"
+                  },
+                  "typeName": {
+                    "id": 13012,
+                    "name": "string",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "181:6:60",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_string_storage_ptr",
+                      "typeString": "string"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                }
+              ],
+              "src": "130:71:60"
+            },
+            "payable": false,
+            "returnParameters": {
+              "id": 13017,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 13016,
+                  "name": "success",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 13018,
+                  "src": "218:12:60",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_bool",
+                    "typeString": "bool"
+                  },
+                  "typeName": {
+                    "id": 13015,
+                    "name": "bool",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "218:4:60",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_bool",
+                      "typeString": "bool"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                }
+              ],
+              "src": "217:14:60"
+            },
+            "scope": 13025,
+            "src": "106:126:60",
+            "stateMutability": "nonpayable",
+            "superFunction": null,
+            "visibility": "public"
+          },
+          {
+            "body": null,
+            "documentation": null,
+            "id": 13024,
+            "implemented": false,
+            "isConstructor": false,
+            "isDeclaredConst": true,
+            "modifiers": [],
+            "name": "getCommunities",
+            "nodeType": "FunctionDefinition",
+            "parameters": {
+              "id": 13019,
+              "nodeType": "ParameterList",
+              "parameters": [],
+              "src": "260:2:60"
+            },
+            "payable": false,
+            "returnParameters": {
+              "id": 13023,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 13022,
+                  "name": "",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 13024,
+                  "src": "284:11:60",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_array$_t_contract$_Community_$116_$dyn_memory_ptr",
+                    "typeString": "contract Community[]"
+                  },
+                  "typeName": {
+                    "baseType": {
+                      "contractScope": null,
+                      "id": 13020,
+                      "name": "Community",
+                      "nodeType": "UserDefinedTypeName",
+                      "referencedDeclaration": 116,
+                      "src": "284:9:60",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_contract$_Community_$116",
+                        "typeString": "contract Community"
+                      }
+                    },
+                    "id": 13021,
+                    "length": null,
+                    "nodeType": "ArrayTypeName",
+                    "src": "284:11:60",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_array$_t_contract$_Community_$116_$dyn_storage_ptr",
+                      "typeString": "contract Community[]"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                }
+              ],
+              "src": "283:13:60"
+            },
+            "scope": 13025,
+            "src": "237:60:60",
+            "stateMutability": "view",
+            "superFunction": null,
+            "visibility": "public"
+          }
+        ],
+        "scope": 13026,
+        "src": "82:217:60"
+      }
+    ],
+    "src": "0:300:60"
+  },
+  "legacyAST": {
+    "absolutePath": "/Users/cryptotom/code/gitcoin/communiteths/contracts/interfaces/INetwork.sol",
+    "exportedSymbols": {
+      "INetwork": [
+        13025
+      ]
+    },
+    "id": 13026,
+    "nodeType": "SourceUnit",
+    "nodes": [
+      {
+        "id": 13004,
+        "literals": [
+          "solidity",
+          "^",
+          "0.4",
+          ".24"
+        ],
+        "nodeType": "PragmaDirective",
+        "src": "0:24:60"
+      },
+      {
+        "absolutePath": "/Users/cryptotom/code/gitcoin/communiteths/contracts/Community.sol",
+        "file": "../Community.sol",
+        "id": 13005,
+        "nodeType": "ImportDirective",
+        "scope": 13026,
+        "sourceUnit": 117,
+        "src": "26:26:60",
+        "symbolAliases": [],
+        "unitAlias": ""
+      },
+      {
+        "baseContracts": [],
+        "contractDependencies": [],
+        "contractKind": "contract",
+        "documentation": null,
+        "fullyImplemented": false,
+        "id": 13025,
+        "linearizedBaseContracts": [
+          13025
+        ],
+        "name": "INetwork",
+        "nodeType": "ContractDefinition",
+        "nodes": [
+          {
+            "body": null,
+            "documentation": null,
+            "id": 13018,
+            "implemented": false,
+            "isConstructor": false,
+            "isDeclaredConst": false,
+            "modifiers": [],
+            "name": "createCommunity",
+            "nodeType": "FunctionDefinition",
+            "parameters": {
+              "id": 13014,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 13007,
+                  "name": "_name",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 13018,
+                  "src": "131:12:60",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_string_memory_ptr",
+                    "typeString": "string"
+                  },
+                  "typeName": {
+                    "id": 13006,
+                    "name": "string",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "131:6:60",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_string_storage_ptr",
+                      "typeString": "string"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 13009,
+                  "name": "_benefit",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 13018,
+                  "src": "145:15:60",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_string_memory_ptr",
+                    "typeString": "string"
+                  },
+                  "typeName": {
+                    "id": 13008,
+                    "name": "string",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "145:6:60",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_string_storage_ptr",
+                      "typeString": "string"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 13011,
+                  "name": "_tokenName",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 13018,
+                  "src": "162:17:60",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_string_memory_ptr",
+                    "typeString": "string"
+                  },
+                  "typeName": {
+                    "id": 13010,
+                    "name": "string",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "162:6:60",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_string_storage_ptr",
+                      "typeString": "string"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 13013,
+                  "name": "_tokenSymbol",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 13018,
+                  "src": "181:19:60",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_string_memory_ptr",
+                    "typeString": "string"
+                  },
+                  "typeName": {
+                    "id": 13012,
+                    "name": "string",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "181:6:60",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_string_storage_ptr",
+                      "typeString": "string"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                }
+              ],
+              "src": "130:71:60"
+            },
+            "payable": false,
+            "returnParameters": {
+              "id": 13017,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 13016,
+                  "name": "success",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 13018,
+                  "src": "218:12:60",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_bool",
+                    "typeString": "bool"
+                  },
+                  "typeName": {
+                    "id": 13015,
+                    "name": "bool",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "218:4:60",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_bool",
+                      "typeString": "bool"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                }
+              ],
+              "src": "217:14:60"
+            },
+            "scope": 13025,
+            "src": "106:126:60",
+            "stateMutability": "nonpayable",
+            "superFunction": null,
+            "visibility": "public"
+          },
+          {
+            "body": null,
+            "documentation": null,
+            "id": 13024,
+            "implemented": false,
+            "isConstructor": false,
+            "isDeclaredConst": true,
+            "modifiers": [],
+            "name": "getCommunities",
+            "nodeType": "FunctionDefinition",
+            "parameters": {
+              "id": 13019,
+              "nodeType": "ParameterList",
+              "parameters": [],
+              "src": "260:2:60"
+            },
+            "payable": false,
+            "returnParameters": {
+              "id": 13023,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 13022,
+                  "name": "",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 13024,
+                  "src": "284:11:60",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_array$_t_contract$_Community_$116_$dyn_memory_ptr",
+                    "typeString": "contract Community[]"
+                  },
+                  "typeName": {
+                    "baseType": {
+                      "contractScope": null,
+                      "id": 13020,
+                      "name": "Community",
+                      "nodeType": "UserDefinedTypeName",
+                      "referencedDeclaration": 116,
+                      "src": "284:9:60",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_contract$_Community_$116",
+                        "typeString": "contract Community"
+                      }
+                    },
+                    "id": 13021,
+                    "length": null,
+                    "nodeType": "ArrayTypeName",
+                    "src": "284:11:60",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_array$_t_contract$_Community_$116_$dyn_storage_ptr",
+                      "typeString": "contract Community[]"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                }
+              ],
+              "src": "283:13:60"
+            },
+            "scope": 13025,
+            "src": "237:60:60",
+            "stateMutability": "view",
+            "superFunction": null,
+            "visibility": "public"
+          }
+        ],
+        "scope": 13026,
+        "src": "82:217:60"
+      }
+    ],
+    "src": "0:300:60"
+  },
+  "compiler": {
+    "name": "solc",
+    "version": "0.4.26+commit.4563c3fc.Emscripten.clang"
+  },
+  "networks": {},
+  "schemaVersion": "3.0.11",
+  "updatedAt": "2019-09-13T02:05:18.083Z",
+  "devdoc": {
+    "methods": {}
+  },
+  "userdoc": {
+    "methods": {}
+  }
+}
