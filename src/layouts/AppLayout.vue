@@ -1,12 +1,9 @@
 <template>
   <!-- eslint-disable -->
   <q-layout view="hHh lpR fFf">
-    <!-- <div class="row full-width"> -->
-
-    <q-header elevated class="row full-width">
-      <q-space class="col" />
-      <q-toolbar class="col-12 col-sm-11 col-md-10">
-        <q-toolbar-title class="q-px-xs-sm q-px-sm-xl">
+    <q-header elevated class="row full-width q-pa-sm">
+      <q-toolbar>
+        <q-toolbar-title>
           <q-btn
             flat
             no-caps
@@ -17,15 +14,31 @@
             color="white"
           />
         </q-toolbar-title>
-        <q-space />
-        <!-- <q-btn flat dense round aria-label="Menu">
-            <q-icon name="menu" />
-        </q-btn>-->
-      </q-toolbar>
-      <q-space class="col" />
-    </q-header>
+        <q-card class="row q-px-sm">
+          <q-form @submit="onConvert" class="row">
+            <!-- SEND -->
+            <q-select borderless dense v-model="sendModel" :options="options" class="q-ma-sm" />
+            <q-input dense outlined v-model="trade.sendAmount" label="Send Amount" lazy-rules />
 
-    <!-- </div> -->
+            <!-- SWAP BUTTON -->
+            <q-btn flat size="lg" icon="swap_horizontal_circle" color="primary" />
+
+            <!-- RECEIVE -->
+            <q-select borderless dense v-model="receiveModel" :options="options" class="q-ma-sm" />
+            <q-input
+              dense
+              outlined
+              v-model="trade.receiveAmount"
+              label="Receive Amount"
+              lazy-rules
+            />
+
+            <!-- CONVERT BUTTON -->
+            <q-btn size="md" label="Convert" type="submit" color="primary" class="q-ma-sm" />
+          </q-form>
+        </q-card>
+      </q-toolbar>
+    </q-header>
 
     <q-page-container>
       <router-view />
@@ -40,11 +53,23 @@ export default {
   name: "AppLayout",
   data() {
     return {
-      rightDrawerOpen: false
+      rightDrawerOpen: false,
+      dense: true,
+      denseOpts: true,
+      trade: {
+        sendToken: "ETH",
+        sendAmount: "",
+        receiveToken: "MYCOM",
+        receiveAmount: ""
+      },
+      sendModel: "ETH",
+      receiveModel: "MYCOM",
+      options: ["ETH", "MYCOM", "BNT", "PLNTE", "GRNPC"]
     };
   },
   methods: {
-    openURL
+    openURL,
+    onConvert() {}
   }
 };
 </script>
