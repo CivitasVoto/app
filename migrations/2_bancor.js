@@ -7,7 +7,7 @@ const NonStandardTokenRegistry = artifacts.require("NonStandardTokenRegistry");
 const BancorNetwork = artifacts.require("BancorNetwork");
 
 module.exports = async function(deployer, network, accounts) {
-  let account = accounts[0];
+  const account = accounts[0];
 
   // ContractRegistry
   await deployer.deploy(ContractRegistry);
@@ -47,7 +47,7 @@ module.exports = async function(deployer, network, accounts) {
   // NonStandardTokenRegistry
   await deployer.deploy(NonStandardTokenRegistry);
   const nonStandardTokenRegistry = await NonStandardTokenRegistry.deployed();
-  let nonStandardTokenRegistryId = await contractIds.NON_STANDARD_TOKEN_REGISTRY.call();
+  const nonStandardTokenRegistryId = await contractIds.NON_STANDARD_TOKEN_REGISTRY.call();
   await contractRegistry.registerAddress(
     nonStandardTokenRegistryId,
     nonStandardTokenRegistry.address
