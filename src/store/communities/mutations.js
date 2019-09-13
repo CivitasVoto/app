@@ -1,7 +1,7 @@
 /**
  * Add community to state.
  */
-export function add(state, payload) {
+export function addCommunity(state, payload) {
   state.communities.push(payload.community);
 }
 

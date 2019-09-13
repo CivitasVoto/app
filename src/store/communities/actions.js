@@ -21,7 +21,7 @@ export async function initialize(context) {
     const community = await Community.at(address);
     const token = await SmartToken.at(await community.token());
 
-    context.commit("add", {
+    context.commit("addCommunity", {
       community: {
         address,
         name: await community.name(),
@@ -48,7 +48,7 @@ export async function create(context, payload) {
 
   const address = receipt.logs[0].args.community;
 
-  context.commit("add", {
+  context.commit("addCommunity", {
     community: {
       address,
       ...payload.community,
