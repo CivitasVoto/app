@@ -7,6 +7,7 @@ import "./bancor/converter/BancorConverter.sol";
 
 contract Network is INetwork {
     Community[] private communities;
+    SmartToken public etherToken;
     SmartToken public networkToken;
     ContractRegistry public contractRegistry;
     // BancorConverterRegistry public converterRegistry;
@@ -24,10 +25,12 @@ contract Network is INetwork {
     mapping (address => Community[]) userCommunities;
 
     constructor(
+        SmartToken _etherToken,
         SmartToken _networkToken,
         ContractRegistry _contractRegistry
         // BancorConverterRegistry _converterRegistry
     ) public {
+        etherToken = _etherToken;
         networkToken = _networkToken;
         contractRegistry = _contractRegistry;
         // converterRegistry = _converterRegistry;

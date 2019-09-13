@@ -53,6 +53,7 @@ module.exports = async function(deployer, network, accounts) {
 
   await deployer.deploy(
     Network,
+    etherToken.address,
     networkToken.address,
     contractRegistry.address
     // converterRegistry.address
