@@ -217,4 +217,10 @@ contract("BancorConverter", ([deployer, bancorTester]) => {
       );
     });
   });
+
+  describe("convert smart tokens", () => {
+    it("allows Network=>Community conversion", async () => {});
+    it("allows Community=>Community conversion", async () => {});
+    it("allows Community=>Network conversion", async () => {});
+  });
 });
