@@ -16,7 +16,7 @@ contract("BancorConverter", ([deployer, bancorTester]) => {
   let nonStandardTokenRegistry;
   let etherToken;
   let DAIToken;
-  let CNTSmartToken;
+  let networkToken;
   let converter;
 
   before(async () => {
@@ -26,25 +26,25 @@ contract("BancorConverter", ([deployer, bancorTester]) => {
     nonStandardTokenRegistry = await NonStandardTokenRegistry.deployed();
 
     etherToken = await EtherToken.new();
-    await etherToken.deposit({ value: 107706655 }); // ~ circulating supply of ETH
+    await etherToken.deposit({ value: 1000000000000000000 }); // Seed with 1 ETH
 
     await bancorNetwork.registerEtherToken(etherToken.address, true);
 
-    CNTSmartToken = await SmartToken.new(
+    networkToken = await SmartToken.new(
       "CommunitETHs Network Token",
-      "CNT",
+      "TNT",
       18
     );
 
-    await CNTSmartToken.issue(deployer, 100000);
+    await networkToken.issue(deployer, 100000);
 
     await contractRegistry.registerAddress(
       await contractIds.BNT_TOKEN.call(),
-      CNTSmartToken.address
+      networkToken.address
     );
 
     converter = await BancorConverter.new(
-      CNTSmartToken.address, // Smart token governed by converter
+      networkToken.address, // Smart token governed by converter
       contractRegistry.address,
       10000, // Max conversion fee (1%)
       etherToken.address, // Initial connector token
@@ -68,23 +68,23 @@ contract("BancorConverter", ([deployer, bancorTester]) => {
     await etherToken.transfer(converter.address, 50000);
     await DAIToken.transfer(converter.address, 50000);
 
-    await CNTSmartToken.transferOwnership(converter.address);
+    await networkToken.transferOwnership(converter.address);
     await converter.acceptTokenOwnership();
   });
 
   describe("purchase and sale of smart tokens", () => {
     it("allows for purchase of Smart Token from Ether token", async () => {
-      ETHCNTBuyPath = [
+      ETHTNTBuyPath = [
         etherToken.address,
-        CNTSmartToken.address,
-        CNTSmartToken.address
+        networkToken.address,
+        networkToken.address
       ];
 
-      const prevBalance = await CNTSmartToken.balanceOf.call(bancorTester);
+      const prevBalance = await networkToken.balanceOf.call(bancorTester);
 
       const expectedReturn = await converter.getReturn(
         etherToken.address, // From
-        CNTSmartToken.address, // To
+        networkToken.address, // To
         100 // Amount
       );
 
@@ -92,7 +92,7 @@ contract("BancorConverter", ([deployer, bancorTester]) => {
       // const conversionFee = expectedReturn[1];
 
       await converter.quickConvert(
-        ETHCNTBuyPath, // Path
+        ETHTNTBuyPath, // Path
         100, // Amount
         minReturn,
         {
@@ -100,7 +100,7 @@ contract("BancorConverter", ([deployer, bancorTester]) => {
           value: 100
         }
       );
-      const newBalance = await CNTSmartToken.balanceOf.call(bancorTester);
+      const newBalance = await networkToken.balanceOf.call(bancorTester);
 
       assert.isAbove(
         newBalance.toNumber(),
@@ -110,20 +110,20 @@ contract("BancorConverter", ([deployer, bancorTester]) => {
     });
 
     it("allows for purchase of Smart Token from non standard ERC20 token", async () => {
-      DAICNTBuyPath = [
+      DAITNTBuyPath = [
         DAIToken.address,
-        CNTSmartToken.address,
-        CNTSmartToken.address
+        networkToken.address,
+        networkToken.address
       ];
 
       await DAIToken.transfer(bancorTester, 100);
       await DAIToken.approve(converter.address, 100, { from: bancorTester });
 
-      const prevBalance = await CNTSmartToken.balanceOf.call(bancorTester);
+      const prevBalance = await networkToken.balanceOf.call(bancorTester);
 
       const expectedReturn = await converter.getReturn(
         DAIToken.address, // From
-        CNTSmartToken.address, // To
+        networkToken.address, // To
         100 // Amount
       );
 
@@ -131,14 +131,14 @@ contract("BancorConverter", ([deployer, bancorTester]) => {
       // const conversionFee = expectedReturn[1];
 
       await converter.quickConvert(
-        DAICNTBuyPath, // Path
+        DAITNTBuyPath, // Path
         100, // Amount
         minReturn,
         {
           from: bancorTester
         }
       );
-      const newBalance = await CNTSmartToken.balanceOf.call(bancorTester);
+      const newBalance = await networkToken.balanceOf.call(bancorTester);
 
       assert.isAbove(
         newBalance.toNumber(),
@@ -148,16 +148,16 @@ contract("BancorConverter", ([deployer, bancorTester]) => {
     });
 
     it("allows for sale of Smart Token to non standard ERC20 token", async () => {
-      DAICNTSellPath = [
-        CNTSmartToken.address,
-        CNTSmartToken.address,
+      DAITNTSellPath = [
+        networkToken.address,
+        networkToken.address,
         DAIToken.address
       ];
 
-      const prevBalance = await CNTSmartToken.balanceOf.call(bancorTester);
+      const prevBalance = await networkToken.balanceOf.call(bancorTester);
 
       const expectedReturn = await converter.getReturn(
-        CNTSmartToken.address, // To
+        networkToken.address, // To
         DAIToken.address, // From
         10 // Amount
       );
@@ -166,14 +166,14 @@ contract("BancorConverter", ([deployer, bancorTester]) => {
       // const conversionFee = expectedReturn[1];
 
       await converter.quickConvert(
-        DAICNTSellPath, // Path
+        DAITNTSellPath, // Path
         10, // Amount
         minReturn,
         {
           from: bancorTester
         }
       );
-      const newBalance = await CNTSmartToken.balanceOf.call(bancorTester);
+      const newBalance = await networkToken.balanceOf.call(bancorTester);
 
       assert.isAbove(
         prevBalance.toNumber(),
@@ -183,16 +183,16 @@ contract("BancorConverter", ([deployer, bancorTester]) => {
     });
 
     it("allows for sale of Smart Token to ether token", async () => {
-      ETHCNTSellPath = [
-        CNTSmartToken.address,
-        CNTSmartToken.address,
+      ETHTNTSellPath = [
+        networkToken.address,
+        networkToken.address,
         etherToken.address
       ];
 
-      const prevBalance = await CNTSmartToken.balanceOf.call(bancorTester);
+      const prevBalance = await networkToken.balanceOf.call(bancorTester);
 
       const expectedReturn = await converter.getReturn(
-        CNTSmartToken.address, // To
+        networkToken.address, // To
         etherToken.address, // From
         10 // Amount
       );
@@ -201,14 +201,14 @@ contract("BancorConverter", ([deployer, bancorTester]) => {
       // const conversionFee = expectedReturn[1];
 
       await converter.quickConvert(
-        ETHCNTSellPath, // Path
+        ETHTNTSellPath, // Path
         10, // Amount
         minReturn,
         {
           from: bancorTester
         }
       );
-      const newBalance = await CNTSmartToken.balanceOf.call(bancorTester);
+      const newBalance = await networkToken.balanceOf.call(bancorTester);
 
       assert.isAbove(
         prevBalance.toNumber(),
