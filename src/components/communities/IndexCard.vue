@@ -10,8 +10,8 @@
         <br />
         Symbol: {{ community.tokenSymbol }}
         <br />
-        Price: {{ community.price }}
-        <br />
+        <!-- Price: {{ community.price }}
+        <br />-->
         Benefit: {{ community.benefit }}
         <br />
       </p>
