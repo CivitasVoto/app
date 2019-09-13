@@ -9,7 +9,7 @@
         <q-space v-if="$q.screen.gt.xs" />
         <div class="col-10 row justify-center q-gutter-lg">
           <div v-for="(community, index) in communities" :key="index" class="col-grow">
-            <CommunityIndexCard :community="community" :user="user" />
+            <CommunityIndexCard :community="community" />
           </div>
         </div>
         <q-space v-if="$q.screen.gt.xs" />

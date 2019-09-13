@@ -39,9 +39,6 @@ export default {
   props: {
     community: {
       type: Object
-    },
-    user: {
-      type: Object
     }
   },
   data() {

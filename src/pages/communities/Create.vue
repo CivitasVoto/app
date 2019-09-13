@@ -74,20 +74,7 @@
         icon="create_new_folder"
         :done="step > 2"
         :header-nav="step > 2"
-      >
-        Hang tight. We're creating your community...
-        <q-stepper-navigation>
-          <q-btn @click="() => { done2 = true; step = 3 }" color="primary" label="Continue" />
-          <q-btn flat @click="step = 1" color="primary" label="Back" class="q-ml-sm" />
-        </q-stepper-navigation>
-      </q-step>
-
-      <q-step :name="3" title="Finish" icon="add_comment" :header-nav="step > 3">
-        Your community has been created. Click 'Finish' to go to your new Community!
-        <q-stepper-navigation>
-          <q-btn color="primary" @click="done3 = true" label="Finish" />
-        </q-stepper-navigation>
-      </q-step>
+      >Hang tight. We're creating your community...</q-step>
     </q-stepper>
   </q-page>
 </template>
