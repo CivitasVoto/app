@@ -9,6 +9,7 @@ contract Network is INetwork {
     Community[] private communities;
     SmartToken public etherToken;
     SmartToken public networkToken;
+    BancorConverter public converter;
     ContractRegistry public contractRegistry;
     // BancorConverterRegistry public converterRegistry;
 
@@ -27,11 +28,13 @@ contract Network is INetwork {
     constructor(
         SmartToken _etherToken,
         SmartToken _networkToken,
+        BancorConverter _converter,
         ContractRegistry _contractRegistry
         // BancorConverterRegistry _converterRegistry
     ) public {
         etherToken = _etherToken;
         networkToken = _networkToken;
+        converter = _converter;
         contractRegistry = _contractRegistry;
         // converterRegistry = _converterRegistry;
     }
