@@ -85,9 +85,9 @@ export default {
     return {
       community: {
         name: null,
+        benefit: null,
         tokenName: null,
-        tokenSymbol: null,
-        benefit: null
+        tokenSymbol: null
       },
       step: 1
     };
