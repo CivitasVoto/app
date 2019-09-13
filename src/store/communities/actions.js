@@ -4,19 +4,16 @@ import contract from "truffle-contract";
 import NetworkABI from "src/abis/Network";
 import CommunityABI from "src/abis/Community";
 import SmartTokenABI from "src/abis/SmartToken";
-import BancorConverterABI from "src/abis/BancorConverter";
 import CommunityUtilsABI from "src/abis/CommunityUtils";
 
 const Network = contract(NetworkABI);
 const Community = contract(CommunityABI);
 const SmartToken = contract(SmartTokenABI);
-const BancorConverter = contract(BancorConverterABI);
 const CommunityUtils = contract(CommunityUtilsABI);
 
 Network.setProvider(web3.currentProvider);
 Community.setProvider(web3.currentProvider);
 SmartToken.setProvider(web3.currentProvider);
-BancorConverter.setProvider(web3.currentProvider);
 CommunityUtils.setProvider(web3.currentProvider);
 
 export async function initialize(context) {
@@ -34,7 +31,8 @@ export async function initialize(context) {
         benefit: await community.benefit(),
         tokenName: await token.name(),
         tokenSymbol: await token.symbol(),
-        price: 1,
+        tokenAddress: await community.token(),
+        // price: 1,
         members: await community.getMembers()
       }
     });
