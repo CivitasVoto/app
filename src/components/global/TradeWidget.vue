@@ -9,7 +9,7 @@
           <b>{{ trade.receiveToken }}</b>
         </div>
       </div>
-      <q-form @submit="onSubmit" @reset="onReset" class="column items-center">
+      <q-form class="column items-center">
         <!-- SEND -->
         <div class="row full-width justify-center">
           <q-input
@@ -23,7 +23,7 @@
             outlined
             class="col-grow"
             v-model="sendModel"
-            :options="options"
+            :options="tokens"
             label="Token"
             stack-label
           />
@@ -46,7 +46,7 @@
             outlined
             class="col-grow"
             v-model="receiveModel"
-            :options="options"
+            :options="tokens"
             label="Token"
             stack-label
           />
@@ -83,21 +83,14 @@ export default {
       },
       sendModel: "ETH",
       receiveModel: "MYCOM",
-      options: ["ETH", "MYCOM", "BNT", "PLNTE", "GRNPC"]
+      options: ["ETH", "MYCOM", "BNT", "PLNTE", "GRNPC"],
+      tokens: []
     };
   },
-  methods: {
-    onSubmit() {
-      // this.$store.dispatch("communities/create", {
-      //   community: { ...this.$data }
-      // });
-    },
-    onReset() {
-      // this.name = null;
-      // this.tokenName = null;
-      // this.tokenSymbol = null;
-      // this.benefit = null;
-    }
+  async mounted() {
+    this.tokens = this.$store.getters["communities/communityTokens"]
+      .concat(await this.$store.getters["communities/networkTokens"])
+      .reverse();
   }
 };
 </script>
