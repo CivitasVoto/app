@@ -2,6 +2,7 @@ import Vue from "vue";
 import Vuex from "vuex";
 
 import communities from "./communities";
+import bancor from "./bancor";
 
 Vue.use(Vuex);
 
@@ -13,7 +14,8 @@ Vue.use(Vuex);
 export default function(/* { ssrContext } */) {
   const Store = new Vuex.Store({
     modules: {
-      communities
+      communities,
+      bancor
     },
 
     // enable strict mode (adds overhead!)
