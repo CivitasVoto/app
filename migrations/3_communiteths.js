@@ -5,8 +5,7 @@ const ContractIds = artifacts.require("ContractIds");
 const EtherToken = artifacts.require("EtherToken");
 const BancorNetwork = artifacts.require("BancorNetwork");
 const BancorConverter = artifacts.require("BancorConverter");
-// const NetworkUtils = artifacts.require("NetworkUtils");
-// const BancorConverterRegistry = artifacts.require("BancorConverterRegistry");
+const CommunityUtils = artifacts.require("CommunityUtils");
 
 module.exports = async function(deployer, network, accounts) {
   const account = accounts[0];
@@ -38,18 +37,12 @@ module.exports = async function(deployer, network, accounts) {
 
   // Deposit initial reserve and issue TNT in return.
   await etherToken.deposit({ value: 1000000000000000000 }); // Seed with 1 ETH
+  await etherToken.transfer(converter.address, "1000000000000000000");
   await networkToken.issue(account, "500000000000000000000"); // Issue 500 TNT
 
   // Hand the network token over to the converter.
   await networkToken.transferOwnership(converter.address);
   await converter.acceptTokenOwnership();
-
-  // await converterRegistry.registerConverter(
-  //   networkToken.address,
-  //   converter.address
-  // );
-
-  // await deployer.deploy(NetworkUtils);
 
   await deployer.deploy(
     Network,
@@ -57,6 +50,9 @@ module.exports = async function(deployer, network, accounts) {
     networkToken.address,
     converter.address,
     contractRegistry.address
-    // converterRegistry.address
   );
+
+  await deployer.deploy(CommunityUtils);
+
+  console.log(networkToken.address);
 };

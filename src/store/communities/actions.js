@@ -2,22 +2,22 @@ import { web3 } from "boot/web3";
 import contract from "truffle-contract";
 
 import NetworkABI from "src/abis/Network";
-// import NetworkUtilsABI from "src/abis/NetworkUtils";
 import CommunityABI from "src/abis/Community";
 import SmartTokenABI from "src/abis/SmartToken";
 import BancorConverterABI from "src/abis/BancorConverter";
+import CommunityUtilsABI from "src/abis/CommunityUtils";
 
 const Network = contract(NetworkABI);
-// const NetworkUtils = contract(NetworkUtilsABI);
 const Community = contract(CommunityABI);
 const SmartToken = contract(SmartTokenABI);
 const BancorConverter = contract(BancorConverterABI);
+const CommunityUtils = contract(CommunityUtilsABI);
 
 Network.setProvider(web3.currentProvider);
-// NetworkUtils.setProvider(web3.currentProvider);
 Community.setProvider(web3.currentProvider);
 SmartToken.setProvider(web3.currentProvider);
 BancorConverter.setProvider(web3.currentProvider);
+CommunityUtils.setProvider(web3.currentProvider);
 
 export async function initialize(context) {
   const network = await Network.deployed();
@@ -43,7 +43,7 @@ export async function initialize(context) {
 
 export async function create(context, payload) {
   const network = await Network.deployed();
-  // const networkUtils = await NetworkUtils.deployed();
+  const communityUtils = await CommunityUtils.deployed();
   const [account] = await web3.eth.getAccounts();
 
   const receipt = await network.createCommunity(
@@ -52,21 +52,11 @@ export async function create(context, payload) {
       from: account
     }
   );
+  const communityAddress = receipt.logs[0].args.community;
 
-  const address = receipt.logs[0].args.community;
-  const community = await Community.at(address);
-  const token = await community.token();
-  const contractRegistry = await network.contractRegistry();
-  const networkToken = await network.networkToken();
-  // const converterRegistry = await network.converterRegistry();
-
-  // TODO: Swap this for NetworkUtils.createConverter() to add to on chain registry
-  await BancorConverter.new(
-    token, // Create for this community's smart token
-    contractRegistry,
-    10000, // Max conversion fee (1%)
-    networkToken, // Initial connector token
-    1000000, // Connector weight PPM (100%)
+  await communityUtils.createConverter(
+    network.address,
+    communityAddress, // Create for this community
     {
       from: account
     }
@@ -74,7 +64,7 @@ export async function create(context, payload) {
 
   context.commit("addCommunity", {
     community: {
-      address,
+      communityAddress,
       ...payload.community,
       price: 1,
       members: []
@@ -82,11 +72,11 @@ export async function create(context, payload) {
   });
 
   context.commit("addMember", {
-    community: address,
+    community: communityAddress,
     member: account
   });
 
-  this.$router.push(`/communities/${address}`);
+  this.$router.push(`/communities/${communityAddress}`);
 }
 
 export async function join(context, payload) {

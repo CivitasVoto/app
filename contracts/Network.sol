@@ -3,7 +3,6 @@ pragma solidity ^0.4.26;
 import "./interfaces/INetwork.sol";
 import "./bancor/utility/ContractRegistry.sol";
 import "./bancor/converter/BancorConverter.sol";
-// import "./bancor/BancorConverterRegistry.sol";
 
 contract Network is INetwork {
     Community[] private communities;
@@ -11,7 +10,6 @@ contract Network is INetwork {
     SmartToken public networkToken;
     BancorConverter public converter;
     ContractRegistry public contractRegistry;
-    // BancorConverterRegistry public converterRegistry;
 
     /** @dev Network, Community, and Token addresses of a new community.
      */
@@ -30,13 +28,11 @@ contract Network is INetwork {
         SmartToken _networkToken,
         BancorConverter _converter,
         ContractRegistry _contractRegistry
-        // BancorConverterRegistry _converterRegistry
     ) public {
         etherToken = _etherToken;
         networkToken = _networkToken;
         converter = _converter;
         contractRegistry = _contractRegistry;
-        // converterRegistry = _converterRegistry;
     }
 
     /** @dev Create a new community and add to the network's communities.

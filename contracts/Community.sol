@@ -1,12 +1,14 @@
 pragma solidity ^0.4.26;
 
 import "./interfaces/ICommunity.sol";
+import "./bancor/converter/BancorConverter.sol";
 
 contract Community is ICommunity {
     address public owner;
     string public name;
     string public benefit;
     SmartToken public token;
+    BancorConverter public converter;
     address[] private members;
 
     mapping (address => bool) public memberExists;
@@ -26,6 +28,10 @@ contract Community is ICommunity {
         // Add owner to members.
         memberExists[owner] = true;
         members.push(owner);
+    }
+
+    function setConverter(BancorConverter _converter) external {
+        converter = _converter;
     }
 
     /** @dev Join this community.
