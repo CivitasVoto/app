@@ -5,6 +5,7 @@ const BancorGasPriceLimit = artifacts.require("BancorGasPriceLimit");
 const BancorFormula = artifacts.require("BancorFormula");
 const NonStandardTokenRegistry = artifacts.require("NonStandardTokenRegistry");
 const BancorNetwork = artifacts.require("BancorNetwork");
+// const BancorConverterRegistry = artifacts.require("BancorConverterRegistry");
 
 module.exports = async function(deployer, network, accounts) {
   const account = accounts[0];
@@ -52,6 +53,9 @@ module.exports = async function(deployer, network, accounts) {
     nonStandardTokenRegistryId,
     nonStandardTokenRegistry.address
   );
+
+  // BancorConverterRegistry
+  // await deployer.deploy(BancorConverterRegistry);
 
   // BancorNetwork
   await deployer.deploy(BancorNetwork, contractRegistry.address);
