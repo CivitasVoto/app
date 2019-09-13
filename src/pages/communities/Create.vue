@@ -9,65 +9,62 @@
         :done="step > 1"
         :header-nav="step > 1"
       >
-        <div class="q-pa-md">
-          <q-form
-            @submit="onSubmit"
-            @reset="onReset"
-            class="row full-width justify-center q-gutter-md"
-          >
-            <div class="col">
-              <q-input
-                dense
-                filled
-                v-model="name"
-                label="Community Name *"
-                hint="Name of community"
-                lazy-rules
-                :rules="[ val => val && val.length > 0 || 'Please type something']"
-              />
+        <div class="row q-pa-md full-width justify-center q-gutter-md">
+          <div class="col">
+            <q-input
+              dense
+              filled
+              v-model="community.name"
+              label="Community Name *"
+              hint="Name of community"
+              lazy-rules
+              :rules="[ val => val && val.length > 0 || 'Please type something']"
+              ref="name"
+            />
 
-              <q-input
-                dense
-                filled
-                v-model="tokenName"
-                label="Token Name *"
-                hint="Name of token"
-                lazy-rules
-                :rules="[ val => val && val.length > 0 || 'Please type something']"
-              />
-            </div>
+            <q-input
+              dense
+              filled
+              v-model="community.tokenName"
+              label="Token Name *"
+              hint="Name of token"
+              lazy-rules
+              :rules="[ val => val && val.length > 0 || 'Please type something']"
+              ref="tokenName"
+            />
+          </div>
 
-            <div class="col">
-              <q-input
-                dense
-                filled
-                v-model="tokenSymbol"
-                label="Token Symbol *"
-                hint="Symbol representing token"
-                lazy-rules
-                :rules="[ val => val && val.length > 0 || 'Please type something']"
-              />
+          <div class="col">
+            <q-input
+              dense
+              filled
+              v-model="community.tokenSymbol"
+              label="Token Symbol *"
+              hint="Symbol representing token"
+              lazy-rules
+              :rules="[ val => val && val.length > 0 || 'Please type something']"
+              ref="tokenSymbol"
+            />
 
-              <q-input
-                dense
-                filled
-                v-model="benefit"
-                label="Benefit *"
-                hint="Membership reward"
-                lazy-rules
-                :rules="[ val => val && val.length > 0 || 'Please type something']"
-              />
-
-              <!-- <div>
-                <q-btn label="Submit" type="submit" color="primary" />
-                <q-btn label="Reset" type="reset" color="primary" flat class="q-ml-sm" />
-              </div>-->
-            </div>
-          </q-form>
+            <q-input
+              dense
+              filled
+              v-model="community.benefit"
+              label="Benefit *"
+              hint="Membership reward"
+              lazy-rules
+              :rules="[ val => val && val.length > 0 || 'Please type something']"
+              ref="benefit"
+            />
+          </div>
         </div>
 
         <q-stepper-navigation>
-          <q-btn @click="() => { done1 = true; step = 2 }" color="primary" label="Continue" />
+          <q-btn
+            @click="() => { if (validateStep1()) {onSubmit(); done1 = true; step = 2} }"
+            color="primary"
+            label="Continue"
+          />
         </q-stepper-navigation>
       </q-step>
 
@@ -99,26 +96,28 @@
 export default {
   data() {
     return {
-      name: null,
-      tokenName: null,
-      tokenSymbol: null,
-      benefit: null,
+      community: {
+        name: null,
+        tokenName: null,
+        tokenSymbol: null,
+        benefit: null
+      },
       step: 1
     };
   },
-
   methods: {
+    validateStep1() {
+      return (
+        this.$refs.name.validate() &&
+        this.$refs.tokenName.validate() &&
+        this.$refs.tokenSymbol.validate() &&
+        this.$refs.benefit.validate()
+      );
+    },
     onSubmit() {
       this.$store.dispatch("communities/create", {
-        community: { ...this.$data }
+        community: { ...this.$data.community }
       });
-    },
-
-    onReset() {
-      this.name = null;
-      this.tokenName = null;
-      this.tokenSymbol = null;
-      this.benefit = null;
     }
   }
 };
