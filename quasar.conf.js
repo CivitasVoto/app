@@ -60,10 +60,17 @@ module.exports = function (ctx) {
         "QTable",
         "QTh",
         "QTr",
-        "QTd"
+        "QTd",
+        "QDialog",
+        "QStep",
+        "QStepper",
+        "QStepperNavigation"
       ],
 
-      directives: ["Ripple"],
+      directives: [
+        "Ripple",
+        "ClosePopup"
+      ],
 
       // Quasar plugins
       plugins: ["Notify"],

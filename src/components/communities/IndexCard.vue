@@ -24,13 +24,17 @@
           @click="$store.dispatch('communities/join', {community: community.address})"
         >Join</q-btn>
       </div>
-      <BuySell />
+      <q-btn label="Trade" color="primary" @click="trade = true" class="q-mt-md" />
     </q-card-section>
+    <q-dialog v-model="trade">
+      <TradeWidget />
+    </q-dialog>
   </q-card>
 </template>
 
 <script>
-import BuySell from "./BuySell";
+//import BuySell from "./BuySell";
+import TradeWidget from "src/components/global/TradeWidget";
 
 export default {
   props: {
@@ -43,22 +47,26 @@ export default {
   },
   data() {
     return {
-      account: ""
+      account: "",
+      trade: false
     };
   },
   async mounted() {
-    [this.account] = await this.$web3.eth.getAccounts();
+    // UNCOMMENT FOR PRODUCTION
+    // [this.account] = await this.$web3.eth.getAccounts();
   },
   methods: {
     isMember() {
-      const member = this.$props.community.members.find(
-        member => member == this.account
-      );
-      return Boolean(member);
+      // UNCOMMENT FOR PRODUCTION
+      // const member = this.$props.community.members.find(
+      //   member => member == this.account
+      // );
+      // return Boolean(member);
     }
   },
   components: {
-    BuySell
+    TradeWidget
+    //BuySell
   }
 };
 </script>
