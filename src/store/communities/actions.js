@@ -62,7 +62,7 @@ export async function create(context, payload) {
 
   context.commit("addCommunity", {
     community: {
-      communityAddress,
+      address: communityAddress,
       ...payload.community,
       price: 1,
       members: []
