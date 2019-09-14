@@ -2,8 +2,7 @@
   <!-- eslint-disable -->
   <q-layout view="hHh lpR fFf">
     <q-header elevated class="row full-width q-pa-sm">
-      <q-toolbar>
-        <q-toolbar-title>
+        <q-toolbar-title class="col-xs-12 col-sm-4 col-md-3">
           <q-btn
             flat
             no-caps
@@ -14,27 +13,57 @@
             color="white"
           />
         </q-toolbar-title>
-        <q-card class="row q-px-sm">
-          <q-form @submit="onConvert" class="row">
-            <!-- SEND -->
-            <q-select borderless dense v-model="sendModel" :options="options" class="q-ma-sm" />
-            <q-input dense outlined v-model="trade.sendAmount" label="Send Amount" lazy-rules />
+        <q-card class="col-xs-12 col-sm-8 q-px-sm">
+          <q-form @submit="onConvert" class="row full-width justify-evenly">
+            <div class="col-4 row">
+              <!-- SEND -->
+              <q-select
+                borderless
+                dense
+                v-model="sendModel"
+                :options="options"
+                class="col-sm-12 col-md-4 q-ma-md-sm"
+              />
+              <q-input
+                dense
+                outlined
+                v-model="trade.sendAmount"
+                label="Send Amount"
+                lazy-rules
+                class="col-sm-12 col-md-7 q-mb-xs-sm q-mb-md-none"
+              />
+            </div>
 
             <!-- SWAP BUTTON -->
-            <q-btn flat size="lg" icon="swap_horizontal_circle" color="primary" />
-
-            <!-- RECEIVE -->
-            <q-select borderless dense v-model="receiveModel" :options="options" class="q-ma-sm" />
-            <q-input
-              dense
-              outlined
-              v-model="trade.receiveAmount"
-              label="Receive Amount"
-              lazy-rules
+            <q-btn
+              class="col-md-1 q-ma-none q-pa-none"
+              flat
+              size="lg"
+              icon="swap_horizontal_circle"
+              color="primary"
             />
 
-            <!-- CONVERT BUTTON -->
-            <q-btn size="md" label="Convert" type="submit" color="primary" class="q-ma-sm" />
+            <div class="col-4 row">
+              <!-- RECEIVE -->
+              <q-select
+                borderless
+                dense
+                v-model="receiveModel"
+                :options="options"
+                class="col-sm-12 col-md-4 q-ma-md-sm"
+              />
+              <q-input
+                dense
+                outlined
+                v-model="trade.receiveAmount"
+                label="Receive Amount"
+                lazy-rules
+                class="col-sm-12 col-md-7 q-mb-xs-sm q-mb-md-none"
+              />
+            </div>
+
+            <!-- TRADE BUTTON -->
+            <q-btn size="sm" label="Trade" type="submit" color="primary" class="col-2 q-ma-sm" />
           </q-form>
         </q-card>
       </q-toolbar>
