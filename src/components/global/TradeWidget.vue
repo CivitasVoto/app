@@ -6,10 +6,18 @@
       <div class="row full-width q-pb-md justify-center">
         <div>
           Convert to:
-          <b>{{ trade.receiveToken.name ? trade.receiveToken.name : "The Network Token" }}</b>
+          <b>{{ trade.receiveToken.name }}</b>
         </div>
       </div>
-      <q-form class="column items-center">
+      <q-form
+        @submit.prevent="$store.dispatch('bancor/convert',{
+          sendToken: trade.sendToken.address,
+          receiveToken: trade.receiveToken.address,
+          amount: $web3.utils.toWei(trade.sendAmount),
+          sendingETH: trade.sendToken.symbol == 'ETH' ? true : false
+        })"
+        class="column items-center"
+      >
         <!-- SEND -->
         <div class="row full-width justify-center">
           <q-input
@@ -29,6 +37,7 @@
             label="Token"
             stack-label
           />
+          <span>Address: {{ trade.sendToken.address }}</span>
         </div>
         <!-- SWAP BUTTON -->
         <q-btn flat size="lg" icon="swap_vertical_circle" color="primary" class="q-my-xs" />
@@ -54,6 +63,7 @@
             label="Token"
             stack-label
           />
+          <span>Address: {{ trade.receiveToken.address }}</span>
         </div>
 
         <!-- CONVERT BUTTON -->
@@ -80,9 +90,9 @@ export default {
       dense: true,
       denseOpts: true,
       trade: {
-        sendToken: "ETH",
+        sendToken: "",
         sendAmount: "",
-        receiveToken: "TNT",
+        receiveToken: "",
         receiveAmount: ""
       },
       tokens: []
@@ -92,6 +102,8 @@ export default {
     this.tokens = this.$store.getters["communities/communityTokens"]
       .concat(await this.$store.getters["communities/networkTokens"])
       .reverse();
+    this.trade.sendToken = this.tokens[0];
+    this.trade.receiveToken = this.tokens[1];
   }
 };
 </script>
