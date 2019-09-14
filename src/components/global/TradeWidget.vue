@@ -6,7 +6,7 @@
       <div class="row full-width q-pb-md justify-center">
         <div>
           Convert to:
-          <b>{{ trade.receiveToken }}</b>
+          <b>{{ trade.receiveToken.name ? trade.receiveToken.name : "The Network Token" }}</b>
         </div>
       </div>
       <q-form class="column items-center">
@@ -22,8 +22,10 @@
           <q-select
             outlined
             class="col-grow"
-            v-model="sendModel"
+            v-model="trade.sendToken"
             :options="tokens"
+            option-value="address"
+            option-label="symbol"
             label="Token"
             stack-label
           />
@@ -45,8 +47,10 @@
           <q-select
             outlined
             class="col-grow"
-            v-model="receiveModel"
+            v-model="trade.receiveToken"
             :options="tokens"
+            option-value="address"
+            option-label="symbol"
             label="Token"
             stack-label
           />
@@ -78,12 +82,9 @@ export default {
       trade: {
         sendToken: "ETH",
         sendAmount: "",
-        receiveToken: "MYCOM",
+        receiveToken: "TNT",
         receiveAmount: ""
       },
-      sendModel: "ETH",
-      receiveModel: "MYCOM",
-      options: ["ETH", "MYCOM", "BNT", "PLNTE", "GRNPC"],
       tokens: []
     };
   },

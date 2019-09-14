@@ -28,14 +28,14 @@ export async function networkTokens() {
 
   networkTokens.push({
     name: await networkToken.name(),
-    label: await networkToken.symbol(),
-    value: await network.networkToken()
+    symbol: await networkToken.symbol(),
+    address: await network.networkToken()
   });
 
   networkTokens.push({
     name: await etherToken.name(),
-    label: await etherToken.symbol(),
-    value: await network.etherToken()
+    symbol: await etherToken.symbol(),
+    address: await network.etherToken()
   });
 
   return networkTokens;
@@ -50,8 +50,8 @@ export function communityTokens(state) {
   state.communities.forEach(community => {
     communityTokens.push({
       name: community.tokenName,
-      label: community.tokenSymbol,
-      value: community.tokenAddress
+      symbol: community.tokenSymbol,
+      address: community.tokenAddress
     });
   });
 
