@@ -15,14 +15,24 @@
         />
       </q-toolbar-title>
       <q-card class="col-xs-12 col-sm-8 q-px-sm">
-        <q-form @submit="onConvert" class="row full-width justify-evenly">
+        <q-form
+          @submit.prevent="$store.dispatch('bancor/convert',{
+          sendToken: trade.sendToken.address,
+          receiveToken: trade.receiveToken.address,
+          amount: $web3.utils.toWei(trade.sendAmount),
+          sendingETH: trade.sendToken.symbol == 'ETH' ? true : false
+        })"
+          class="row full-width justify-evenly"
+        >
           <div class="col-4 row">
             <!-- SEND -->
             <q-select
               borderless
               dense
-              v-model="sendModel"
-              :options="options"
+              v-model="trade.sendToken"
+              :options="tokens"
+              option-value="address"
+              option-label="symbol"
               class="col-sm-12 col-md-4 q-ma-md-sm"
             />
             <q-input
@@ -42,6 +52,7 @@
             size="lg"
             icon="swap_horizontal_circle"
             color="primary"
+            @click="swap"
           />
 
           <div class="col-4 row">
@@ -49,8 +60,10 @@
             <q-select
               borderless
               dense
-              v-model="receiveModel"
-              :options="options"
+              v-model="trade.receiveToken"
+              :options="tokens"
+              option-value="address"
+              option-label="symbol"
               class="col-sm-12 col-md-4 q-ma-md-sm"
             />
             <q-input
@@ -87,23 +100,31 @@ export default {
       dense: true,
       denseOpts: true,
       trade: {
-        sendToken: "ETH",
+        sendToken: "",
         sendAmount: "",
-        receiveToken: "MYCOM",
+        receiveToken: "",
         receiveAmount: ""
       },
-      sendModel: "ETH",
-      receiveModel: "MYCOM",
-      options: ["ETH", "MYCOM", "BNT", "PLNTE", "GRNPC"]
+      tokens: []
     };
   },
   async mounted() {
     const [account] = await this.$web3.eth.getAccounts();
     this.account = account;
+
+    this.tokens = this.$store.getters["communities/communityTokens"]
+      .concat(await this.$store.getters["communities/networkTokens"])
+      .reverse();
+    this.trade.sendToken = this.tokens[0];
+    this.trade.receiveToken = this.tokens[1];
   },
   methods: {
     openURL,
-    onConvert() {}
+    swap() {
+      const hold = this.trade.sendToken;
+      this.trade.sendToken = this.trade.receiveToken;
+      this.trade.receiveToken = hold;
+    }
   }
 };
 </script>
