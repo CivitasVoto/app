@@ -5,7 +5,7 @@
       <section class="column items-center gradient-bg full-width q-mb-md">
         <div class="text-h6 q-mt-xl">User:</div>
         <div class="row q-mb-xl col-shrink">
-          <div class="col-12">{{user.name}}</div>
+          <div class="col-12">{{ $route.params.account }}</div>
         </div>
       </section>
 
@@ -59,13 +59,6 @@ export default {
         ]
       }
     };
-  },
-  computed: {
-    // community() {
-    //   return this.$store.getters["communities/detailsByAddress"](
-    //     this.$route.params.address
-    //   );
-    // }
   },
   components: {
     TradeWidget,

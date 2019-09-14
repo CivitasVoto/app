@@ -17,7 +17,7 @@ const routes = [
         component: () => import("pages/communities/Edit.vue")
       },
       {
-        path: "users/0xFC680634ca2E37b342266412c4BAB1F0D2aad1f8", // change to users/:id
+        path: "users/:account", // change to users/:id
         component: () => import("pages/users/Profile.vue")
       }
     ]
