@@ -7934,10 +7934,53 @@
       "links": {},
       "address": "0x53567Fb8d13577C4bd789C241831746D0A0cFC02",
       "transactionHash": "0x9e5d7b092d26bee745e19c8a8667efcab9d46e6dd5092a2fb10dda1e77e9bca1"
+    },
+    "42": {
+      "events": {
+        "0xfc08d1253c81bcd5444fc7056ef1f5a5df4c9220b6fd70d7449267f1f0f29918": {
+          "anonymous": false,
+          "inputs": [
+            {
+              "indexed": true,
+              "name": "_contractName",
+              "type": "bytes32"
+            },
+            {
+              "indexed": false,
+              "name": "_contractAddress",
+              "type": "address"
+            }
+          ],
+          "name": "AddressUpdate",
+          "type": "event",
+          "signature": "0xfc08d1253c81bcd5444fc7056ef1f5a5df4c9220b6fd70d7449267f1f0f29918"
+        },
+        "0x343765429aea5a34b3ff6a3785a98a5abb2597aca87bfbb58632c173d585373a": {
+          "anonymous": false,
+          "inputs": [
+            {
+              "indexed": true,
+              "name": "_prevOwner",
+              "type": "address"
+            },
+            {
+              "indexed": true,
+              "name": "_newOwner",
+              "type": "address"
+            }
+          ],
+          "name": "OwnerUpdate",
+          "type": "event",
+          "signature": "0x343765429aea5a34b3ff6a3785a98a5abb2597aca87bfbb58632c173d585373a"
+        }
+      },
+      "links": {},
+      "address": "0x264F6c62D66eCf74b5386bc52F45ebA9D715795A",
+      "transactionHash": "0x9908cd9407f013ab77a3765db278f7bcb92318e6d2ff4d0389df8188088374e8"
     }
   },
   "schemaVersion": "3.0.11",
-  "updatedAt": "2019-09-14T02:32:03.465Z",
+  "updatedAt": "2019-09-14T03:02:37.240Z",
   "devdoc": {
     "methods": {
       "acceptOwnership()": {

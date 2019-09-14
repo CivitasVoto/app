@@ -1301,10 +1301,16 @@
       "links": {},
       "address": "0x79b3A1793F864D480A16689cfDf9CeBE46f590B5",
       "transactionHash": "0xdcc0ac493c361139c4068dc6a6ddfaa52bcc016f8b4fd478c47b2ecb1457f1b2"
+    },
+    "42": {
+      "events": {},
+      "links": {},
+      "address": "0xb87674d09CCDAC400821010e1D09E32868053114",
+      "transactionHash": "0xa916ed626d55de3eb0fef2a8c623cfb09564f2e49f8132371d6c37bef763706d"
     }
   },
   "schemaVersion": "3.0.11",
-  "updatedAt": "2019-09-14T02:32:03.471Z",
+  "updatedAt": "2019-09-14T03:02:37.251Z",
   "devdoc": {
     "methods": {}
   },

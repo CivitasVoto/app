@@ -3514,10 +3514,16 @@
       "links": {},
       "address": "0xd5a391c3b328cb466c7fFc73C11A7923B2DF22d2",
       "transactionHash": "0xab51577a9f87c226aa284bae863c73c550329f96ff3e0f0266ce0ebe11289f54"
+    },
+    "42": {
+      "events": {},
+      "links": {},
+      "address": "0x5474eED6f5893a16cB825CBCCffdDc017FCd5CC1",
+      "transactionHash": "0x89f367537191174adc07f4af302479c653270a710bb4c55e755a301aad5e84b2"
     }
   },
   "schemaVersion": "3.0.11",
-  "updatedAt": "2019-09-14T02:32:03.450Z",
+  "updatedAt": "2019-09-14T03:02:37.228Z",
   "devdoc": {
     "methods": {
       "createCommunity(string,string,string,string)": {

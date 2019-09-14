@@ -68180,10 +68180,16 @@
       "links": {},
       "address": "0x5Cd40cD92CE730cA36681310d49089FFE93f8c70",
       "transactionHash": "0xdeb7fe6590a8a352e37445c29dead5f1834e94cac46a5c2d0e05085b6eb92427"
+    },
+    "42": {
+      "events": {},
+      "links": {},
+      "address": "0x3694E739A7B655DA9d0AF993e8Cb037C6bb71793",
+      "transactionHash": "0x918462666a3910f9ee03395e9e791df2a189a1d0a36efd7d2a1f69e93b04299c"
     }
   },
   "schemaVersion": "3.0.11",
-  "updatedAt": "2019-09-14T02:19:49.831Z",
+  "updatedAt": "2019-09-14T02:59:04.916Z",
   "devdoc": {
     "methods": {
       "calculateCrossConnectorReturn(uint256,uint32,uint256,uint32,uint256)": {

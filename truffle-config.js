@@ -23,16 +23,8 @@ module.exports = {
           `https://ropsten.infura.io/v3/${infuraKey}`
         ),
       network_id: 3,
-      skipDryRun: true
-    },
-    rinkeby: {
-      provider: () =>
-        new HDWalletProvider(
-          mnemonic,
-          `https://rinkeby.infura.io/v3/${infuraKey}`
-        ),
-      network_id: 4,
-      skipDryRun: true
+      skipDryRun: true,
+      gas: 6721975
     },
     kovan: {
       provider: () =>

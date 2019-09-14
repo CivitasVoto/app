@@ -864,10 +864,16 @@
       "links": {},
       "address": "0x82bf5e09F8Bf4a891e54e021Eaa58812c0f3769d",
       "transactionHash": "0x40119aefe7426fcb15ee918949f70f1042bd0330ec74345da1ce10be276fb083"
+    },
+    "42": {
+      "events": {},
+      "links": {},
+      "address": "0xe37299aC912c857d4Bc2729a448fE5073c972f0e",
+      "transactionHash": "0xa59f5270b44a0d975a2ddfe1e52291b649e38b60635074f82fce4081c0e07b65"
     }
   },
   "schemaVersion": "3.0.11",
-  "updatedAt": "2019-09-14T02:19:49.873Z",
+  "updatedAt": "2019-09-14T02:59:04.948Z",
   "devdoc": {
     "methods": {
       "acceptOwnership()": {

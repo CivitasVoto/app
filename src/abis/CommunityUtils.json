@@ -1089,10 +1089,16 @@
       "links": {},
       "address": "0xEC6A5782Fa64e59815f72be218076a7fF9d13cF4",
       "transactionHash": "0x9bff97bb94ea8362d89ababc10024ecce37e577dc39229ad68c2e5a6c65e3c8b"
+    },
+    "42": {
+      "events": {},
+      "links": {},
+      "address": "0xd740cD123211572c82095Ae6DC5dB923eF92136b",
+      "transactionHash": "0xef7d647864ca89efb0e057f8aaa08a630f784eb262b073ab9a11ecaea35769db"
     }
   },
   "schemaVersion": "3.0.11",
-  "updatedAt": "2019-09-14T02:32:03.575Z",
+  "updatedAt": "2019-09-14T03:02:37.356Z",
   "devdoc": {
     "methods": {
       "createConverter(address,address)": {
