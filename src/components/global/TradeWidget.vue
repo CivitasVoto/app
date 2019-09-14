@@ -40,7 +40,14 @@
           <span>Address: {{ trade.sendToken.address }}</span>
         </div>
         <!-- SWAP BUTTON -->
-        <q-btn flat size="lg" icon="swap_vertical_circle" color="primary" class="q-my-xs" />
+        <q-btn
+          @click="swap"
+          flat
+          size="lg"
+          icon="swap_vertical_circle"
+          color="primary"
+          class="q-my-xs"
+        />
 
         <!-- RECEIVE -->
         <!-- <q-input outlined v-model="trade.receiveAmount" label="Receive Amount *" lazy-rules /> -->
@@ -104,6 +111,13 @@ export default {
       .reverse();
     this.trade.sendToken = this.tokens[0];
     this.trade.receiveToken = this.tokens[1];
+  },
+  methods: {
+    swap() {
+      const hold = this.trade.sendToken;
+      this.trade.sendToken = this.trade.receiveToken;
+      this.trade.receiveToken = hold;
+    }
   }
 };
 </script>
