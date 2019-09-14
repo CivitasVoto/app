@@ -74,7 +74,7 @@
         icon="create_new_folder"
         :done="step > 2"
         :header-nav="step > 2"
-      >Hang tight. We're creating your community...</q-step>
+      >Hang tight. We're creating your community... Please accept both transactions.</q-step>
     </q-stepper>
   </q-page>
 </template>
