@@ -52436,10 +52436,16 @@
       "links": {},
       "address": "0x38fFEc68A8d5b5A9C5Fd1d312e406dE736A2f060",
       "transactionHash": "0x9ff02be6f1d54d975d7039bbd74dbe72d53c74f45b223410890cd0ad1a9a54ce"
+    },
+    "5777": {
+      "events": {},
+      "links": {},
+      "address": "0x00556bF5D7ca29613F9B185F1212b034ed9Aba3E",
+      "transactionHash": "0x40c36a604191f79955c64c1698a58e55766a7438670775e2806bccdebf96340b"
     }
   },
   "schemaVersion": "3.0.11",
-  "updatedAt": "2019-09-14T03:02:37.270Z",
+  "updatedAt": "2019-09-14T03:19:11.583Z",
   "devdoc": {
     "methods": {
       "acceptOwnership()": {

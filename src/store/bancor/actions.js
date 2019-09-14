@@ -18,16 +18,17 @@ export async function convert(context, payload) {
 
   const path = [payload.sendToken, networkToken, payload.receiveToken];
 
-  const expectedReturn = await converter.getReturn(
-    payload.sendToken, // From
-    payload.receiveToken, // To
-    payload.amount // Amount
-  );
+  // const expectedReturn = await converter.getReturn(
+  //   payload.sendToken, // From
+  //   payload.receiveToken, // To
+  //   payload.amount // Amount
+  // );
 
   await converter.quickConvert(
     path, // Path
     payload.amount, // Amount
-    expectedReturn[0], // Min return
+    // expectedReturn[0], // Min return
+    1,
     {
       from: account,
       value: payload.sendingETH ? payload.amount : 0

@@ -2568,10 +2568,16 @@
       "links": {},
       "address": "0x5056785C8a121056B3F61004cbdf9F6Fed43A069",
       "transactionHash": "0x41faba6864ccc9fe9222afe37759413e9387c25067287784413b459185d88642"
+    },
+    "5777": {
+      "events": {},
+      "links": {},
+      "address": "0x0D3011d0403e285B11E506fF8F4cf247361081b3",
+      "transactionHash": "0x74062b0e8cd19a2f57fda07de43503fe4115c3491c1f8281c93023dd28a88de1"
     }
   },
   "schemaVersion": "3.0.11",
-  "updatedAt": "2019-09-14T02:59:04.895Z",
+  "updatedAt": "2019-09-14T03:19:09.095Z",
   "devdoc": {
     "methods": {
       "enableFeatures(uint256,bool)": {
