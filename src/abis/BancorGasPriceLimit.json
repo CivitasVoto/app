@@ -1494,8 +1494,8 @@
     "42": {
       "events": {},
       "links": {},
-      "address": "0x2bEfAef9F7589DB4Aa35cDBabBA5300De427ff05",
-      "transactionHash": "0x19bb854287185709b28a1a68a500f2770db5362a93619be5ddda0b02c8215000"
+      "address": "0x25863deD4e10eAde2e3c3C8E35Ca1Cab25ee82aB",
+      "transactionHash": "0x2bb4546dd3cf854b5b9b719525fe9f26598210c6bf6c9e3a8dfb0cdcf9d6bac6"
     },
     "5777": {
       "events": {},
@@ -1505,7 +1505,7 @@
     }
   },
   "schemaVersion": "3.0.11",
-  "updatedAt": "2019-09-14T03:19:09.101Z",
+  "updatedAt": "2019-09-16T21:09:00.606Z",
   "devdoc": {
     "methods": {
       "acceptOwnership()": {

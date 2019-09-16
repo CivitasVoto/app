@@ -3518,8 +3518,8 @@
     "42": {
       "events": {},
       "links": {},
-      "address": "0x5474eED6f5893a16cB825CBCCffdDc017FCd5CC1",
-      "transactionHash": "0x89f367537191174adc07f4af302479c653270a710bb4c55e755a301aad5e84b2"
+      "address": "0xeF30317722aA3CcDc91820B4C57715cA28610F70",
+      "transactionHash": "0x0599c34937a7adce732926aeeab351c6a9ecb71a79ff2d0319f2d269e47ecc56"
     },
     "5777": {
       "events": {},
@@ -3529,7 +3529,7 @@
     }
   },
   "schemaVersion": "3.0.11",
-  "updatedAt": "2019-09-14T03:19:11.542Z",
+  "updatedAt": "2019-09-16T21:12:01.120Z",
   "devdoc": {
     "methods": {
       "createCommunity(string,string,string,string)": {

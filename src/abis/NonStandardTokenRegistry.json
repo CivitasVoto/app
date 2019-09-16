@@ -868,8 +868,8 @@
     "42": {
       "events": {},
       "links": {},
-      "address": "0xe37299aC912c857d4Bc2729a448fE5073c972f0e",
-      "transactionHash": "0xa59f5270b44a0d975a2ddfe1e52291b649e38b60635074f82fce4081c0e07b65"
+      "address": "0xCA50949E00AEBD15B8f2f275C4782f11D2c0e65E",
+      "transactionHash": "0xee2fce2d6b122d5452e7ee0913006bfff297d91f45cdce1d8398696ef5195133"
     },
     "5777": {
       "events": {},
@@ -879,7 +879,7 @@
     }
   },
   "schemaVersion": "3.0.11",
-  "updatedAt": "2019-09-14T03:19:09.160Z",
+  "updatedAt": "2019-09-16T21:09:00.648Z",
   "devdoc": {
     "methods": {
       "acceptOwnership()": {

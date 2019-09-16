@@ -112,9 +112,9 @@ export default {
     const [account] = await this.$web3.eth.getAccounts();
     this.account = account;
 
-    this.tokens = this.$store.getters["communities/communityTokens"]
-      .concat(await this.$store.getters["communities/networkTokens"])
-      .reverse();
+    this.tokens = await this.$store.getters[
+      "communities/networkTokens"
+    ].reverse();
     this.trade.sendToken = this.tokens[0];
     this.trade.receiveToken = this.tokens[1];
   },

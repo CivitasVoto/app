@@ -52434,8 +52434,8 @@
     "42": {
       "events": {},
       "links": {},
-      "address": "0x38fFEc68A8d5b5A9C5Fd1d312e406dE736A2f060",
-      "transactionHash": "0x9ff02be6f1d54d975d7039bbd74dbe72d53c74f45b223410890cd0ad1a9a54ce"
+      "address": "0xeE2457d9C3ccCe078E5bc35F552ffe9B81B23d41",
+      "transactionHash": "0x8fbbb464a859a85387ed39893d7520463405d4146726b9e2634519aaa0fe7810"
     },
     "5777": {
       "events": {},
@@ -52445,7 +52445,7 @@
     }
   },
   "schemaVersion": "3.0.11",
-  "updatedAt": "2019-09-14T03:19:11.583Z",
+  "updatedAt": "2019-09-16T21:12:01.161Z",
   "devdoc": {
     "methods": {
       "acceptOwnership()": {
