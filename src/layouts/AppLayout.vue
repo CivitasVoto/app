@@ -2,17 +2,9 @@
   <!-- eslint-disable -->
   <q-layout view="hHh lpR fFf">
     <q-header elevated class="row full-width q-pa-sm">
-      <q-btn class="q-ml-md" flat size="md" icon="person" :to="`/users/${account}`" />
       <q-toolbar-title class="col-xs-12 col-sm-4 col-md-3">
-        <q-btn
-          flat
-          no-caps
-          size="lg"
-          to="/"
-          label="CommunitETHs"
-          icon="nature_people"
-          color="white"
-        />
+        <q-btn class="q-ml-md" flat size="md" icon="person" :to="`/users/${account}`" />
+        <q-btn flat no-caps size="lg" to="/" label="Civitas" icon="nature_people" color="white" />
       </q-toolbar-title>
       <q-card class="col-xs-12 col-sm-8 q-px-sm">
         <q-form
