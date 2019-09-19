@@ -103,7 +103,7 @@
         :done="step > 3"
         :header-nav="step > 3"
       >
-        <div class="row q-pa-md full-width justify-center q-gutter-md">
+        <div class="row full-width justify-center q-pa-md q-gutter-md">
           <div class="col">
             <q-input
               dense
@@ -113,16 +113,6 @@
               lazy-rules
               :rules="[ val => val && val.length > 0 || 'Please type something']"
               ref="tokenPrice"
-            />
-
-            <q-input
-              dense
-              filled
-              v-model="community.tokenStability"
-              label="Token Stability *"
-              lazy-rules
-              :rules="[ val => val && val.length > 0 || 'Please type something']"
-              ref="tokenStability"
             />
 
             <q-input
@@ -144,6 +134,19 @@
               :rules="[ val => val && val.length > 0 || 'Please type something']"
               ref="initialCost"
             />
+          </div>
+
+          <div class="col text-center">
+            <q-knob
+              show-value
+              font-size="12px"
+              v-model="community.connectorWeight"
+              size="150px"
+              :thickness="0.5"
+              color="teal"
+              track-color="grey-3"
+              class="q-ma-md"
+            >{{ value }}%</q-knob>
           </div>
         </div>
 
@@ -173,18 +176,23 @@ export default {
   data() {
     return {
       community: {
-        name: null,
-        description: null,
-        address: null,
-        initialCost: null,
-        tokenName: null,
-        tokenSymbol: null,
-        tokenPrice: null,
-        tokenStability: null,
-        tokenCount: null
+        name: "MyCoin Community Name",
+        description: "MyCoin Community Description",
+        address: "MyCoin Address 80918",
+        tokenName: "MyCoin",
+        tokenSymbol: "MYC",
+        tokenPrice: "1.00",
+        tokenCount: "1000",
+        connectorWeight: "0.5",
+        initialCost: "0"
       },
-      step: 1
+      step: 3
     };
+  },
+  computed: {
+    initialCost() {
+      return this.$refs.community.tokenPrice * this.$refs.community.tokenCount;
+    }
   },
   methods: {
     validateStep1() {
@@ -201,9 +209,9 @@ export default {
     },
     validateStep3() {
       return (
-        this.$refs.tokenStability.validate() &&
         this.$refs.tokenPrice.validate() &&
         this.$refs.tokenCount.validate() &&
+        this.$refs.connectorWeight.validate() &&
         this.$refs.initialCost.validate()
       );
     },

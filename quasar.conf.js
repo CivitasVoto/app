@@ -64,7 +64,8 @@ module.exports = function (ctx) {
         "QDialog",
         "QStep",
         "QStepper",
-        "QStepperNavigation"
+        "QStepperNavigation",
+        "QKnob"
       ],
 
       directives: [
