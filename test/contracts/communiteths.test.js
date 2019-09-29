@@ -8,7 +8,7 @@ require("chai")
   .use(require("chai-as-promised"))
   .should();
 
-contract("Network", ([deployer, bancorTester]) => {
+contract("Network", ([deployer]) => {
   // Cross-test instance variables
   let network;
   let result; // Transaction receipt from creating community
