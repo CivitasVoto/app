@@ -2,7 +2,7 @@
   <!-- eslint-disable -->
   <div>
     <template>
-      <div class="q-pa-sm">
+      <div class="q-px-sm">
         <q-table title="Communities Joined" :data="data" :columns="columns" row-key="name" />
       </div>
     </template>

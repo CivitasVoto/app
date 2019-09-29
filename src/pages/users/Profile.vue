@@ -13,10 +13,8 @@
         class="row items-start justify-center full-width text-center q-col-gutter-md q-pr-md"
       >
         <div class="col-12 col-md-7 justify-center">
-          <div class="bg-white rounded-borders full-width text-left q-pa-xs">
-            <CommunitiesJoined />
-            <TokensHeld />
-          </div>
+          <CommunitiesJoined />
+          <TokensHeld />
         </div>
 
         <div class="col-12 col-md-4 column">
