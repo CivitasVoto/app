@@ -103,13 +103,13 @@
         :done="step > 3"
         :header-nav="step > 3"
       >
-        <div class="row full-width justify-center q-pa-md q-gutter-md">
-          <div class="col">
+        <div class="row q-py-md q-col-gutter-md items-end">
+          <div class="col-xs-12 col-sm-4">
             <q-input
               dense
               filled
               v-model="community.tokenPrice"
-              label="Token Price *"
+              label="Initial Token Price *"
               lazy-rules
               :rules="[ val => val && val.length > 0 || 'Please type something']"
               ref="tokenPrice"
@@ -118,35 +118,40 @@
             <q-input
               dense
               filled
-              v-model="community.tokenCount"
-              label="Token Count"
+              v-model="initialDeposit"
+              label="Initial Deposit"
               lazy-rules
               :rules="[ val => val && val.length > 0 || 'Please type something']"
-              ref="tokenCount"
-            />
-
-            <q-input
-              dense
-              filled
-              v-model="community.initialCost"
-              label="Initial Cost"
-              lazy-rules
-              :rules="[ val => val && val.length > 0 || 'Please type something']"
-              ref="initialCost"
+              ref="initialDeposit"
             />
           </div>
 
-          <div class="col text-center">
+          <div class="col-xs-12 col-sm-4 text-center">
+            <div>Reserve Ratio:</div>
             <q-knob
               show-value
               font-size="12px"
-              v-model="community.connectorWeight"
+              v-model="community.reserveRatio"
               size="150px"
               :thickness="0.5"
               color="teal"
               track-color="grey-3"
-              class="q-ma-md"
-            >{{ value }}%</q-knob>
+            >{{ community.reserveRatio }}%</q-knob>
+          </div>
+
+          <div class="col-xs-12 col-sm-4 text-center">
+            <div>Initial Mint:</div>
+            <q-knob
+              :min="1"
+              :max="1000"
+              show-value
+              font-size="12px"
+              v-model="community.tokensToMint"
+              size="150px"
+              :thickness="0.5"
+              color="teal"
+              track-color="grey-3"
+            />
           </div>
         </div>
 
@@ -181,17 +186,30 @@ export default {
         address: "MyCoin Address 80918",
         tokenName: "MyCoin",
         tokenSymbol: "MYC",
-        tokenPrice: "1.00",
-        tokenCount: "1000",
-        connectorWeight: "0.5",
-        initialCost: "0"
+        tokenPrice: 0.01,
+        tokensToMint: 100,
+        reserveRatio: 50,
+        initialDeposit: 0
       },
-      step: 3
+      step: 1
     };
   },
   computed: {
-    initialCost() {
-      return this.$refs.community.tokenPrice * this.$refs.community.tokenCount;
+    initialDeposit: {
+      // getter
+      get: function() {
+        return (
+          this.community.tokenPrice *
+          (this.community.reserveRatio / 100) *
+          this.community.tokensToMint
+        );
+      },
+      // setter
+      set: function(newValue) {
+        this.community.tokenPrice =
+          newValue /
+          (this.community.tokensToMint * (this.community.reserveRatio / 100));
+      }
     }
   },
   methods: {
@@ -208,12 +226,11 @@ export default {
       );
     },
     validateStep3() {
-      return (
-        this.$refs.tokenPrice.validate() &&
-        this.$refs.tokenCount.validate() &&
-        this.$refs.connectorWeight.validate() &&
-        this.$refs.initialCost.validate()
-      );
+      return true;
+      // this.$refs.tokenPrice.validate() &&
+      // this.$refs.tokensToMint.validate() &&
+      // this.$refs.reserveRatio.validate() &&
+      // this.$refs.initialDeposit.validate()
     },
     onSubmit() {
       this.$store.dispatch("communities/create", {
