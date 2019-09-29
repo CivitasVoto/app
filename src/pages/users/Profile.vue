@@ -29,8 +29,8 @@
 
 <script>
 import TradeWidget from "src/components/global/TradeWidget";
-import CommunitiesJoined from "src/components/global/CommunitiesJoined";
-import TokensHeld from "src/components/global/TokensHeld";
+import CommunitiesJoined from "src/components/users/CommunitiesJoined";
+import TokensHeld from "src/components/users/TokensHeld";
 
 export default {
   data() {

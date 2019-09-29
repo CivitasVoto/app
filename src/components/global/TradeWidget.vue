@@ -19,7 +19,7 @@
         class="column items-center"
       >
         <!-- SEND -->
-        <div class="row full-width justify-center">
+        <div class="row full-width q-col-gutter-md">
           <q-input
             class="col-grow"
             outlined
@@ -37,7 +37,7 @@
             label="Token"
             stack-label
           />
-          <span>Address: {{ trade.sendToken.address }}</span>
+          <!-- <span>Address: {{ trade.sendToken.address }}</span> -->
         </div>
         <!-- SWAP BUTTON -->
         <q-btn
@@ -52,7 +52,7 @@
         <!-- RECEIVE -->
         <!-- <q-input outlined v-model="trade.receiveAmount" label="Receive Amount *" lazy-rules /> -->
 
-        <div class="row full-width justify-center">
+        <div class="row full-width q-col-gutter-md">
           <q-input
             class="col-grow"
             outlined
@@ -70,7 +70,7 @@
             label="Token"
             stack-label
           />
-          <span>Address: {{ trade.receiveToken.address }}</span>
+          <!-- <span>Address: {{ trade.receiveToken.address }}</span> -->
         </div>
 
         <!-- CONVERT BUTTON -->

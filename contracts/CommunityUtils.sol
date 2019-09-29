@@ -11,20 +11,23 @@ contract CommunityUtils {
      */
     function createConverter(
         Network _network,
-        Community _community
+        Community _community,
+        uint32 conversionFee,
+        uint32 reserveRatio,
+        uint32 amountToMint
     ) public {
         BancorConverter converter = new BancorConverter(
             _community.token(), // Create for this community's smart token
             _network.contractRegistry(),
-            10000, // Max conversion fee (1%)
+            conversionFee * 10000, // Max conversion fee PPM (10%)
             _network.networkToken(), // Initial connector token
-            1000000 // Connector weight PPM (100%)
+            reserveRatio * 10000 // Reserve Ratio PPM (100%)
         );
 
-        // _community.token().issue(_community.owner(), 1000000000000000000); // Issue 1 Community Token
+        _community.token().issue(_community.owner(), amountToMint); // Issue initial tokens
 
-        // _community.token().transferOwnership(converter);
-        // converter.acceptTokenOwnership();
+        _community.token().transferOwnership(converter);
+        converter.acceptTokenOwnership();
 
         _community.setConverter(converter);
     }
