@@ -103,8 +103,8 @@
         :done="step > 3"
         :header-nav="step > 3"
       >
-        <div class="row q-py-md q-col-gutter-md items-end">
-          <div class="col-xs-12 col-sm-4">
+        <div class="row q-py-md q-col-gutter-md items-center">
+          <div class="col-xs-12 q-col-gutter-md col-sm-4">
             <q-input
               dense
               filled
