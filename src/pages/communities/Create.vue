@@ -110,8 +110,6 @@
               filled
               v-model="community.tokenPrice"
               label="Initial Token Price *"
-              lazy-rules
-              :rules="[ val => val && val.length > 0 || 'Please type something']"
               ref="tokenPrice"
             />
 
@@ -120,8 +118,6 @@
               filled
               v-model="initialDeposit"
               label="Initial Deposit"
-              lazy-rules
-              :rules="[ val => val && val.length > 0 || 'Please type something']"
               ref="initialDeposit"
             />
           </div>
