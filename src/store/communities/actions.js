@@ -4,17 +4,14 @@ import contract from "truffle-contract";
 import NetworkABI from "src/abis/Network";
 import CommunityABI from "src/abis/Community";
 import SmartTokenABI from "src/abis/SmartToken";
-import CommunityUtilsABI from "src/abis/CommunityUtils";
 
 const Network = contract(NetworkABI);
 const Community = contract(CommunityABI);
 const SmartToken = contract(SmartTokenABI);
-const CommunityUtils = contract(CommunityUtilsABI);
 
 Network.setProvider(web3.currentProvider);
 Community.setProvider(web3.currentProvider);
 SmartToken.setProvider(web3.currentProvider);
-CommunityUtils.setProvider(web3.currentProvider);
 
 export async function initialize(context) {
   const network = await Network.deployed();
