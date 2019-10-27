@@ -1,15 +1,14 @@
 pragma solidity ^0.4.26;
 
-import "./interfaces/INetwork.sol";
-import "./bancor/utility/ContractRegistry.sol";
+import "./Community.sol";
+import "./bancor/token/SmartToken.sol";
 import "./bancor/converter/BancorConverter.sol";
 
-contract Network is INetwork {
+contract Network {
     Community[] private communities;
     SmartToken public etherToken;
     SmartToken public networkToken;
     BancorConverter public converter;
-    ContractRegistry public contractRegistry;
 
     /** @dev Network, Community, and Token addresses of a new community.
      */
@@ -26,32 +25,27 @@ contract Network is INetwork {
     constructor(
         SmartToken _etherToken,
         SmartToken _networkToken,
-        BancorConverter _converter,
-        ContractRegistry _contractRegistry
+        BancorConverter _converter
     ) public {
         etherToken = _etherToken;
         networkToken = _networkToken;
         converter = _converter;
-        contractRegistry = _contractRegistry;
     }
 
     /** @dev Create a new community and add to the network's communities.
       *
       * @param _name Name of the community to be created
-      * @param _benefit The benefit of joining the community
       * @param _tokenName Name of the community's token
       * @param _tokenSymbol Symbol of the community's token
       */
     function createCommunity(
         string _name,
-        string _benefit,
         string _tokenName,
         string _tokenSymbol
     ) public {
         Community community = new Community(
             msg.sender, // Owner
             _name, // Community Name
-            _benefit, // Community benefit
             _tokenName, // Token Name
             _tokenSymbol // Token Symbol
         );
@@ -63,6 +57,15 @@ contract Network is INetwork {
             community,
             community.token()
         );
+    }
+
+    function createConnector(
+        Community _community,
+        uint32 _reserveRatio,
+        uint256 _amountDeposited
+    ) public {
+        converter.addConnector(_community.token(), _reserveRatio, false);
+        networkToken.transferFrom(_community.owner(), converter, _amountDeposited);
     }
 
     /** @dev Get a list of the network's communities.

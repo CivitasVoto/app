@@ -1,14 +1,11 @@
 pragma solidity ^0.4.26;
 
-import "./interfaces/ICommunity.sol";
-import "./bancor/converter/BancorConverter.sol";
+import "./Network.sol";
 
-contract Community is ICommunity {
+contract Community {
     address public owner;
     string public name;
-    string public benefit;
     SmartToken public token;
-    BancorConverter public converter;
     address[] private members;
 
     mapping (address => bool) public memberExists;
@@ -16,13 +13,11 @@ contract Community is ICommunity {
     constructor(
         address _owner,
         string _name,
-        string _benefit,
         string _tokenName,
         string _tokenSymbol
     ) public {
         owner = _owner;
         name = _name;
-        benefit = _benefit;
         token = new SmartToken(_tokenName, _tokenSymbol, 18);
 
         // Add owner to members.
@@ -30,8 +25,17 @@ contract Community is ICommunity {
         members.push(owner);
     }
 
-    function setConverter(BancorConverter _converter) external {
-        converter = _converter;
+    function initializeConnector(
+        Network _network,
+        uint256 _amountToMint,
+        uint32 _reserveRatio,
+        uint256 _amountDeposited
+    ) public {
+        // Mint initial tokens
+        token.issue(owner, _amountToMint);
+
+        // Add token to network converter
+        _network.createConnector(this, _reserveRatio, _amountDeposited);
     }
 
     /** @dev Join this community.

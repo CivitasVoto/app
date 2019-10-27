@@ -45,10 +45,10 @@ contract("Network", ([deployer]) => {
       const name = await community.name();
       name.should.equal("Wild Water");
     });
-    it("tracks the benefit", async () => {
-      const benefit = await community.benefit();
-      benefit.should.equal("Access to the water park for 1 month!");
-    });
+    // it("tracks the benefit", async () => {
+    //   const benefit = await community.benefit();
+    //   benefit.should.equal("Access to the water park for 1 month!");
+    // });
     it("tracks the token name", async () => {
       const tokenName = await token.name();
       tokenName.should.equal("Waves");
