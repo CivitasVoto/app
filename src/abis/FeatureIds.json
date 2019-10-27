@@ -19,22 +19,22 @@
   "metadata": "{\"compiler\":{\"version\":\"0.4.26+commit.4563c3fc\"},\"language\":\"Solidity\",\"output\":{\"abi\":[{\"constant\":true,\"inputs\":[],\"name\":\"CONVERTER_CONVERSION_WHITELIST\",\"outputs\":[{\"name\":\"\",\"type\":\"uint256\"}],\"payable\":false,\"stateMutability\":\"view\",\"type\":\"function\"}],\"devdoc\":{\"methods\":{}},\"userdoc\":{\"methods\":{}}},\"settings\":{\"compilationTarget\":{\"/Users/cryptotom/code/gitcoin/communiteths/contracts/bancor/FeatureIds.sol\":\"FeatureIds\"},\"evmVersion\":\"byzantium\",\"libraries\":{},\"optimizer\":{\"enabled\":true,\"runs\":200},\"remappings\":[]},\"sources\":{\"/Users/cryptotom/code/gitcoin/communiteths/contracts/bancor/FeatureIds.sol\":{\"keccak256\":\"0xf45743ec73f6982aff22302af4a7bcce244bef0a3eb0aeacd8b32dad625bb454\",\"urls\":[\"bzzr://62d7b08633c4ca50e9cbfe0eafd6623cb6fc170278537f5c234069c0f9afa169\"]}},\"version\":1}",
   "bytecode": "0x6080604052348015600f57600080fd5b5060988061001e6000396000f300608060405260043610603e5763ffffffff7c010000000000000000000000000000000000000000000000000000000060003504166392d1abb781146043575b600080fd5b348015604e57600080fd5b5060556067565b60408051918252519081900360200190f35b6001815600a165627a7a72305820c618deb28e1f7befc90a8f83a9261354336a906d451a53392936fa252fd935240029",
   "deployedBytecode": "0x608060405260043610603e5763ffffffff7c010000000000000000000000000000000000000000000000000000000060003504166392d1abb781146043575b600080fd5b348015604e57600080fd5b5060556067565b60408051918252519081900360200190f35b6001815600a165627a7a72305820c618deb28e1f7befc90a8f83a9261354336a906d451a53392936fa252fd935240029",
-  "sourceMap": "215:121:7:-;;;;8:9:-1;5:2;;;30:1;27;20:12;5:2;215:121:7;;;;;;;",
-  "deployedSourceMap": "215:121:7:-;;;;;;;;;;;;;;;;;;;;;;;269:63;;8:9:-1;5:2;;;30:1;27;20:12;5:2;269:63:7;;;;;;;;;;;;;;;;;;;;;326:6;269:63;:::o",
+  "sourceMap": "215:121:6:-;;;;8:9:-1;5:2;;;30:1;27;20:12;5:2;215:121:6;;;;;;;",
+  "deployedSourceMap": "215:121:6:-;;;;;;;;;;;;;;;;;;;;;;;269:63;;8:9:-1;5:2;;;30:1;27;20:12;5:2;269:63:6;;;;;;;;;;;;;;;;;;;;;326:6;269:63;:::o",
   "source": "pragma solidity ^0.4.24;\r\n\r\n/**\r\n  * @dev Id definitions for bancor contract features\r\n  * \r\n  * Can be used to query the ContractFeatures contract to check whether a certain feature is supported by a contract\r\n*/\r\ncontract FeatureIds {\r\n    // converter features\r\n    uint256 public constant CONVERTER_CONVERSION_WHITELIST = 1 << 0;\r\n}\r\n",
   "sourcePath": "/Users/cryptotom/code/gitcoin/communiteths/contracts/bancor/FeatureIds.sol",
   "ast": {
     "absolutePath": "/Users/cryptotom/code/gitcoin/communiteths/contracts/bancor/FeatureIds.sol",
     "exportedSymbols": {
       "FeatureIds": [
-        2484
+        2467
       ]
     },
-    "id": 2485,
+    "id": 2468,
     "nodeType": "SourceUnit",
     "nodes": [
       {
-        "id": 2478,
+        "id": 2461,
         "literals": [
           "solidity",
           "^",
@@ -42,7 +42,7 @@
           ".24"
         ],
         "nodeType": "PragmaDirective",
-        "src": "0:24:7"
+        "src": "0:24:6"
       },
       {
         "baseContracts": [],
@@ -50,20 +50,20 @@
         "contractKind": "contract",
         "documentation": "@dev Id definitions for bancor contract features\r\n\r\nCan be used to query the ContractFeatures contract to check whether a certain feature is supported by a contract\r",
         "fullyImplemented": true,
-        "id": 2484,
+        "id": 2467,
         "linearizedBaseContracts": [
-          2484
+          2467
         ],
         "name": "FeatureIds",
         "nodeType": "ContractDefinition",
         "nodes": [
           {
             "constant": true,
-            "id": 2483,
+            "id": 2466,
             "name": "CONVERTER_CONVERSION_WHITELIST",
             "nodeType": "VariableDeclaration",
-            "scope": 2484,
-            "src": "269:63:7",
+            "scope": 2467,
+            "src": "269:63:6",
             "stateVariable": true,
             "storageLocation": "default",
             "typeDescriptions": {
@@ -71,10 +71,10 @@
               "typeString": "uint256"
             },
             "typeName": {
-              "id": 2479,
+              "id": 2462,
               "name": "uint256",
               "nodeType": "ElementaryTypeName",
-              "src": "269:7:7",
+              "src": "269:7:6",
               "typeDescriptions": {
                 "typeIdentifier": "t_uint256",
                 "typeString": "uint256"
@@ -86,7 +86,7 @@
                 "typeIdentifier": "t_rational_1_by_1",
                 "typeString": "int_const 1"
               },
-              "id": 2482,
+              "id": 2465,
               "isConstant": false,
               "isLValue": false,
               "isPure": true,
@@ -94,14 +94,14 @@
               "leftExpression": {
                 "argumentTypes": null,
                 "hexValue": "31",
-                "id": 2480,
+                "id": 2463,
                 "isConstant": false,
                 "isLValue": false,
                 "isPure": true,
                 "kind": "number",
                 "lValueRequested": false,
                 "nodeType": "Literal",
-                "src": "326:1:7",
+                "src": "326:1:6",
                 "subdenomination": null,
                 "typeDescriptions": {
                   "typeIdentifier": "t_rational_1_by_1",
@@ -114,14 +114,14 @@
               "rightExpression": {
                 "argumentTypes": null,
                 "hexValue": "30",
-                "id": 2481,
+                "id": 2464,
                 "isConstant": false,
                 "isLValue": false,
                 "isPure": true,
                 "kind": "number",
                 "lValueRequested": false,
                 "nodeType": "Literal",
-                "src": "331:1:7",
+                "src": "331:1:6",
                 "subdenomination": null,
                 "typeDescriptions": {
                   "typeIdentifier": "t_rational_0_by_1",
@@ -129,7 +129,7 @@
                 },
                 "value": "0"
               },
-              "src": "326:6:7",
+              "src": "326:6:6",
               "typeDescriptions": {
                 "typeIdentifier": "t_rational_1_by_1",
                 "typeString": "int_const 1"
@@ -138,24 +138,24 @@
             "visibility": "public"
           }
         ],
-        "scope": 2485,
-        "src": "215:121:7"
+        "scope": 2468,
+        "src": "215:121:6"
       }
     ],
-    "src": "0:338:7"
+    "src": "0:338:6"
   },
   "legacyAST": {
     "absolutePath": "/Users/cryptotom/code/gitcoin/communiteths/contracts/bancor/FeatureIds.sol",
     "exportedSymbols": {
       "FeatureIds": [
-        2484
+        2467
       ]
     },
-    "id": 2485,
+    "id": 2468,
     "nodeType": "SourceUnit",
     "nodes": [
       {
-        "id": 2478,
+        "id": 2461,
         "literals": [
           "solidity",
           "^",
@@ -163,7 +163,7 @@
           ".24"
         ],
         "nodeType": "PragmaDirective",
-        "src": "0:24:7"
+        "src": "0:24:6"
       },
       {
         "baseContracts": [],
@@ -171,20 +171,20 @@
         "contractKind": "contract",
         "documentation": "@dev Id definitions for bancor contract features\r\n\r\nCan be used to query the ContractFeatures contract to check whether a certain feature is supported by a contract\r",
         "fullyImplemented": true,
-        "id": 2484,
+        "id": 2467,
         "linearizedBaseContracts": [
-          2484
+          2467
         ],
         "name": "FeatureIds",
         "nodeType": "ContractDefinition",
         "nodes": [
           {
             "constant": true,
-            "id": 2483,
+            "id": 2466,
             "name": "CONVERTER_CONVERSION_WHITELIST",
             "nodeType": "VariableDeclaration",
-            "scope": 2484,
-            "src": "269:63:7",
+            "scope": 2467,
+            "src": "269:63:6",
             "stateVariable": true,
             "storageLocation": "default",
             "typeDescriptions": {
@@ -192,10 +192,10 @@
               "typeString": "uint256"
             },
             "typeName": {
-              "id": 2479,
+              "id": 2462,
               "name": "uint256",
               "nodeType": "ElementaryTypeName",
-              "src": "269:7:7",
+              "src": "269:7:6",
               "typeDescriptions": {
                 "typeIdentifier": "t_uint256",
                 "typeString": "uint256"
@@ -207,7 +207,7 @@
                 "typeIdentifier": "t_rational_1_by_1",
                 "typeString": "int_const 1"
               },
-              "id": 2482,
+              "id": 2465,
               "isConstant": false,
               "isLValue": false,
               "isPure": true,
@@ -215,14 +215,14 @@
               "leftExpression": {
                 "argumentTypes": null,
                 "hexValue": "31",
-                "id": 2480,
+                "id": 2463,
                 "isConstant": false,
                 "isLValue": false,
                 "isPure": true,
                 "kind": "number",
                 "lValueRequested": false,
                 "nodeType": "Literal",
-                "src": "326:1:7",
+                "src": "326:1:6",
                 "subdenomination": null,
                 "typeDescriptions": {
                   "typeIdentifier": "t_rational_1_by_1",
@@ -235,14 +235,14 @@
               "rightExpression": {
                 "argumentTypes": null,
                 "hexValue": "30",
-                "id": 2481,
+                "id": 2464,
                 "isConstant": false,
                 "isLValue": false,
                 "isPure": true,
                 "kind": "number",
                 "lValueRequested": false,
                 "nodeType": "Literal",
-                "src": "331:1:7",
+                "src": "331:1:6",
                 "subdenomination": null,
                 "typeDescriptions": {
                   "typeIdentifier": "t_rational_0_by_1",
@@ -250,7 +250,7 @@
                 },
                 "value": "0"
               },
-              "src": "326:6:7",
+              "src": "326:6:6",
               "typeDescriptions": {
                 "typeIdentifier": "t_rational_1_by_1",
                 "typeString": "int_const 1"
@@ -259,11 +259,11 @@
             "visibility": "public"
           }
         ],
-        "scope": 2485,
-        "src": "215:121:7"
+        "scope": 2468,
+        "src": "215:121:6"
       }
     ],
-    "src": "0:338:7"
+    "src": "0:338:6"
   },
   "compiler": {
     "name": "solc",
@@ -271,7 +271,7 @@
   },
   "networks": {},
   "schemaVersion": "3.0.11",
-  "updatedAt": "2019-09-14T02:07:59.075Z",
+  "updatedAt": "2019-10-27T15:33:38.172Z",
   "devdoc": {
     "methods": {}
   },
