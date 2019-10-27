@@ -3,10 +3,12 @@
   <div class="row full-width justify-center">
     <q-card class="col-12 column text-left q-pa-lg">
       <!-- Convert Title -->
-      <div class="row full-width q-pb-md justify-center">
+      <div class="row full-width q-pb-md justify-center text-center">
         <div>
           Convert to:
           <b>{{ trade.receiveToken.name }}</b>
+          <hr />
+          {{ trade.receiveToken.address }}
         </div>
       </div>
       <q-form

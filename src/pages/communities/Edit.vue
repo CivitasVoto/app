@@ -30,14 +30,6 @@
           :rules="[ val => val && val.length > 0 || 'Please type something']"
         />
 
-        <q-input
-          filled
-          v-model="benefit"
-          label="Benefit *"
-          hint="Membership reward"
-          lazy-rules
-          :rules="[ val => val && val.length > 0 || 'Please type something']"
-        />
         <div>
           <q-btn label="Submit" type="submit" color="primary" />
           <q-btn label="Reset" type="reset" color="primary" flat class="q-ml-sm" />
@@ -53,8 +45,7 @@ export default {
     return {
       name: null,
       tokenName: null,
-      tokenSymbol: null,
-      benefit: null
+      tokenSymbol: null
     };
   },
 
@@ -65,7 +56,6 @@ export default {
       this.name = null;
       this.tokenName = null;
       this.tokenSymbol = null;
-      this.benefit = null;
     }
   }
 };

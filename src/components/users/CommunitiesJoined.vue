@@ -36,7 +36,12 @@ export default {
           field: "renewalDate",
           sortable: true
         },
-        { name: "renewalPrice", label: "Renewal Price", field: "renewalPrice" }
+        {
+          name: "renewalPrice",
+          label: "Renewal Price",
+          field: "renewalPrice",
+          sortable: true
+        }
       ],
       data: [
         {

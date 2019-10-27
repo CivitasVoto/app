@@ -8,7 +8,7 @@
       <div class="row full-width justify-center">
         <q-space v-if="$q.screen.gt.xs" />
         <div class="col-10 row justify-center q-gutter-lg">
-          <div v-for="(community, index) in communities" :key="index" class="col-grow">
+          <div v-for="(community, index) in communities" :key="index" class="col-3">
             <CommunityIndexCard :community="community" />
           </div>
         </div>

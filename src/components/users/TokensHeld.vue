@@ -25,7 +25,6 @@ export default {
         },
         {
           name: "amountHeld",
-          align: "left",
           label: "Amount Held",
           field: "amountHeld",
           sortable: true
@@ -39,14 +38,14 @@ export default {
       ],
       data: [
         {
-          name: "ETH",
+          name: "Balls",
           amountHeld: "2",
-          Value: "380.00"
+          value: "84.27"
         },
         {
-          name: "MYCOM",
+          name: "Waves",
           amountHeld: "10",
-          Value: "48.72"
+          value: "48.72"
         }
       ]
     };

@@ -28,20 +28,17 @@ export async function initialize(context) {
       community: {
         address,
         name: await community.name(),
-        benefit: await community.benefit(),
         tokenName: await token.name(),
         tokenSymbol: await token.symbol(),
         tokenAddress: await community.token(),
-        // price: 1,
         members: await community.getMembers()
       }
     });
   });
 }
 
-export async function create(context, payload) {
+export async function createCommunity(context, payload) {
   const network = await Network.deployed();
-  const communityUtils = await CommunityUtils.deployed();
   const [account] = await web3.eth.getAccounts();
 
   const receipt = await network.createCommunity(
@@ -51,14 +48,6 @@ export async function create(context, payload) {
     }
   );
   const communityAddress = receipt.logs[0].args.community;
-
-  await communityUtils.createConverter(
-    network.address,
-    communityAddress, // Create for this community
-    {
-      from: account
-    }
-  );
 
   context.commit("addCommunity", {
     community: {
@@ -74,7 +63,29 @@ export async function create(context, payload) {
     member: account
   });
 
-  this.$router.push(`/communities/${communityAddress}`);
+  return communityAddress;
+}
+
+export async function addConnector(context, payload) {
+  const community = await Community.at(payload.community.address);
+  const network = await Network.deployed();
+  const [account] = await web3.eth.getAccounts();
+
+  await community.initializeConnector(
+    network.address,
+    web3.utils
+      .toWei(web3.utils.toBN(payload.converter.amountToMint))
+      .toString(), // Set amount of tokens to mint
+    payload.converter.reserveRatio, // Set reserve ratio
+    web3.utils
+      .toWei(web3.utils.toBN(payload.converter.amountToDeposit))
+      .toString(), // Set amount of tokens to deposit
+    {
+      from: account
+    }
+  );
+
+  this.$router.push(`/communities/${community.address}`);
 }
 
 export async function join(context, payload) {

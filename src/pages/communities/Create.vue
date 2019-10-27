@@ -1,6 +1,7 @@
 <template>
   <!-- eslint-disable -->
   <q-page class="flex flex-center">
+    <!-- TODO: Break steps into multiple components -->
     <q-stepper v-model="step" header-nav ref="stepper" color="primary" animated>
       <q-step
         :name="1"
@@ -24,7 +25,7 @@
             <q-input
               dense
               filled
-              v-model="community.description"
+              v-model="description"
               label="Description *"
               lazy-rules
               :rules="[ val => val && val.length > 0 || 'Please type something']"
@@ -34,8 +35,8 @@
             <q-input
               dense
               filled
-              v-model="community.address"
-              label="Postal Address *"
+              v-model="address"
+              label="Membership Price (in community tokens)"
               lazy-rules
               :rules="[ val => val && val.length > 0 || 'Please type something']"
               ref="address"
@@ -45,7 +46,7 @@
 
         <q-stepper-navigation>
           <q-btn
-            @click="() => { if (validateStep1()) {done1 = true; step = 2} }"
+            @click="() => { if (validateStep1()) {step = 2} }"
             color="primary"
             label="Continue"
           />
@@ -89,7 +90,7 @@
 
         <q-stepper-navigation>
           <q-btn
-            @click="() => { if (validateStep2()) {done2 = true; step = 3} }"
+            @click="() => { if (validateStep2()) {submitStep2()} }"
             color="primary"
             label="Continue"
           />
@@ -108,7 +109,7 @@
             <q-input
               dense
               filled
-              v-model="community.tokenPrice"
+              v-model="converter.tokenPrice"
               label="Initial Token Price *"
               ref="tokenPrice"
             />
@@ -116,9 +117,9 @@
             <q-input
               dense
               filled
-              v-model="initialDeposit"
+              v-model="amountToDeposit"
               label="Initial Deposit"
-              ref="initialDeposit"
+              ref="amountToDeposit"
             />
           </div>
 
@@ -127,12 +128,12 @@
             <q-knob
               show-value
               font-size="12px"
-              v-model="community.reserveRatio"
+              v-model="converter.reserveRatio"
               size="150px"
               :thickness="0.5"
               color="teal"
               track-color="grey-3"
-            >{{ community.reserveRatio }}%</q-knob>
+            >{{ converter.reserveRatio }}%</q-knob>
           </div>
 
           <div class="col-xs-12 col-sm-4 text-center">
@@ -142,7 +143,7 @@
               :max="1000"
               show-value
               font-size="12px"
-              v-model="community.tokensToMint"
+              v-model="converter.amountToMint"
               size="150px"
               :thickness="0.5"
               color="teal"
@@ -153,7 +154,7 @@
 
         <q-stepper-navigation>
           <q-btn
-            @click="() => { if (validateStep3()) {done3 = true; step = 4} }"
+            @click="() => { if (validateStep3()) {submitStep3()} }"
             color="primary"
             label="Continue"
           />
@@ -177,34 +178,36 @@ export default {
   data() {
     return {
       community: {
-        name: "MyCoin Community Name",
-        description: "MyCoin Community Description",
-        address: "MyCoin Address 80918",
-        tokenName: "MyCoin",
-        tokenSymbol: "MYC",
-        tokenPrice: 0.01,
-        tokensToMint: 100,
-        reserveRatio: 50,
-        initialDeposit: 0
+        name: "",
+        tokenName: "",
+        tokenSymbol: ""
       },
+      converter: {
+        tokenPrice: 0.01,
+        amountToMint: 100,
+        reserveRatio: 50
+      },
+      description: "",
+      address: "",
+      ethAddress: "0x0",
       step: 1
     };
   },
   computed: {
-    initialDeposit: {
+    amountToDeposit: {
       // getter
       get: function() {
         return (
-          this.community.tokenPrice *
-          (this.community.reserveRatio / 100) *
-          this.community.tokensToMint
+          this.converter.tokenPrice *
+          (this.converter.reserveRatio / 100) *
+          this.converter.amountToMint
         );
       },
       // setter
       set: function(newValue) {
-        this.community.tokenPrice =
+        this.converter.tokenPrice =
           newValue /
-          (this.community.tokensToMint * (this.community.reserveRatio / 100));
+          (this.converter.amountToMint * (this.converter.reserveRatio / 100));
       }
     }
   },
@@ -224,14 +227,25 @@ export default {
     validateStep3() {
       return true;
       // this.$refs.tokenPrice.validate() &&
-      // this.$refs.tokensToMint.validate() &&
+      // this.$refs.amountToMint.validate() &&
       // this.$refs.reserveRatio.validate() &&
-      // this.$refs.initialDeposit.validate()
+      // this.$refs.amountToDeposit.validate()
     },
-    onSubmit() {
-      this.$store.dispatch("communities/create", {
-        community: { ...this.$data.community }
+    async submitStep2() {
+      this.ethAddress = await this.$store.dispatch(
+        "communities/createCommunity",
+        {
+          community: { ...this.community }
+        }
+      );
+      this.step = 3;
+    },
+    async submitStep3() {
+      await this.$store.dispatch("communities/addConnector", {
+        community: { address: this.ethAddress },
+        converter: { ...this.converter, amountToDeposit: this.amountToDeposit }
       });
+      this.step = 4;
     }
   }
 };

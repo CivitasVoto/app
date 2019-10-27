@@ -10,10 +10,6 @@
         <br />
         Symbol: {{ community.tokenSymbol }}
         <br />
-        <!-- Price: {{ community.price }}
-        <br />-->
-        Benefit: {{ community.benefit }}
-        <br />
       </p>
       <div class="row justify-center q-gutter-md">
         <router-link :to="`communities/${community.address}`">
@@ -60,7 +56,6 @@ export default {
   },
   components: {
     TradeWidget
-    //BuySell
   }
 };
 </script>
