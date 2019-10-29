@@ -1,12 +1,14 @@
 pragma solidity ^0.4.26;
 
 import "./Network.sol";
+import "./bancor/converter/BancorConverter.sol";
 
 contract Community {
     address public owner;
     string public name;
     SmartToken public token;
     address[] private members;
+    BancorConverter public converter;
 
     mapping (address => bool) public memberExists;
 
@@ -33,9 +35,14 @@ contract Community {
     ) public {
         // Mint initial tokens
         token.issue(owner, _amountToMint);
-
-        // Add token to network converter
-        _network.createConnector(this, _reserveRatio, _amountDeposited);
+        converter = _network.communityUtils().createConverter(
+            _network,
+            this,
+            _reserveRatio,
+            _amountDeposited
+        );
+        token.transferOwnership(converter);
+        converter.acceptTokenOwnership();
     }
 
     /** @dev Join this community.

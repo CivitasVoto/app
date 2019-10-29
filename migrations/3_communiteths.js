@@ -5,6 +5,7 @@ const ContractIds = artifacts.require("ContractIds");
 const EtherToken = artifacts.require("EtherToken");
 const BancorNetwork = artifacts.require("BancorNetwork");
 const BancorConverter = artifacts.require("BancorConverter");
+const CommunityUtils = artifacts.require("CommunityUtils");
 
 module.exports = async function(deployer, network, accounts) {
   const account = accounts[0];
@@ -42,10 +43,15 @@ module.exports = async function(deployer, network, accounts) {
   await networkToken.transferOwnership(converter.address);
   await converter.acceptTokenOwnership();
 
+  await deployer.deploy(CommunityUtils);
+  const communityUtils = await CommunityUtils.deployed();
+
   await deployer.deploy(
     Network,
     etherToken.address,
     networkToken.address,
-    converter.address
+    converter.address,
+    contractRegistry.address,
+    communityUtils.address
   );
 };
