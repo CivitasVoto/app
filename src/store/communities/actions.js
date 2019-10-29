@@ -67,6 +67,17 @@ export async function addConnector(context, payload) {
   const community = await Community.at(payload.community.address);
   const network = await Network.deployed();
   const [account] = await web3.eth.getAccounts();
+  const networkToken = await SmartToken.at(await network.networkToken());
+
+  await networkToken.approve(
+    community.address,
+    web3.utils
+      .toWei(web3.utils.toBN(payload.converter.amountToDeposit))
+      .toString(), // Set amount of tokens to deposit
+    {
+      from: account
+    }
+  );
 
   await community.initializeConnector(
     network.address,

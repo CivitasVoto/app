@@ -33,16 +33,22 @@ contract Community {
         uint32 _reserveRatio,
         uint256 _amountDeposited
     ) public {
-        // Mint initial tokens
+        // Mint initial tokens.
         token.issue(owner, _amountToMint);
+
+        // Create converter.
         converter = _network.communityUtils().createConverter(
             _network,
             this,
-            _reserveRatio,
-            _amountDeposited
+            _reserveRatio
         );
+
+        // Deposit network token to converter.
+        _network.networkToken().transferFrom(msg.sender, converter, _amountDeposited);
+
+        // Transfer token ownership to converter.
         token.transferOwnership(converter);
-        converter.acceptTokenOwnership();
+        _network.communityUtils().acceptToken(converter);
     }
 
     /** @dev Join this community.

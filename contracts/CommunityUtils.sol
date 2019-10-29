@@ -10,8 +10,7 @@ contract CommunityUtils {
     function createConverter(
         Network _network,
         Community _community,
-        uint32 _reserveRatio,
-        uint256 _amountDeposited
+        uint32 _reserveRatio
     ) public returns (BancorConverter) {
         BancorConverter converter = new BancorConverter(
             _community.token(), // Create for this community's smart token
@@ -21,8 +20,10 @@ contract CommunityUtils {
             _reserveRatio * 10000 // Reserve Ratio PPM (100%)
         );
 
-        _network.networkToken().transferFrom(_community.owner(), converter, _amountDeposited);
-
         return converter;
+    }
+
+    function acceptToken(BancorConverter converter) public {
+        converter.acceptTokenOwnership();
     }
 }
