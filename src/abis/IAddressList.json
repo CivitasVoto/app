@@ -24,22 +24,22 @@
   "metadata": "{\"compiler\":{\"version\":\"0.4.26+commit.4563c3fc\"},\"language\":\"Solidity\",\"output\":{\"abi\":[{\"constant\":true,\"inputs\":[{\"name\":\"\",\"type\":\"address\"}],\"name\":\"listedAddresses\",\"outputs\":[{\"name\":\"\",\"type\":\"bool\"}],\"payable\":false,\"stateMutability\":\"view\",\"type\":\"function\"}],\"devdoc\":{\"methods\":{}},\"userdoc\":{\"methods\":{}}},\"settings\":{\"compilationTarget\":{\"/Users/cryptotom/code/gitcoin/communiteths/contracts/bancor/utility/interfaces/IAddressList.sol\":\"IAddressList\"},\"evmVersion\":\"byzantium\",\"libraries\":{},\"optimizer\":{\"enabled\":true,\"runs\":200},\"remappings\":[]},\"sources\":{\"/Users/cryptotom/code/gitcoin/communiteths/contracts/bancor/utility/interfaces/IAddressList.sol\":{\"keccak256\":\"0x3de4d53e90ce340cf45e9fde143fa6956ff0ab2c40a8ac7f155995ab09736390\",\"urls\":[\"bzzr://cc8bbe33aa156cd273b4f60ef678bd489c9a052962323c48ae571625ec5f686a\"]}},\"version\":1}",
   "bytecode": "0x608060405234801561001057600080fd5b5060c38061001f6000396000f300608060405260043610603e5763ffffffff7c0100000000000000000000000000000000000000000000000000000000600035041663aeea10bd81146043575b600080fd5b348015604e57600080fd5b50606e73ffffffffffffffffffffffffffffffffffffffff600435166082565b604080519115158252519081900360200190f35b60006020819052908152604090205460ff16815600a165627a7a72305820b4cf3690d997cb6a11248b318347eaaa6e2a7b06abd44c0f2a5e77a65d6784370029",
   "deployedBytecode": "0x608060405260043610603e5763ffffffff7c0100000000000000000000000000000000000000000000000000000000600035041663aeea10bd81146043575b600080fd5b348015604e57600080fd5b50606e73ffffffffffffffffffffffffffffffffffffffff600435166082565b604080519115158252519081900360200190f35b60006020819052908152604090205460ff16815600a165627a7a72305820b4cf3690d997cb6a11248b318347eaaa6e2a7b06abd44c0f2a5e77a65d6784370029",
-  "sourceMap": "59:79:53:-;;;;8:9:-1;5:2;;;30:1;27;20:12;5:2;59:79:53;;;;;;;",
-  "deployedSourceMap": "59:79:53:-;;;;;;;;;;;;;;;;;;;;;;;87:48;;8:9:-1;5:2;;;30:1;27;20:12;5:2;-1:-1;87:48:53;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;:::o",
+  "sourceMap": "59:79:54:-;;;;8:9:-1;5:2;;;30:1;27;20:12;5:2;59:79:54;;;;;;;",
+  "deployedSourceMap": "59:79:54:-;;;;;;;;;;;;;;;;;;;;;;;87:48;;8:9:-1;5:2;;;30:1;27;20:12;5:2;-1:-1;87:48:54;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;:::o",
   "source": "pragma solidity ^0.4.24;\n\n/*\n    Address list interface\n*/\ncontract IAddressList {\n    mapping (address => bool) public listedAddresses;\n}\n",
   "sourcePath": "/Users/cryptotom/code/gitcoin/communiteths/contracts/bancor/utility/interfaces/IAddressList.sol",
   "ast": {
     "absolutePath": "/Users/cryptotom/code/gitcoin/communiteths/contracts/bancor/utility/interfaces/IAddressList.sol",
     "exportedSymbols": {
       "IAddressList": [
-        12953
+        13024
       ]
     },
-    "id": 12954,
+    "id": 13025,
     "nodeType": "SourceUnit",
     "nodes": [
       {
-        "id": 12948,
+        "id": 13019,
         "literals": [
           "solidity",
           "^",
@@ -47,7 +47,7 @@
           ".24"
         ],
         "nodeType": "PragmaDirective",
-        "src": "0:24:53"
+        "src": "0:24:54"
       },
       {
         "baseContracts": [],
@@ -55,20 +55,20 @@
         "contractKind": "contract",
         "documentation": null,
         "fullyImplemented": true,
-        "id": 12953,
+        "id": 13024,
         "linearizedBaseContracts": [
-          12953
+          13024
         ],
         "name": "IAddressList",
         "nodeType": "ContractDefinition",
         "nodes": [
           {
             "constant": false,
-            "id": 12952,
+            "id": 13023,
             "name": "listedAddresses",
             "nodeType": "VariableDeclaration",
-            "scope": 12953,
-            "src": "87:48:53",
+            "scope": 13024,
+            "src": "87:48:54",
             "stateVariable": true,
             "storageLocation": "default",
             "typeDescriptions": {
@@ -76,28 +76,28 @@
               "typeString": "mapping(address => bool)"
             },
             "typeName": {
-              "id": 12951,
+              "id": 13022,
               "keyType": {
-                "id": 12949,
+                "id": 13020,
                 "name": "address",
                 "nodeType": "ElementaryTypeName",
-                "src": "96:7:53",
+                "src": "96:7:54",
                 "typeDescriptions": {
                   "typeIdentifier": "t_address",
                   "typeString": "address"
                 }
               },
               "nodeType": "Mapping",
-              "src": "87:25:53",
+              "src": "87:25:54",
               "typeDescriptions": {
                 "typeIdentifier": "t_mapping$_t_address_$_t_bool_$",
                 "typeString": "mapping(address => bool)"
               },
               "valueType": {
-                "id": 12950,
+                "id": 13021,
                 "name": "bool",
                 "nodeType": "ElementaryTypeName",
-                "src": "107:4:53",
+                "src": "107:4:54",
                 "typeDescriptions": {
                   "typeIdentifier": "t_bool",
                   "typeString": "bool"
@@ -108,24 +108,24 @@
             "visibility": "public"
           }
         ],
-        "scope": 12954,
-        "src": "59:79:53"
+        "scope": 13025,
+        "src": "59:79:54"
       }
     ],
-    "src": "0:139:53"
+    "src": "0:139:54"
   },
   "legacyAST": {
     "absolutePath": "/Users/cryptotom/code/gitcoin/communiteths/contracts/bancor/utility/interfaces/IAddressList.sol",
     "exportedSymbols": {
       "IAddressList": [
-        12953
+        13024
       ]
     },
-    "id": 12954,
+    "id": 13025,
     "nodeType": "SourceUnit",
     "nodes": [
       {
-        "id": 12948,
+        "id": 13019,
         "literals": [
           "solidity",
           "^",
@@ -133,7 +133,7 @@
           ".24"
         ],
         "nodeType": "PragmaDirective",
-        "src": "0:24:53"
+        "src": "0:24:54"
       },
       {
         "baseContracts": [],
@@ -141,20 +141,20 @@
         "contractKind": "contract",
         "documentation": null,
         "fullyImplemented": true,
-        "id": 12953,
+        "id": 13024,
         "linearizedBaseContracts": [
-          12953
+          13024
         ],
         "name": "IAddressList",
         "nodeType": "ContractDefinition",
         "nodes": [
           {
             "constant": false,
-            "id": 12952,
+            "id": 13023,
             "name": "listedAddresses",
             "nodeType": "VariableDeclaration",
-            "scope": 12953,
-            "src": "87:48:53",
+            "scope": 13024,
+            "src": "87:48:54",
             "stateVariable": true,
             "storageLocation": "default",
             "typeDescriptions": {
@@ -162,28 +162,28 @@
               "typeString": "mapping(address => bool)"
             },
             "typeName": {
-              "id": 12951,
+              "id": 13022,
               "keyType": {
-                "id": 12949,
+                "id": 13020,
                 "name": "address",
                 "nodeType": "ElementaryTypeName",
-                "src": "96:7:53",
+                "src": "96:7:54",
                 "typeDescriptions": {
                   "typeIdentifier": "t_address",
                   "typeString": "address"
                 }
               },
               "nodeType": "Mapping",
-              "src": "87:25:53",
+              "src": "87:25:54",
               "typeDescriptions": {
                 "typeIdentifier": "t_mapping$_t_address_$_t_bool_$",
                 "typeString": "mapping(address => bool)"
               },
               "valueType": {
-                "id": 12950,
+                "id": 13021,
                 "name": "bool",
                 "nodeType": "ElementaryTypeName",
-                "src": "107:4:53",
+                "src": "107:4:54",
                 "typeDescriptions": {
                   "typeIdentifier": "t_bool",
                   "typeString": "bool"
@@ -194,11 +194,11 @@
             "visibility": "public"
           }
         ],
-        "scope": 12954,
-        "src": "59:79:53"
+        "scope": 13025,
+        "src": "59:79:54"
       }
     ],
-    "src": "0:139:53"
+    "src": "0:139:54"
   },
   "compiler": {
     "name": "solc",
@@ -206,7 +206,7 @@
   },
   "networks": {},
   "schemaVersion": "3.0.11",
-  "updatedAt": "2019-10-27T15:33:38.314Z",
+  "updatedAt": "2019-10-29T21:10:52.947Z",
   "devdoc": {
     "methods": {}
   },

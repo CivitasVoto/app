@@ -31,14 +31,14 @@
     "absolutePath": "/Users/cryptotom/code/gitcoin/communiteths/contracts/bancor/bancorx/interfaces/IBancorXUpgrader.sol",
     "exportedSymbols": {
       "IBancorXUpgrader": [
-        3666
+        3737
       ]
     },
-    "id": 3667,
+    "id": 3738,
     "nodeType": "SourceUnit",
     "nodes": [
       {
-        "id": 3657,
+        "id": 3728,
         "literals": [
           "solidity",
           "^",
@@ -46,7 +46,7 @@
           ".24"
         ],
         "nodeType": "PragmaDirective",
-        "src": "0:24:11"
+        "src": "0:24:12"
       },
       {
         "baseContracts": [],
@@ -54,9 +54,9 @@
         "contractKind": "contract",
         "documentation": null,
         "fullyImplemented": false,
-        "id": 3666,
+        "id": 3737,
         "linearizedBaseContracts": [
-          3666
+          3737
         ],
         "name": "IBancorXUpgrader",
         "nodeType": "ContractDefinition",
@@ -64,7 +64,7 @@
           {
             "body": null,
             "documentation": null,
-            "id": 3665,
+            "id": 3736,
             "implemented": false,
             "isConstructor": false,
             "isDeclaredConst": false,
@@ -72,16 +72,16 @@
             "name": "upgrade",
             "nodeType": "FunctionDefinition",
             "parameters": {
-              "id": 3663,
+              "id": 3734,
               "nodeType": "ParameterList",
               "parameters": [
                 {
                   "constant": false,
-                  "id": 3659,
+                  "id": 3730,
                   "name": "_version",
                   "nodeType": "VariableDeclaration",
-                  "scope": 3665,
-                  "src": "113:15:11",
+                  "scope": 3736,
+                  "src": "113:15:12",
                   "stateVariable": false,
                   "storageLocation": "default",
                   "typeDescriptions": {
@@ -89,10 +89,10 @@
                     "typeString": "uint16"
                   },
                   "typeName": {
-                    "id": 3658,
+                    "id": 3729,
                     "name": "uint16",
                     "nodeType": "ElementaryTypeName",
-                    "src": "113:6:11",
+                    "src": "113:6:12",
                     "typeDescriptions": {
                       "typeIdentifier": "t_uint16",
                       "typeString": "uint16"
@@ -103,11 +103,11 @@
                 },
                 {
                   "constant": false,
-                  "id": 3662,
+                  "id": 3733,
                   "name": "_reporters",
                   "nodeType": "VariableDeclaration",
-                  "scope": 3665,
-                  "src": "130:20:11",
+                  "scope": 3736,
+                  "src": "130:20:12",
                   "stateVariable": false,
                   "storageLocation": "default",
                   "typeDescriptions": {
@@ -116,19 +116,19 @@
                   },
                   "typeName": {
                     "baseType": {
-                      "id": 3660,
+                      "id": 3731,
                       "name": "address",
                       "nodeType": "ElementaryTypeName",
-                      "src": "130:7:11",
+                      "src": "130:7:12",
                       "typeDescriptions": {
                         "typeIdentifier": "t_address",
                         "typeString": "address"
                       }
                     },
-                    "id": 3661,
+                    "id": 3732,
                     "length": null,
                     "nodeType": "ArrayTypeName",
-                    "src": "130:9:11",
+                    "src": "130:9:12",
                     "typeDescriptions": {
                       "typeIdentifier": "t_array$_t_address_$dyn_storage_ptr",
                       "typeString": "address[]"
@@ -138,40 +138,40 @@
                   "visibility": "internal"
                 }
               ],
-              "src": "112:39:11"
+              "src": "112:39:12"
             },
             "payable": false,
             "returnParameters": {
-              "id": 3664,
+              "id": 3735,
               "nodeType": "ParameterList",
               "parameters": [],
-              "src": "158:0:11"
+              "src": "158:0:12"
             },
-            "scope": 3666,
-            "src": "96:63:11",
+            "scope": 3737,
+            "src": "96:63:12",
             "stateMutability": "nonpayable",
             "superFunction": null,
             "visibility": "public"
           }
         ],
-        "scope": 3667,
-        "src": "64:97:11"
+        "scope": 3738,
+        "src": "64:97:12"
       }
     ],
-    "src": "0:162:11"
+    "src": "0:162:12"
   },
   "legacyAST": {
     "absolutePath": "/Users/cryptotom/code/gitcoin/communiteths/contracts/bancor/bancorx/interfaces/IBancorXUpgrader.sol",
     "exportedSymbols": {
       "IBancorXUpgrader": [
-        3666
+        3737
       ]
     },
-    "id": 3667,
+    "id": 3738,
     "nodeType": "SourceUnit",
     "nodes": [
       {
-        "id": 3657,
+        "id": 3728,
         "literals": [
           "solidity",
           "^",
@@ -179,7 +179,7 @@
           ".24"
         ],
         "nodeType": "PragmaDirective",
-        "src": "0:24:11"
+        "src": "0:24:12"
       },
       {
         "baseContracts": [],
@@ -187,9 +187,9 @@
         "contractKind": "contract",
         "documentation": null,
         "fullyImplemented": false,
-        "id": 3666,
+        "id": 3737,
         "linearizedBaseContracts": [
-          3666
+          3737
         ],
         "name": "IBancorXUpgrader",
         "nodeType": "ContractDefinition",
@@ -197,7 +197,7 @@
           {
             "body": null,
             "documentation": null,
-            "id": 3665,
+            "id": 3736,
             "implemented": false,
             "isConstructor": false,
             "isDeclaredConst": false,
@@ -205,16 +205,16 @@
             "name": "upgrade",
             "nodeType": "FunctionDefinition",
             "parameters": {
-              "id": 3663,
+              "id": 3734,
               "nodeType": "ParameterList",
               "parameters": [
                 {
                   "constant": false,
-                  "id": 3659,
+                  "id": 3730,
                   "name": "_version",
                   "nodeType": "VariableDeclaration",
-                  "scope": 3665,
-                  "src": "113:15:11",
+                  "scope": 3736,
+                  "src": "113:15:12",
                   "stateVariable": false,
                   "storageLocation": "default",
                   "typeDescriptions": {
@@ -222,10 +222,10 @@
                     "typeString": "uint16"
                   },
                   "typeName": {
-                    "id": 3658,
+                    "id": 3729,
                     "name": "uint16",
                     "nodeType": "ElementaryTypeName",
-                    "src": "113:6:11",
+                    "src": "113:6:12",
                     "typeDescriptions": {
                       "typeIdentifier": "t_uint16",
                       "typeString": "uint16"
@@ -236,11 +236,11 @@
                 },
                 {
                   "constant": false,
-                  "id": 3662,
+                  "id": 3733,
                   "name": "_reporters",
                   "nodeType": "VariableDeclaration",
-                  "scope": 3665,
-                  "src": "130:20:11",
+                  "scope": 3736,
+                  "src": "130:20:12",
                   "stateVariable": false,
                   "storageLocation": "default",
                   "typeDescriptions": {
@@ -249,19 +249,19 @@
                   },
                   "typeName": {
                     "baseType": {
-                      "id": 3660,
+                      "id": 3731,
                       "name": "address",
                       "nodeType": "ElementaryTypeName",
-                      "src": "130:7:11",
+                      "src": "130:7:12",
                       "typeDescriptions": {
                         "typeIdentifier": "t_address",
                         "typeString": "address"
                       }
                     },
-                    "id": 3661,
+                    "id": 3732,
                     "length": null,
                     "nodeType": "ArrayTypeName",
-                    "src": "130:9:11",
+                    "src": "130:9:12",
                     "typeDescriptions": {
                       "typeIdentifier": "t_array$_t_address_$dyn_storage_ptr",
                       "typeString": "address[]"
@@ -271,27 +271,27 @@
                   "visibility": "internal"
                 }
               ],
-              "src": "112:39:11"
+              "src": "112:39:12"
             },
             "payable": false,
             "returnParameters": {
-              "id": 3664,
+              "id": 3735,
               "nodeType": "ParameterList",
               "parameters": [],
-              "src": "158:0:11"
+              "src": "158:0:12"
             },
-            "scope": 3666,
-            "src": "96:63:11",
+            "scope": 3737,
+            "src": "96:63:12",
             "stateMutability": "nonpayable",
             "superFunction": null,
             "visibility": "public"
           }
         ],
-        "scope": 3667,
-        "src": "64:97:11"
+        "scope": 3738,
+        "src": "64:97:12"
       }
     ],
-    "src": "0:162:11"
+    "src": "0:162:12"
   },
   "compiler": {
     "name": "solc",
@@ -299,7 +299,7 @@
   },
   "networks": {},
   "schemaVersion": "3.0.11",
-  "updatedAt": "2019-10-27T15:33:38.186Z",
+  "updatedAt": "2019-10-29T21:10:52.815Z",
   "devdoc": {
     "methods": {}
   },

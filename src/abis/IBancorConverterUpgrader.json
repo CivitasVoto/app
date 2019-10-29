@@ -41,14 +41,14 @@
     "absolutePath": "/Users/cryptotom/code/gitcoin/communiteths/contracts/bancor/converter/interfaces/IBancorConverterUpgrader.sol",
     "exportedSymbols": {
       "IBancorConverterUpgrader": [
-        9426
+        9497
       ]
     },
-    "id": 9427,
+    "id": 9498,
     "nodeType": "SourceUnit",
     "nodes": [
       {
-        "id": 9414,
+        "id": 9485,
         "literals": [
           "solidity",
           "^",
@@ -56,16 +56,16 @@
           ".24"
         ],
         "nodeType": "PragmaDirective",
-        "src": "0:24:19"
+        "src": "0:24:20"
       },
       {
         "absolutePath": "/Users/cryptotom/code/gitcoin/communiteths/contracts/bancor/converter/interfaces/IBancorConverter.sol",
         "file": "./IBancorConverter.sol",
-        "id": 9415,
+        "id": 9486,
         "nodeType": "ImportDirective",
-        "scope": 9427,
-        "sourceUnit": 9392,
-        "src": "25:32:19",
+        "scope": 9498,
+        "sourceUnit": 9463,
+        "src": "25:32:20",
         "symbolAliases": [],
         "unitAlias": ""
       },
@@ -75,9 +75,9 @@
         "contractKind": "contract",
         "documentation": null,
         "fullyImplemented": false,
-        "id": 9426,
+        "id": 9497,
         "linearizedBaseContracts": [
-          9426
+          9497
         ],
         "name": "IBancorConverterUpgrader",
         "nodeType": "ContractDefinition",
@@ -85,7 +85,7 @@
           {
             "body": null,
             "documentation": null,
-            "id": 9420,
+            "id": 9491,
             "implemented": false,
             "isConstructor": false,
             "isDeclaredConst": false,
@@ -93,16 +93,16 @@
             "name": "upgrade",
             "nodeType": "FunctionDefinition",
             "parameters": {
-              "id": 9418,
+              "id": 9489,
               "nodeType": "ParameterList",
               "parameters": [
                 {
                   "constant": false,
-                  "id": 9417,
+                  "id": 9488,
                   "name": "_version",
                   "nodeType": "VariableDeclaration",
-                  "scope": 9420,
-                  "src": "162:16:19",
+                  "scope": 9491,
+                  "src": "162:16:20",
                   "stateVariable": false,
                   "storageLocation": "default",
                   "typeDescriptions": {
@@ -110,10 +110,10 @@
                     "typeString": "bytes32"
                   },
                   "typeName": {
-                    "id": 9416,
+                    "id": 9487,
                     "name": "bytes32",
                     "nodeType": "ElementaryTypeName",
-                    "src": "162:7:19",
+                    "src": "162:7:20",
                     "typeDescriptions": {
                       "typeIdentifier": "t_bytes32",
                       "typeString": "bytes32"
@@ -123,17 +123,17 @@
                   "visibility": "internal"
                 }
               ],
-              "src": "161:18:19"
+              "src": "161:18:20"
             },
             "payable": false,
             "returnParameters": {
-              "id": 9419,
+              "id": 9490,
               "nodeType": "ParameterList",
               "parameters": [],
-              "src": "186:0:19"
+              "src": "186:0:20"
             },
-            "scope": 9426,
-            "src": "145:42:19",
+            "scope": 9497,
+            "src": "145:42:20",
             "stateMutability": "nonpayable",
             "superFunction": null,
             "visibility": "public"
@@ -141,7 +141,7 @@
           {
             "body": null,
             "documentation": null,
-            "id": 9425,
+            "id": 9496,
             "implemented": false,
             "isConstructor": false,
             "isDeclaredConst": false,
@@ -149,16 +149,16 @@
             "name": "upgrade",
             "nodeType": "FunctionDefinition",
             "parameters": {
-              "id": 9423,
+              "id": 9494,
               "nodeType": "ParameterList",
               "parameters": [
                 {
                   "constant": false,
-                  "id": 9422,
+                  "id": 9493,
                   "name": "_version",
                   "nodeType": "VariableDeclaration",
-                  "scope": 9425,
-                  "src": "209:15:19",
+                  "scope": 9496,
+                  "src": "209:15:20",
                   "stateVariable": false,
                   "storageLocation": "default",
                   "typeDescriptions": {
@@ -166,10 +166,10 @@
                     "typeString": "uint16"
                   },
                   "typeName": {
-                    "id": 9421,
+                    "id": 9492,
                     "name": "uint16",
                     "nodeType": "ElementaryTypeName",
-                    "src": "209:6:19",
+                    "src": "209:6:20",
                     "typeDescriptions": {
                       "typeIdentifier": "t_uint16",
                       "typeString": "uint16"
@@ -179,40 +179,40 @@
                   "visibility": "internal"
                 }
               ],
-              "src": "208:17:19"
+              "src": "208:17:20"
             },
             "payable": false,
             "returnParameters": {
-              "id": 9424,
+              "id": 9495,
               "nodeType": "ParameterList",
               "parameters": [],
-              "src": "232:0:19"
+              "src": "232:0:20"
             },
-            "scope": 9426,
-            "src": "192:41:19",
+            "scope": 9497,
+            "src": "192:41:20",
             "stateMutability": "nonpayable",
             "superFunction": null,
             "visibility": "public"
           }
         ],
-        "scope": 9427,
-        "src": "105:130:19"
+        "scope": 9498,
+        "src": "105:130:20"
       }
     ],
-    "src": "0:236:19"
+    "src": "0:236:20"
   },
   "legacyAST": {
     "absolutePath": "/Users/cryptotom/code/gitcoin/communiteths/contracts/bancor/converter/interfaces/IBancorConverterUpgrader.sol",
     "exportedSymbols": {
       "IBancorConverterUpgrader": [
-        9426
+        9497
       ]
     },
-    "id": 9427,
+    "id": 9498,
     "nodeType": "SourceUnit",
     "nodes": [
       {
-        "id": 9414,
+        "id": 9485,
         "literals": [
           "solidity",
           "^",
@@ -220,16 +220,16 @@
           ".24"
         ],
         "nodeType": "PragmaDirective",
-        "src": "0:24:19"
+        "src": "0:24:20"
       },
       {
         "absolutePath": "/Users/cryptotom/code/gitcoin/communiteths/contracts/bancor/converter/interfaces/IBancorConverter.sol",
         "file": "./IBancorConverter.sol",
-        "id": 9415,
+        "id": 9486,
         "nodeType": "ImportDirective",
-        "scope": 9427,
-        "sourceUnit": 9392,
-        "src": "25:32:19",
+        "scope": 9498,
+        "sourceUnit": 9463,
+        "src": "25:32:20",
         "symbolAliases": [],
         "unitAlias": ""
       },
@@ -239,9 +239,9 @@
         "contractKind": "contract",
         "documentation": null,
         "fullyImplemented": false,
-        "id": 9426,
+        "id": 9497,
         "linearizedBaseContracts": [
-          9426
+          9497
         ],
         "name": "IBancorConverterUpgrader",
         "nodeType": "ContractDefinition",
@@ -249,7 +249,7 @@
           {
             "body": null,
             "documentation": null,
-            "id": 9420,
+            "id": 9491,
             "implemented": false,
             "isConstructor": false,
             "isDeclaredConst": false,
@@ -257,16 +257,16 @@
             "name": "upgrade",
             "nodeType": "FunctionDefinition",
             "parameters": {
-              "id": 9418,
+              "id": 9489,
               "nodeType": "ParameterList",
               "parameters": [
                 {
                   "constant": false,
-                  "id": 9417,
+                  "id": 9488,
                   "name": "_version",
                   "nodeType": "VariableDeclaration",
-                  "scope": 9420,
-                  "src": "162:16:19",
+                  "scope": 9491,
+                  "src": "162:16:20",
                   "stateVariable": false,
                   "storageLocation": "default",
                   "typeDescriptions": {
@@ -274,10 +274,10 @@
                     "typeString": "bytes32"
                   },
                   "typeName": {
-                    "id": 9416,
+                    "id": 9487,
                     "name": "bytes32",
                     "nodeType": "ElementaryTypeName",
-                    "src": "162:7:19",
+                    "src": "162:7:20",
                     "typeDescriptions": {
                       "typeIdentifier": "t_bytes32",
                       "typeString": "bytes32"
@@ -287,17 +287,17 @@
                   "visibility": "internal"
                 }
               ],
-              "src": "161:18:19"
+              "src": "161:18:20"
             },
             "payable": false,
             "returnParameters": {
-              "id": 9419,
+              "id": 9490,
               "nodeType": "ParameterList",
               "parameters": [],
-              "src": "186:0:19"
+              "src": "186:0:20"
             },
-            "scope": 9426,
-            "src": "145:42:19",
+            "scope": 9497,
+            "src": "145:42:20",
             "stateMutability": "nonpayable",
             "superFunction": null,
             "visibility": "public"
@@ -305,7 +305,7 @@
           {
             "body": null,
             "documentation": null,
-            "id": 9425,
+            "id": 9496,
             "implemented": false,
             "isConstructor": false,
             "isDeclaredConst": false,
@@ -313,16 +313,16 @@
             "name": "upgrade",
             "nodeType": "FunctionDefinition",
             "parameters": {
-              "id": 9423,
+              "id": 9494,
               "nodeType": "ParameterList",
               "parameters": [
                 {
                   "constant": false,
-                  "id": 9422,
+                  "id": 9493,
                   "name": "_version",
                   "nodeType": "VariableDeclaration",
-                  "scope": 9425,
-                  "src": "209:15:19",
+                  "scope": 9496,
+                  "src": "209:15:20",
                   "stateVariable": false,
                   "storageLocation": "default",
                   "typeDescriptions": {
@@ -330,10 +330,10 @@
                     "typeString": "uint16"
                   },
                   "typeName": {
-                    "id": 9421,
+                    "id": 9492,
                     "name": "uint16",
                     "nodeType": "ElementaryTypeName",
-                    "src": "209:6:19",
+                    "src": "209:6:20",
                     "typeDescriptions": {
                       "typeIdentifier": "t_uint16",
                       "typeString": "uint16"
@@ -343,27 +343,27 @@
                   "visibility": "internal"
                 }
               ],
-              "src": "208:17:19"
+              "src": "208:17:20"
             },
             "payable": false,
             "returnParameters": {
-              "id": 9424,
+              "id": 9495,
               "nodeType": "ParameterList",
               "parameters": [],
-              "src": "232:0:19"
+              "src": "232:0:20"
             },
-            "scope": 9426,
-            "src": "192:41:19",
+            "scope": 9497,
+            "src": "192:41:20",
             "stateMutability": "nonpayable",
             "superFunction": null,
             "visibility": "public"
           }
         ],
-        "scope": 9427,
-        "src": "105:130:19"
+        "scope": 9498,
+        "src": "105:130:20"
       }
     ],
-    "src": "0:236:19"
+    "src": "0:236:20"
   },
   "compiler": {
     "name": "solc",
@@ -371,7 +371,7 @@
   },
   "networks": {},
   "schemaVersion": "3.0.11",
-  "updatedAt": "2019-10-27T15:33:38.261Z",
+  "updatedAt": "2019-10-29T21:10:52.892Z",
   "devdoc": {
     "methods": {}
   },
