@@ -21,7 +21,7 @@ contract CommunityUtils {
             _reserveRatio * 10000 // Reserve Ratio PPM (100%)
         );
 
-        _network.networkToken().transfer(converter, _amountDeposited);
+        _network.networkToken().transferFrom(_community.owner(), converter, _amountDeposited);
 
         return converter;
     }
