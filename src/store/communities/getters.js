@@ -51,7 +51,8 @@ export function communityTokens(state) {
     communityTokens.push({
       name: community.tokenName,
       symbol: community.tokenSymbol,
-      address: community.tokenAddress
+      address: community.tokenAddress,
+      community
     });
   });
 

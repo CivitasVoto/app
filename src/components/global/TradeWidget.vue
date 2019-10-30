@@ -16,7 +16,11 @@
           sendToken: trade.sendToken.address,
           receiveToken: trade.receiveToken.address,
           amount: $web3.utils.toWei(trade.sendAmount),
-          sendingETH: trade.sendToken.symbol == 'ETH' ? true : false
+          sendingETH: trade.sendToken.symbol == 'ETH' ? true : false,
+          sendingCommunityToken: trade.sendToken.community ? true : false,
+          sendCommunity: { address: trade.sendToken.community ? trade.sendToken.community.address: false },
+          receivingCommunityToken: trade.receiveToken.community ? true : false,
+          receiveCommunity: { address: trade.receiveToken.community ? trade.receiveToken.community.address: false }
         })"
         class="column items-center"
       >
