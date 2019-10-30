@@ -15,7 +15,7 @@
         @submit.prevent="$store.dispatch('bancor/convert',{
           sendToken: trade.sendToken.address,
           receiveToken: trade.receiveToken.address,
-          amount: $web3.utils.toWei(trade.sendAmount),
+          amount: trade.sendAmount,
           sendingETH: trade.sendToken.symbol == 'ETH' ? true : false,
           sendingCommunityToken: trade.sendToken.community ? true : false,
           sendCommunity: { address: trade.sendToken.community ? trade.sendToken.community.address: false },

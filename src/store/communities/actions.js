@@ -44,23 +44,26 @@ export async function createCommunity(context, payload) {
       from: account
     }
   );
-  const communityAddress = receipt.logs[0].args.community;
+  const community = await Community.at(receipt.logs[0].args.community);
+  const token = await SmartToken.at(await community.token());
 
   context.commit("addCommunity", {
     community: {
-      address: communityAddress,
-      ...payload.community,
-      price: 1,
-      members: []
+      address: community.address,
+      name: await community.name(),
+      tokenName: await token.name(),
+      tokenSymbol: await token.symbol(),
+      tokenAddress: await community.token(),
+      members: await community.getMembers()
     }
   });
 
   context.commit("addMember", {
-    community: communityAddress,
+    community: community.address,
     member: account
   });
 
-  return communityAddress;
+  return community.address;
 }
 
 export async function addConnector(context, payload) {
@@ -71,9 +74,7 @@ export async function addConnector(context, payload) {
 
   await networkToken.approve(
     community.address,
-    web3.utils
-      .toWei(web3.utils.toBN(payload.converter.amountToDeposit))
-      .toString(), // Set amount of tokens to deposit
+    web3.utils.toWei(payload.converter.amountToDeposit.toString()), // Approve amount of tokens to deposit
     {
       from: account
     }
@@ -81,13 +82,9 @@ export async function addConnector(context, payload) {
 
   await community.initializeConnector(
     network.address,
-    web3.utils
-      .toWei(web3.utils.toBN(payload.converter.amountToMint))
-      .toString(), // Set amount of tokens to mint
+    web3.utils.toWei(payload.converter.amountToMint.toString()), // Set amount of tokens to mint
     payload.converter.reserveRatio, // Set reserve ratio
-    web3.utils
-      .toWei(web3.utils.toBN(payload.converter.amountToDeposit))
-      .toString(), // Set amount of tokens to deposit
+    web3.utils.toWei(payload.converter.amountToDeposit.toString()), // Set amount of tokens to deposit
     {
       from: account
     }

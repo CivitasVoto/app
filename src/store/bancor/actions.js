@@ -4,14 +4,17 @@ import contract from "truffle-contract";
 import NetworkABI from "src/abis/Network";
 import CommunityABI from "src/abis/Community";
 import BancorConverterABI from "src/abis/BancorConverter";
+import SmartTokenABI from "src/abis/SmartToken";
 
 const Network = contract(NetworkABI);
 const Community = contract(CommunityABI);
 const BancorConverter = contract(BancorConverterABI);
+const SmartToken = contract(SmartTokenABI);
 
 Network.setProvider(web3.currentProvider);
 Community.setProvider(web3.currentProvider);
 BancorConverter.setProvider(web3.currentProvider);
+SmartToken.setProvider(web3.currentProvider);
 
 export async function convert(context, payload) {
   const [account] = await web3.eth.getAccounts();
@@ -29,13 +32,23 @@ export async function convert(context, payload) {
     path = [payload.sendToken, payload.sendToken, payload.receiveToken];
   } else if (payload.receivingCommunityToken) {
     const community = await Community.at(payload.receiveCommunity.address);
+    const network = await Network.deployed();
+    const networkToken = await SmartToken.at(await network.networkToken());
+
     converter = await BancorConverter.at(await community.converter());
     path = [payload.sendToken, payload.receiveToken, payload.receiveToken];
+
+    await networkToken.approve(
+      converter.address,
+      web3.utils.toWei(payload.amount.toString()), // Approve amount of tokens to deposit
+      {
+        from: account
+      }
+    );
   } else {
     const network = await Network.deployed();
-    const networkToken = await network.networkToken();
     converter = await BancorConverter.at(await network.converter());
-    path = [payload.sendToken, networkToken, payload.receiveToken];
+    path = [payload.sendToken, payload.sendToken, payload.receiveToken];
   }
 
   // const expectedReturn = await converter.getReturn(
@@ -46,12 +59,12 @@ export async function convert(context, payload) {
 
   await converter.quickConvert(
     path, // Path
-    payload.amount, // Amount
+    web3.utils.toWei(payload.amount), // Amount
     // expectedReturn[0], // Min return
     1,
     {
       from: account,
-      value: payload.sendingETH ? payload.amount : 0
+      value: payload.sendingETH ? web3.utils.toWei(payload.amount) : 0
     }
   );
 }
