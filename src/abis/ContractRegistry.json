@@ -7932,12 +7932,12 @@
         }
       },
       "links": {},
-      "address": "0xD550Ea31F7441ED7893f497DA1060751842500dC",
-      "transactionHash": "0x112c5ba19ca85269689b9fe8cc0501dcf7c5308ae2d7ecf238b5bad73ad1413b"
+      "address": "0xfd4f158463889E015013513243672bcC26Cf496C",
+      "transactionHash": "0x9366af1c86ce60227c66f708922db3d8e4353001454bbd109b96a71eee1384bb"
     }
   },
   "schemaVersion": "3.0.11",
-  "updatedAt": "2019-10-30T08:29:05.065Z",
+  "updatedAt": "2019-10-30T08:54:36.804Z",
   "devdoc": {
     "methods": {
       "acceptOwnership()": {

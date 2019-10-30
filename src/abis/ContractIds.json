@@ -1299,12 +1299,12 @@
     "42": {
       "events": {},
       "links": {},
-      "address": "0xbCDb73Dbc78e79fE2B1e7d82D53f8d3efB743e4B",
-      "transactionHash": "0xe093ada7ba43ad44dfb7d5600e59a06e59cc386b0bf1b2da7f0f81b1df753d72"
+      "address": "0x577a911eAA19065fb0d217Cd8fBdEB9996a55540",
+      "transactionHash": "0x6768c9cc78e70a94625c53c17ba469961af1696018fa135111700b6a1bc84565"
     }
   },
   "schemaVersion": "3.0.11",
-  "updatedAt": "2019-10-30T08:29:05.071Z",
+  "updatedAt": "2019-10-30T08:54:36.808Z",
   "devdoc": {
     "methods": {}
   },

@@ -862,12 +862,12 @@
     "42": {
       "events": {},
       "links": {},
-      "address": "0x9c50277Dda8eBC37fD4f8b211d428C63603d9c44",
-      "transactionHash": "0x1b20809ce464fdbe765b31280862d6c87965fd151487bd5776d5ffb02699b26b"
+      "address": "0xa631B044876f527cA3D8E6a2a726730AE8639cC8",
+      "transactionHash": "0x8f61eab94d7718a428ce143b5fa607d0a38f7698d775d11a0d91e576605decd6"
     }
   },
   "schemaVersion": "3.0.11",
-  "updatedAt": "2019-10-30T08:28:05.676Z",
+  "updatedAt": "2019-10-30T08:53:36.933Z",
   "devdoc": {
     "methods": {
       "acceptOwnership()": {
