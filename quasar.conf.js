@@ -1,7 +1,7 @@
 // Configuration for your app
 // https://quasar.dev/quasar-cli/quasar-conf-js
 
-module.exports = function (ctx) {
+module.exports = function(ctx) {
   return {
     // app boot file (/src/boot)
     // --> boot files are part of "main.js"
@@ -68,10 +68,7 @@ module.exports = function (ctx) {
         "QKnob"
       ],
 
-      directives: [
-        "Ripple",
-        "ClosePopup"
-      ],
+      directives: ["Ripple", "ClosePopup"],
 
       // Quasar plugins
       plugins: ["Notify"],
@@ -117,9 +114,9 @@ module.exports = function (ctx) {
       // workboxPluginMode: 'InjectManifest',
       // workboxOptions: {}, // only for NON InjectManifest
       manifest: {
-        // name: 'CommunitETHs',
-        // short_name: 'CommunitETHs',
-        // description: 'The future of decentralized finance and governance for communities.',
+        // name: 'Civitas',
+        // short_name: 'Civitas',
+        // description: 'An experiment of decentralized finance and governance for communities.',
         display: "standalone",
         orientation: "portrait",
         background_color: "#ffffff",

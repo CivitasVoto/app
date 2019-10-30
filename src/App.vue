@@ -6,7 +6,7 @@
 
 <script>
 export default {
-  name: "CommunitETHs",
+  name: "Civitas",
   mounted() {
     this.$store.dispatch("communities/initialize");
   }

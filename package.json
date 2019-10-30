@@ -1,9 +1,9 @@
 {
-  "name": "communiteths",
+  "name": "civitas",
   "version": "0.0.1",
-  "description": "The future of decentralized finance and governance for communities.",
-  "productName": "CommunitETHs",
-  "cordovaId": "org.communiteths.app",
+  "description": "An experiment of decentralized finance and governance for communities.",
+  "productName": "Civitas",
+  "cordovaId": "org.civitas.app",
   "author": "Tommy Cox <tommy.cox@protonmail.com>",
   "private": true,
   "scripts": {

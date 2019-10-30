@@ -30,11 +30,7 @@ contract("BancorConverter", ([deployer, bancorTester]) => {
 
     await bancorNetwork.registerEtherToken(etherToken.address, true);
 
-    networkToken = await SmartToken.new(
-      "CommunitETHs Network Token",
-      "TNT",
-      18
-    );
+    networkToken = await SmartToken.new("Civitas Network Token", "TNT", 18);
 
     await networkToken.issue(deployer, 100000);
 
