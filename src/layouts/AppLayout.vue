@@ -22,6 +22,7 @@
               dense
               v-model="trade.sendToken"
               :options="tokens"
+              @input="changeFirst"
               option-value="address"
               option-label="symbol"
               class="col-sm-12 col-md-4 q-ma-md-sm"
@@ -53,6 +54,7 @@
               dense
               v-model="trade.receiveToken"
               :options="tokens"
+              @input="changeSecond"
               option-value="address"
               option-label="symbol"
               class="col-sm-12 col-md-4 q-ma-md-sm"
@@ -104,9 +106,8 @@ export default {
     const [account] = await this.$web3.eth.getAccounts();
     this.account = account;
 
-    this.tokens = this.$store.getters["communities/communityTokens"]
-      .concat(await this.$store.getters["communities/networkTokens"])
-      .reverse();
+    this.tokens = await this.$store.getters["communities/networkTokens"];
+    this.tokens.reverse();
     this.trade.sendToken = this.tokens[0];
     this.trade.receiveToken = this.tokens[1];
   },
@@ -116,6 +117,20 @@ export default {
       const hold = this.trade.sendToken;
       this.trade.sendToken = this.trade.receiveToken;
       this.trade.receiveToken = hold;
+    },
+    changeFirst(value) {
+      if (value.symbol == "ETH") {
+        this.trade.receiveToken = this.tokens[1];
+      } else {
+        this.trade.receiveToken = this.tokens[0];
+      }
+    },
+    changeSecond(value) {
+      if (value.symbol == "ETH") {
+        this.trade.sendToken = this.tokens[1];
+      } else {
+        this.trade.sendToken = this.tokens[0];
+      }
     }
   }
 };
