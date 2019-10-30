@@ -64603,7 +64603,7 @@
   },
   "networks": {},
   "schemaVersion": "3.0.11",
-  "updatedAt": "2019-10-30T06:35:21.348Z",
+  "updatedAt": "2019-10-30T08:29:05.131Z",
   "devdoc": {
     "methods": {
       "acceptManagement()": {

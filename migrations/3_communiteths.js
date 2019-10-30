@@ -19,7 +19,11 @@ module.exports = async function(deployer, network, accounts) {
   await bancorNetwork.registerEtherToken(etherToken.address, true);
 
   // Create network token.
-  const networkToken = await SmartToken.new("Civitas Network Token", "CNT", 18);
+  const networkToken = await SmartToken.new(
+    "Civitas Network Token",
+    "CIVNT",
+    18
+  );
   await contractRegistry.registerAddress(
     await contractIds.BNT_TOKEN.call(), // Imitate BNT
     networkToken.address
@@ -37,7 +41,7 @@ module.exports = async function(deployer, network, accounts) {
   // Deposit initial reserve and issue TNT in return.
   await etherToken.deposit({ value: "1000000000000000000" }); // Seed with 1 ETH
   await etherToken.transfer(converter.address, "1000000000000000000");
-  await networkToken.issue(account, "2000000000000000000"); // Issue 2 CNT
+  await networkToken.issue(account, "2000000000000000000"); // Issue 2 CVNT
 
   // Hand the network token over to the converter.
   await networkToken.transferOwnership(converter.address);

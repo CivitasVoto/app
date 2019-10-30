@@ -2560,12 +2560,12 @@
     "42": {
       "events": {},
       "links": {},
-      "address": "0x851f403B2B50231E120979e6Af24d4fdF2d4962E",
-      "transactionHash": "0x885b82d3b3b95ae28b96f155231efc9b885339fbce908122875fd13d694a2fa6"
+      "address": "0xeDE3867d4536C8754ad891882A49cFd51F30B164",
+      "transactionHash": "0x6910aa8fd5e20ebdceec9abaf30f2290ae35429a9fc4b893a2798d8f13339726"
     }
   },
   "schemaVersion": "3.0.11",
-  "updatedAt": "2019-10-30T06:34:09.037Z",
+  "updatedAt": "2019-10-30T08:28:05.625Z",
   "devdoc": {
     "methods": {
       "enableFeatures(uint256,bool)": {

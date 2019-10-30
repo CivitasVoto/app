@@ -1464,12 +1464,12 @@
     "42": {
       "events": {},
       "links": {},
-      "address": "0xce6c2922E8CA3A2B3C7336a7EcF5b69Ca6c692aB",
-      "transactionHash": "0x3f97180f7e560cc14d1c52e8ec18be6073e06a1fcb7a690d1fcc274e9affba2a"
+      "address": "0xA72E6868fA1BD48eCDA432A4C47C0967daFA3525",
+      "transactionHash": "0x9f04954a8c0a4551211d0eb3cd4fb3d889d49e085e392b27bdf35579c830e0f5"
     }
   },
   "schemaVersion": "3.0.11",
-  "updatedAt": "2019-10-30T06:35:21.381Z",
+  "updatedAt": "2019-10-30T08:29:05.163Z",
   "devdoc": {
     "methods": {
       "createConverter(address,address,uint32)": {

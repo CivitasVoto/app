@@ -1379,12 +1379,12 @@
     "42": {
       "events": {},
       "links": {},
-      "address": "0x05DB0C47B370Db37859b5A5d2740B6210c2D0248",
-      "transactionHash": "0x61731b5bf7ba1ea7ce6581972585fe46adcbba00de901f88e46205bef9b1dee4"
+      "address": "0xC2206c7C3C0C461208dDD7733f58e872C73A8B33",
+      "transactionHash": "0x4ea25121c07ca0379d4bad6710b0bdad58b6fc7659f10abd042a1529f797a1a2"
     }
   },
   "schemaVersion": "3.0.11",
-  "updatedAt": "2019-10-30T06:35:21.383Z",
+  "updatedAt": "2019-10-30T08:29:05.164Z",
   "devdoc": {
     "methods": {}
   },

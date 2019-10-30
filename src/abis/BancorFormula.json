@@ -68178,12 +68178,12 @@
     "42": {
       "events": {},
       "links": {},
-      "address": "0x9d0f74729ba7D135545b57E30F489226E0EBbC8F",
-      "transactionHash": "0x8a822896fb80780f5d894bee68df77cc6ad1c2ef8cf7ef06593af351f26855ca"
+      "address": "0x1c0a9a457FF255e5F73f02ee1E40d2C631475A6e",
+      "transactionHash": "0x93cb1e7138b72637b211a15661823d081f503dc2280d5d1486ba2ea2daf1548b"
     }
   },
   "schemaVersion": "3.0.11",
-  "updatedAt": "2019-10-30T06:34:09.066Z",
+  "updatedAt": "2019-10-30T08:28:05.647Z",
   "devdoc": {
     "methods": {
       "calculateCrossConnectorReturn(uint256,uint32,uint256,uint32,uint256)": {
