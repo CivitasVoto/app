@@ -16,11 +16,11 @@
 
         <p>
           Membership Price:
-          <b>$500</b>
+          <b>10 Tennis Balls</b>
         </p>
         <p>
-          Token Price:
-          <b>$24.701234</b>
+          Tennis Balls Price:
+          <b>$4.70</b>
         </p>
 
         <p>
