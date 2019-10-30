@@ -68,3 +68,27 @@ export async function convert(context, payload) {
     }
   );
 }
+
+export async function getReturn(context, payload) {
+  let converter;
+
+  if (payload.sendingETH) {
+    const network = await Network.deployed();
+    converter = await BancorConverter.at(await network.converter());
+  } else if (payload.sendingCommunityToken) {
+    const community = await Community.at(payload.sendCommunity.address);
+    converter = await BancorConverter.at(await community.converter());
+  } else if (payload.receivingCommunityToken) {
+    const community = await Community.at(payload.receiveCommunity.address);
+    converter = await BancorConverter.at(await community.converter());
+  } else {
+    const network = await Network.deployed();
+    converter = await BancorConverter.at(await network.converter());
+  }
+
+  return await converter.getReturn(
+    payload.sendToken, // From
+    payload.receiveToken, // To
+    web3.utils.toWei(payload.amount) // Amount
+  );
+}

@@ -31,6 +31,10 @@
               dense
               outlined
               v-model="trade.sendAmount"
+              @input="getReturn"
+              mask="#.##"
+              fill-mask="0"
+              reverse-fill-mask
               label="Send Amount"
               lazy-rules
               class="col-sm-12 col-md-7 q-mb-xs-sm q-mb-md-none"
@@ -59,14 +63,18 @@
               option-label="symbol"
               class="col-sm-12 col-md-4 q-ma-md-sm"
             />
-            <q-input
+            <q-field
               dense
               outlined
-              v-model="trade.receiveAmount"
+              stack-label
               label="Receive Amount"
               lazy-rules
               class="col-sm-12 col-md-7 q-mb-xs-sm q-mb-md-none"
-            />
+            >
+              <template v-slot:control>
+                <div class="self-center full-width no-outline" tabindex="0">{{trade.receiveAmount}}</div>
+              </template>
+            </q-field>
           </div>
 
           <!-- TRADE BUTTON -->
@@ -95,9 +103,9 @@ export default {
       denseOpts: true,
       trade: {
         sendToken: "",
-        sendAmount: "",
+        sendAmount: 0,
         receiveToken: "",
-        receiveAmount: ""
+        receiveAmount: 0
       },
       tokens: []
     };
@@ -117,6 +125,7 @@ export default {
       const hold = this.trade.sendToken;
       this.trade.sendToken = this.trade.receiveToken;
       this.trade.receiveToken = hold;
+      this.trade.sendAmount = this.trade.receiveAmount = "";
     },
     changeFirst(value) {
       if (value.symbol == "ETH") {
@@ -124,6 +133,7 @@ export default {
       } else {
         this.trade.receiveToken = this.tokens[0];
       }
+      this.trade.sendAmount = this.trade.receiveAmount = "";
     },
     changeSecond(value) {
       if (value.symbol == "ETH") {
@@ -131,6 +141,37 @@ export default {
       } else {
         this.trade.sendToken = this.tokens[0];
       }
+      this.trade.sendAmount = this.trade.receiveAmount = "";
+    },
+    async getReturn() {
+      if (this.trade.sendAmount == 0) {
+        this.trade.receiveAmount = 0;
+        return;
+      }
+      const returnAmount = await this.$store.dispatch("bancor/getReturn", {
+        sendToken: this.trade.sendToken.address,
+        receiveToken: this.trade.receiveToken.address,
+        amount: this.trade.sendAmount,
+        sendingETH: this.trade.sendToken.symbol == "ETH" ? true : false,
+        sendingCommunityToken: this.trade.sendToken.community ? true : false,
+        sendCommunity: {
+          address: this.trade.sendToken.community
+            ? this.trade.sendToken.community.address
+            : false
+        },
+        receivingCommunityToken: this.trade.receiveToken.community
+          ? true
+          : false,
+        receiveCommunity: {
+          address: this.trade.receiveToken.community
+            ? this.trade.receiveToken.community.address
+            : false
+        }
+      });
+
+      this.trade.receiveAmount = this.$web3.utils.fromWei(
+        returnAmount[0].toString()
+      );
     }
   }
 };

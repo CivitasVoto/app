@@ -2,12 +2,15 @@ import { web3 } from "boot/web3";
 import contract from "truffle-contract";
 
 import NetworkABI from "src/abis/Network";
+import CommunityABI from "src/abis/Network";
 import SmartTokenABI from "src/abis/SmartToken";
 
 const Network = contract(NetworkABI);
+const Community = contract(CommunityABI);
 const SmartToken = contract(SmartTokenABI);
 
 Network.setProvider(web3.currentProvider);
+Community.setProvider(web3.currentProvider);
 SmartToken.setProvider(web3.currentProvider);
 
 /**

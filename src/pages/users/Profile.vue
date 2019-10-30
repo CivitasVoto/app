@@ -17,16 +17,16 @@
           <TokensHeld />
         </div>
 
-        <div class="col-12 col-md-4 column">
+        <!-- <div class="col-12 col-md-4 column">
           <TradeWidget :user="user" />
-        </div>
+        </div>-->
       </section>
     </div>
   </q-page>
 </template>
 
 <script>
-import TradeWidget from "src/components/global/TradeWidget";
+// import TradeWidget from "src/components/global/TradeWidget";
 import CommunitiesJoined from "src/components/users/CommunitiesJoined";
 import TokensHeld from "src/components/users/TokensHeld";
 
@@ -59,7 +59,7 @@ export default {
     };
   },
   components: {
-    TradeWidget,
+    // TradeWidget,
     CommunitiesJoined,
     TokensHeld
   }

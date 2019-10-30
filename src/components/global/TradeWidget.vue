@@ -27,22 +27,28 @@
         <!-- SEND -->
         <div class="row full-width q-col-gutter-md">
           <q-input
-            class="col-grow"
+            class="col-8"
             outlined
             v-model="trade.sendAmount"
+            mask="#.##"
+            fill-mask="0"
+            reverse-fill-mask
             label="Send Amount *"
             lazy-rules
+            @input="getReturn"
           />
-          <q-select
+          <q-field
             outlined
-            class="col-grow"
-            v-model="trade.sendToken"
-            :options="tokens"
+            class="col-4"
             option-value="address"
             option-label="symbol"
             label="Token"
             stack-label
-          />
+          >
+            <template v-slot:control>
+              <div class="self-center full-width no-outline" tabindex="0">{{trade.sendToken.symbol}}</div>
+            </template>
+          </q-field>
           <!-- <span>Address: {{ trade.sendToken.address }}</span> -->
         </div>
         <!-- SWAP BUTTON -->
@@ -59,23 +65,26 @@
         <!-- <q-input outlined v-model="trade.receiveAmount" label="Receive Amount *" lazy-rules /> -->
 
         <div class="row full-width q-col-gutter-md">
-          <q-input
-            class="col-grow"
+          <q-field class="col-8" outlined label="Receive Amount *" lazy-rules stack-label>
+            <template v-slot:control>
+              <div class="self-center full-width no-outline" tabindex="0">{{trade.receiveAmount}}</div>
+            </template>
+          </q-field>
+          <q-field
             outlined
-            v-model="trade.receiveAmount"
-            label="Receive Amount *"
-            lazy-rules
-          />
-          <q-select
-            outlined
-            class="col-grow"
-            v-model="trade.receiveToken"
-            :options="tokens"
+            class="col-4"
             option-value="address"
             option-label="symbol"
             label="Token"
             stack-label
-          />
+          >
+            <template v-slot:control>
+              <div
+                class="self-center full-width no-outline"
+                tabindex="0"
+              >{{trade.receiveToken.symbol}}</div>
+            </template>
+          </q-field>
           <!-- <span>Address: {{ trade.receiveToken.address }}</span> -->
         </div>
 
@@ -94,7 +103,7 @@
 <script>
 export default {
   props: {
-    user: {
+    community: {
       type: Object
     }
   },
@@ -103,26 +112,85 @@ export default {
       dense: true,
       denseOpts: true,
       trade: {
-        sendToken: "",
-        sendAmount: "",
-        receiveToken: "",
-        receiveAmount: ""
-      },
-      tokens: []
+        sendToken: {},
+        sendAmount: 0,
+        receiveToken: {},
+        receiveAmount: 0
+      }
     };
   },
   async mounted() {
-    this.tokens = this.$store.getters["communities/communityTokens"]
-      .concat(await this.$store.getters["communities/networkTokens"])
-      .reverse();
-    this.trade.sendToken = this.tokens[0];
-    this.trade.receiveToken = this.tokens[1];
+    const networkTokens = await this.$store.getters[
+      "communities/networkTokens"
+    ];
+    this.trade.sendToken = networkTokens[1];
+
+    let community;
+
+    if (this.$route.params.address) {
+      community = await this.$store.getters["communities/detailsByAddress"](
+        this.$route.params.address
+      );
+    } else {
+      community = this.$props.community;
+    }
+
+    this.trade.receiveToken = {
+      name: community.tokenName,
+      symbol: community.tokenSymbol,
+      address: community.tokenAddress,
+      community
+    };
   },
   methods: {
     swap() {
       const hold = this.trade.sendToken;
       this.trade.sendToken = this.trade.receiveToken;
       this.trade.receiveToken = hold;
+    },
+    changeFirst(value) {
+      if (value.symbol == "ETH") {
+        this.trade.receiveToken = this.tokens[1];
+      } else {
+        this.trade.receiveToken = this.tokens[0];
+      }
+    },
+    changeSecond(value) {
+      if (value.symbol == "ETH") {
+        this.trade.sendToken = this.tokens[1];
+      } else {
+        this.trade.sendToken = this.tokens[0];
+      }
+    },
+    async getReturn() {
+      if (this.trade.sendAmount == 0) {
+        this.trade.receiveAmount = 0;
+        return;
+      }
+      const returnAmount = await this.$store.dispatch("bancor/getReturn", {
+        sendToken: this.trade.sendToken.address,
+        receiveToken: this.trade.receiveToken.address,
+        amount: this.trade.sendAmount,
+        sendingETH: this.trade.sendToken.symbol == "ETH" ? true : false,
+        sendingCommunityToken: this.trade.sendToken.community ? true : false,
+        sendCommunity: {
+          address: this.trade.sendToken.community
+            ? this.trade.sendToken.community.address
+            : false
+        },
+        receivingCommunityToken: this.trade.receiveToken.community
+          ? true
+          : false,
+        receiveCommunity: {
+          address: this.trade.receiveToken.community
+            ? this.trade.receiveToken.community.address
+            : false
+        }
+      });
+
+      this.trade.receiveAmount = this.$web3.utils.fromWei(
+        returnAmount[0].toString()
+      );
     }
   }
 };

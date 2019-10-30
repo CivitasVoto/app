@@ -23,7 +23,7 @@
       <q-btn label="Trade" color="primary" @click="trade = true" class="q-mt-md" />
     </q-card-section>
     <q-dialog v-model="trade">
-      <TradeWidget />
+      <TradeWidget :community="community" />
     </q-dialog>
   </q-card>
 </template>
