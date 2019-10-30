@@ -52428,12 +52428,12 @@
     "42": {
       "events": {},
       "links": {},
-      "address": "0xcC1B0214a7381a0d47065F17BDF54b6C9467c87E",
-      "transactionHash": "0xf66f17d2560ebd56af17b1233326a92b79327696fc05cc79f71de49abbd11ec1"
+      "address": "0xd2420169F69eF93aa8Fd40d222041E1E2324E365",
+      "transactionHash": "0x0013463313bd0c2355cf1312dd08b10d2b7395beae39797546716a8805dc447d"
     }
   },
   "schemaVersion": "3.0.11",
-  "updatedAt": "2019-10-29T21:14:30.689Z",
+  "updatedAt": "2019-10-30T06:35:21.309Z",
   "devdoc": {
     "methods": {
       "acceptOwnership()": {

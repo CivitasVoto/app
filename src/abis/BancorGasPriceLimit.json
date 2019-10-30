@@ -1488,12 +1488,12 @@
     "42": {
       "events": {},
       "links": {},
-      "address": "0xb569d2E8DEb03f4f7b2282B854d463bE24f3458B",
-      "transactionHash": "0x1401fe673d1d92180d318b30dfc6170deb97e5bdf79a1f5f0f5d403c9da32dfe"
+      "address": "0x58Be7DDfF1F19141125355926e6D769B01Edc846",
+      "transactionHash": "0x9b9b0542ad84cfe977776a2deb75499f0667e379604cd6361998a80b2750221c"
     }
   },
   "schemaVersion": "3.0.11",
-  "updatedAt": "2019-10-29T21:13:21.335Z",
+  "updatedAt": "2019-10-30T06:34:09.040Z",
   "devdoc": {
     "methods": {
       "acceptOwnership()": {

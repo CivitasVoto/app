@@ -1644,7 +1644,7 @@
   },
   "networks": {},
   "schemaVersion": "3.0.11",
-  "updatedAt": "2019-10-29T21:10:52.814Z",
+  "updatedAt": "2019-10-30T06:32:44.030Z",
   "devdoc": {
     "methods": {
       "acceptOwnership()": {

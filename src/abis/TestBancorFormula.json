@@ -3145,7 +3145,7 @@
   },
   "networks": {},
   "schemaVersion": "3.0.11",
-  "updatedAt": "2019-10-29T21:10:52.903Z",
+  "updatedAt": "2019-10-30T06:32:44.117Z",
   "devdoc": {
     "methods": {
       "calculateCrossConnectorReturn(uint256,uint32,uint256,uint32,uint256)": {
