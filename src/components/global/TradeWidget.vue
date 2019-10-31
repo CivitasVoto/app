@@ -115,7 +115,7 @@ export default {
         sendToken: {},
         sendAmount: 0,
         receiveToken: {},
-        receiveAmount: 0
+        receiveAmount: "0.00"
       }
     };
   },
@@ -147,6 +147,8 @@ export default {
       const hold = this.trade.sendToken;
       this.trade.sendToken = this.trade.receiveToken;
       this.trade.receiveToken = hold;
+      this.trade.sendAmount = 0;
+      this.trade.receiveAmount = "0.00";
     },
     changeFirst(value) {
       if (value.symbol == "ETH") {
@@ -164,7 +166,7 @@ export default {
     },
     async getReturn() {
       if (this.trade.sendAmount == 0) {
-        this.trade.receiveAmount = 0;
+        this.trade.receiveAmount = "0.00";
         return;
       }
       const returnAmount = await this.$store.dispatch("bancor/getReturn", {
