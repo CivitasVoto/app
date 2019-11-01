@@ -11,6 +11,7 @@
           color="primary"
           class="self-center q-mb-xl"
           @click="$store.dispatch('communities/join', {community: community.address})"
+          :disabled="isMember"
         />
       </section>
       <CommunityDetailPanels />
@@ -22,10 +23,23 @@
 import CommunityDetailPanels from "src/components/communities/DetailPanels";
 
 export default {
+  data() {
+    return {
+      account: "0x0"
+    };
+  },
+  async mounted() {
+    [this.account] = await this.$web3.eth.getAccounts();
+  },
   computed: {
     community() {
       return this.$store.getters["communities/detailsByAddress"](
         this.$route.params.address
+      );
+    },
+    isMember() {
+      return Boolean(
+        this.community.members.find(member => member == this.account)
       );
     }
   },

@@ -16,7 +16,7 @@
           <q-btn>Detail</q-btn>
         </router-link>
         <q-btn
-          :disabled="isMember()"
+          :disabled="isMember"
           @click="$store.dispatch('communities/join', {community: community.address})"
         >Join</q-btn>
       </div>
@@ -46,12 +46,11 @@ export default {
   async mounted() {
     [this.account] = await this.$web3.eth.getAccounts();
   },
-  methods: {
+  computed: {
     isMember() {
-      const member = this.$props.community.members.find(
-        member => member == this.account
+      return Boolean(
+        this.$props.community.members.find(member => member == this.account)
       );
-      return Boolean(member);
     }
   },
   components: {
