@@ -3,7 +3,15 @@
   <q-layout view="hHh lpR fFf">
     <q-header elevated class="row full-width q-pa-sm">
       <q-toolbar-title>
-        <q-btn flat no-caps size="lg" to="/" label="Civitas" icon="nature_people" color="white" />
+        <q-btn
+          flat
+          no-caps
+          size="lg"
+          to="/"
+          label="Civitas"
+          icon="fas fa-campground"
+          color="white"
+        />
       </q-toolbar-title>
       <q-card class="col-8 q-px-sm gt-xs">
         <q-form
@@ -177,4 +185,8 @@ export default {
 };
 </script>
 
-<style></style>
+<style>
+.fa-campground {
+  margin-right: 18px;
+}
+</style>
