@@ -181,5 +181,9 @@ export default {
 @import url("https://fonts.googleapis.com/css?family=Enriqueta&display=swap");
 .q-toolbar__title {
   font-family: "Enriqueta", serif;
+  letter-spacing: 0.33rem;
+}
+.q-toolbar__title div {
+  font-weight: bold;
 }
 </style>
