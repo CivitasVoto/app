@@ -1299,12 +1299,18 @@
     "42": {
       "events": {},
       "links": {},
-      "address": "0x577a911eAA19065fb0d217Cd8fBdEB9996a55540",
-      "transactionHash": "0x6768c9cc78e70a94625c53c17ba469961af1696018fa135111700b6a1bc84565"
+      "address": "0xF6c4875bF6D5be5aADb6A44dA31ab7B3Ca5532f6",
+      "transactionHash": "0x82d24e21c2daae5a642efede5992e329e8fcdc155e2758f46dbffa0718f9eed5"
+    },
+    "5777": {
+      "events": {},
+      "links": {},
+      "address": "0xaFdB217E8923C752C3b4Df407289e9D784dD497A",
+      "transactionHash": "0x38f44cade474b2a0bbfdf29f06e92cc56d1b545b7d1189a3f4b09eec888607a5"
     }
   },
   "schemaVersion": "3.0.11",
-  "updatedAt": "2019-10-30T08:54:36.808Z",
+  "updatedAt": "2019-11-01T02:11:52.473Z",
   "devdoc": {
     "methods": {}
   },

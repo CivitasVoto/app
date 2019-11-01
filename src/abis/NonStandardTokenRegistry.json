@@ -862,12 +862,18 @@
     "42": {
       "events": {},
       "links": {},
-      "address": "0xa631B044876f527cA3D8E6a2a726730AE8639cC8",
-      "transactionHash": "0x8f61eab94d7718a428ce143b5fa607d0a38f7698d775d11a0d91e576605decd6"
+      "address": "0xd4d2f435597f85c03e857b3A06fe97a97d25FFb6",
+      "transactionHash": "0x90e1acc212993f17e3d42a9af3a6c44e2c6c705b79a725c376fb8c2df7bcf5f7"
+    },
+    "5777": {
+      "events": {},
+      "links": {},
+      "address": "0x47Da996B0226A4d5ea7B58DF14FacdcB43461bCC",
+      "transactionHash": "0x950c7b99e49ef8d7fe42b9cd336f7e1f20b1526899f9306a3f049d7485729f71"
     }
   },
   "schemaVersion": "3.0.11",
-  "updatedAt": "2019-10-30T08:53:36.933Z",
+  "updatedAt": "2019-11-01T02:10:49.048Z",
   "devdoc": {
     "methods": {
       "acceptOwnership()": {

@@ -3646,12 +3646,18 @@
     "42": {
       "events": {},
       "links": {},
-      "address": "0x4cd81E1107cb54a44908601192694Ab02A79f439",
-      "transactionHash": "0x78b1bf6f40702d771b3eb71a7ede3f127c6777c33529af50c4e9d6f73587e237"
+      "address": "0x4d2373C4BD624650349E8deEb45391aCDa2b8313",
+      "transactionHash": "0x47e088fc0ada201e433c495c1f7f1912bf570969dc8b71801e83caebdd025e9f"
+    },
+    "5777": {
+      "events": {},
+      "links": {},
+      "address": "0xce6c2922E8CA3A2B3C7336a7EcF5b69Ca6c692aB",
+      "transactionHash": "0x26248b4ea421c0e95ff089fe9feedba01f142895c24a98752454a8032085250e"
     }
   },
   "schemaVersion": "3.0.11",
-  "updatedAt": "2019-10-30T08:54:36.794Z",
+  "updatedAt": "2019-11-01T02:11:52.455Z",
   "devdoc": {
     "methods": {
       "createCommunity(string,string,string)": {

@@ -15,7 +15,8 @@ module.exports = async function(deployer, network, accounts) {
   const bancorNetwork = await BancorNetwork.deployed();
 
   // Create ether token.
-  const etherToken = await EtherToken.new();
+  await deployer.deploy(EtherToken);
+  const etherToken = await EtherToken.deployed();
   await bancorNetwork.registerEtherToken(etherToken.address, true);
 
   // Create network token.

@@ -52428,12 +52428,18 @@
     "42": {
       "events": {},
       "links": {},
-      "address": "0xE1470F0E9df2130a2D1047AA83B65E6677c6f8b5",
-      "transactionHash": "0x74bea1ccf45d6cff9e916704d8fa43dec820727689f6f4e74abe8f1dcddb766c"
+      "address": "0x00556bF5D7ca29613F9B185F1212b034ed9Aba3E",
+      "transactionHash": "0x40c36a604191f79955c64c1698a58e55766a7438670775e2806bccdebf96340b"
+    },
+    "5777": {
+      "events": {},
+      "links": {},
+      "address": "0xB122c44967cA132336680c687A70Ac690F6D035D",
+      "transactionHash": "0x9da3b90cb5be262ef2d10d97edeed16f7b7ef8844ade4879c95921f09f2841ae"
     }
   },
   "schemaVersion": "3.0.11",
-  "updatedAt": "2019-10-30T08:54:36.828Z",
+  "updatedAt": "2019-11-01T02:11:52.505Z",
   "devdoc": {
     "methods": {
       "acceptOwnership()": {

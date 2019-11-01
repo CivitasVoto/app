@@ -5,16 +5,19 @@ import NetworkABI from "src/abis/Network";
 import CommunityABI from "src/abis/Community";
 import BancorConverterABI from "src/abis/BancorConverter";
 import SmartTokenABI from "src/abis/SmartToken";
+import EtherTokenABI from "src/abis/EtherToken";
 
 const Network = contract(NetworkABI);
 const Community = contract(CommunityABI);
 const BancorConverter = contract(BancorConverterABI);
 const SmartToken = contract(SmartTokenABI);
+const EtherToken = contract(EtherTokenABI);
 
 Network.setProvider(web3.currentProvider);
 Community.setProvider(web3.currentProvider);
 BancorConverter.setProvider(web3.currentProvider);
 SmartToken.setProvider(web3.currentProvider);
+EtherToken.setProvider(web3.currentProvider);
 
 export async function convert(context, payload) {
   const [account] = await web3.eth.getAccounts();
@@ -24,8 +27,17 @@ export async function convert(context, payload) {
   if (payload.sendingETH) {
     const network = await Network.deployed();
     const networkToken = await network.networkToken();
+    const etherToken = await EtherToken.deployed();
     converter = await BancorConverter.at(await network.converter());
     path = [payload.sendToken, networkToken, payload.receiveToken];
+
+    await etherToken.approve(
+      converter.address,
+      web3.utils.toWei(payload.amount.toString()), // Approve amount of tokens to deposit
+      {
+        from: account
+      }
+    );
   } else if (payload.sendingCommunityToken) {
     const community = await Community.at(payload.sendCommunity.address);
     converter = await BancorConverter.at(await community.converter());
