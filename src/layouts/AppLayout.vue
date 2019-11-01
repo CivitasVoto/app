@@ -3,15 +3,7 @@
   <q-layout view="hHh lpR fFf">
     <q-header elevated class="row full-width q-pa-sm">
       <q-toolbar-title>
-        <q-btn
-          flat
-          no-caps
-          size="lg"
-          to="/"
-          label="Civitas"
-          icon="fas fa-campground"
-          color="white"
-        />
+        <q-btn flat size="lg" to="/" label="Civitas" icon="fas fa-university" color="white" />
       </q-toolbar-title>
       <q-card class="col-8 q-px-sm gt-xs">
         <q-form
@@ -186,7 +178,8 @@ export default {
 </script>
 
 <style>
-.fa-campground {
-  margin-right: 18px;
+@import url("https://fonts.googleapis.com/css?family=Enriqueta&display=swap");
+.q-toolbar__title {
+  font-family: "Enriqueta", serif;
 }
 </style>
