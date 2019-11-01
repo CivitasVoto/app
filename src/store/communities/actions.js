@@ -28,6 +28,7 @@ export async function initialize(context) {
         tokenName: await token.name(),
         tokenSymbol: await token.symbol(),
         tokenAddress: await community.token(),
+        owner: await community.owner(),
         members: await community.getMembers()
       }
     });
