@@ -2,7 +2,9 @@
 
 ## Overview
 
-Civitas is a platform for creating communities to get work done! Anyone in the world can launch a community and its respective [Smart Token](https://support.bancor.network/hc/en-us/articles/360000472072-How-does-a-Smart-Token-work-) which - by utilizing Civitas Network’s [Liquid Token](https://support.bancor.network/hc/en-us/articles/360000457992-What-is-a-Liquid-Token-) - is tradeable with any other community token or Ethereum token in the Bancor Network. A beneficial side effect of this is that the market price for a community token is [automatically valuated](https://support.bancor.network/hc/en-us/articles/360000503372-How-does-automatic-pricing-and-market-making-work-) based on the overall value of the network, encouraging cooperation between communities to increase the value of the network. Once a community is established, community members vote to distribute community funds generated from [membership dues](https://1337alliance.com/) to projects using [meritocratic governance](https://blog.colony.io/the-colony-reputation-system-5616293c3949/).
+Civitas is a coordination platform for creating bootstrapped communities to get work done! Anyone in the world can launch a community and its [Smart Token](https://support.bancor.network/hc/en-us/articles/360000472072-How-does-a-Smart-Token-work-) which (by holding the Civitas Network’s [Liquid Token](https://support.bancor.network/hc/en-us/articles/360000457992-What-is-a-Liquid-Token-) in reserve) is tradeable with any other community token or Ethereum token in the Bancor Network; a beneficial side effect being that the market price for a community token is [automatically valuated](https://support.bancor.network/hc/en-us/articles/360000503372-How-does-automatic-pricing-and-market-making-work-) based on the overall value of the network - incentivizing cooperation between communities to increase the value of the network.
+
+Once a community and its token are established, community members vote to distribute community funds generated from [recurring membership dues](https://1337alliance.com/) to projects using [meritocratic governance](https://blog.colony.io/the-colony-reputation-system-5616293c3949/). This encourages members to contribute to gain a voice in the direction and decision making of a community.
 
 ## Goals
 
@@ -20,19 +22,19 @@ By standing on the shoulders of giants in open source we get a lot out of the bo
 
 ### [Bancor](https://about.bancor.network/protocol/)
 
-The economy of the network - determines community token prices and allows for trading tokens within and outside of the Civitas Network.
+The economy of the network - provides continuous fundraising and liquidity for a community. Also automatically valuates community token prices and allows for swapping tokens within and outside of the Civitas Network based on the value of those currencies.
 
 ### [Colony](https://colony.io/)
 
-The workforce of the network - community project owners create bounties to be paid in a community’s token, held in escrow until the task is completed. Bounty hunters earn reputation respective to the amount earned.
+The workforce of the network - community project owners create bounties to be paid in a community’s token, held in escrow until the task is completed. Contributors earn reputation equal to the monetary value of a task.
 
 ### [Aragon](https://aragon.org/)
 
-The foundation of communities - reputation holders create and vote on proposals to: allocate funds to projects, change membership dues, signal community decisions, revoke membership, ad infinitum. This can be extended for virtually any use case by installing the relevant Aragon arApp.
+The foundation of communities - reputation holders create and vote on proposals to: allocate funds to projects, change membership dues, signal community decisions, revoke membership, ad infinitum. This can be extended for specific use cases by installing and/or configuring existing arApps.
 
 ## Release Milestones
 
-I. Network of Communities
+I. Network of Communities (COMPLETE)
 
 - Launch communities with a bonding curve fundraising token
 
@@ -60,9 +62,11 @@ V. Much, much more…
 
 - Aragon Chain communities, compound.finance pools, and more to be announced!
 
-## Demand and Competitive Advantage
+## Demand and Advantages
 
-The need for community governed funds distribution to sustain work efforts is a [hot topic in the Ethereum community](https://medium.com/streamrblog/a-proposal-for-ethereum-voting-mechanisms-and-common-funds-distribution-f637eb2515b1) and obviously extends far beyond the blockchain realm. One highly anticipated experiment includes [The LOA](https://medium.com/coinmonks/venturing-into-the-lao-comparing-molochdao-and-vmlao-solidity-designs-81da2361dba5) (built on [Moloch](https://medium.com/@simondlr/the-moloch-dao-collapsing-the-firm-2a800b3aa2e7)) which serves as a fundamental example but is limited by the constraints of the Moloch contracts which are especially cumbersome when dealing with fund allocation based on membership shares. Civitas utilizes battle tested, modular frameworks such as [Bancor](https://about.bancor.network/protocol/), [Colony](https://colony.io/), and [Aragon](https://aragon.org/) to compose an extendable DAO as a Service solution that provides at its core: the choice of permissionless/permissioned membership, continuous fundraising, reputation weighted voting, and decentralized fund allocation with swappable voting mechanisms - enabling cooperation for the masses.
+The need for community governed funds distribution to sustain coordination efforts is a [hot topic in the Ethereum community](https://medium.com/streamrblog/a-proposal-for-ethereum-voting-mechanisms-and-common-funds-distribution-f637eb2515b1) and also extends far beyond the blockchain realm. One highly anticipated example includes [The LOA](https://medium.com/coinmonks/venturing-into-the-lao-comparing-molochdao-and-vmlao-solidity-designs-81da2361dba5) (built on [Moloch](https://medium.com/@simondlr/the-moloch-dao-collapsing-the-firm-2a800b3aa2e7)) which serves as a fundamental experiment of permissioned membership and fund distribution but is limited by the opinionated nature of Moloch.
+
+Civitas utilizes battle tested platforms such as [Bancor](https://about.bancor.network/protocol/), [Colony](https://colony.io/), and [Aragon](https://aragon.org/) to compose a modular, configurable, and extendable DAO as a Service solution that provides at its core: the choice of permissionless/permissioned membership, continuous fundraising/liquidity, automated reputation management, reputation weighted voting, and decentralized fund allocation with swappable voting mechanisms - enabling coordination for the masses.
 
 ## Contributing
 
